@@ -1,0 +1,989 @@
+---
+title: "Checkerboards of antidote combinations on Gram+ pathogens"
+author: "Elisabetta Cacace"
+date: "30/10/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+#never echo code chunks
+knitr::opts_chunk$set(echo = F)
+knitr::opts_chunk$set(message = F)
+knitr::opts_chunk$set(warning = F)
+knitr::opts_chunk$set(error = T)
+knitr::opts_chunk$set(cache = T)
+```
+```{r, results='hide', message=FALSE, warning=T}
+#load packages
+library(data.table)
+library(tidyverse)
+library(tools)
+library(smoothmest)
+library(ggforce)
+library(directlabels)
+library(RColorBrewer)
+library(Rmisc)
+library(lemon)
+```
+
+## Introduction
+Combinations that are antagonistic in gut microbiome strains were previously identified. Specifically, combining erythromycin with either tolfenamic acid or dicoumarol relieves antibiotic pressure on gut microbiome species.
+Question: is erythromycin in these combinations still effective against main Gram+ pathogens it is used for? I.e. is the combination additive or synergistic against main Gram+ pathogens?
+Experimental setup: 8x8 checkerboards (including null concentration) in 384-well plates. Concentrations of antidote drug are 2-fold distant. Strains tested: _S. aureus_ DSM20231, _S. aureus_ Newman, _S. pneumoniae_ D39 (later discarded due to poor quality),  _E. faecium_ 19434. Media used: Tryptic Soy Broth ( _S.aureus_ strains), BHI ( _S. pneumoniae_ and _E.faecium_). Volumes: 30 µl ( _S.aureus_ and _E.faecium_), 50µl ( _S.pneumoniae_), 55 µl in 3rd and 4th biological replicates of _E.faecium_.
+Strain codes:
+* K = _S. aureus_ Newman
+* M = _S. aureus_ DSM20231
+* N = _E.faecium_ 19434
+* P = _S. pneumoniae_ D39.
+
+
+```{r}
+
+#reload annotated files
+# place the annotated files here
+home_dir = here::here("data")
+#create a directory for plots
+plot_dir = here::here("figures")
+#list them
+annot_dir = paste0(home_dir, "/annotated_CBs/")
+list_reads <- list.files(annot_dir)
+names(list_reads) <- file_path_sans_ext(list_reads)
+
+#read them
+annotated <- lapply(paste0(annot_dir, list_reads), 
+                    read.csv, header=T, sep=",")
+names(annotated) <- file_path_sans_ext(list_reads)
+
+```
+
+# Quality control plots (curves)
+Main critical points: condensation 3rd-4th time points, noisy/irreproducible growth in some strains (lysis, biofilm production) --> _S.pneumoniae_, _E.faecium_, partially _S.aureus_ Newman.
+AUC calculation can be biased by such artifacts.
+Decisions: 
+* smoothing artefacts
+* test appropriate time points to trim curves before AUC calculations.
+
+```{r}
+#plot strain by strain to better see problems for each of them
+Newman = annotated[grep(c("_K_"), names(annotated))]
+DSM20231 = annotated[grep(c("_M_"), names(annotated))]
+Entero = annotated[grep(c("_N_"), names(annotated))]
+
+pdf(paste0(plot_dir,"/curves_once.pdf"), width=10, height=8, onefile=TRUE)
+
+ggplot(plyr::ldply(Entero, 'data.frame'), 
+       aes(x=Time_h, y=OD_no1st)) + 
+    geom_point() + geom_line(aes(group = Well)) +
+    scale_y_continuous(limits = c(min(unlist(lapply(annotated,function(df) min(df$OD_no1st)))),
+                                max(unlist(lapply(annotated,function(df) max(df$OD_no1st)))))) +
+    facet_wrap(~ plate_id) +
+    ggtitle("E.faecium") +
+    theme_bw() +
+    theme(plot.title = element_text(hjust = 0.5))
+
+ggplot(plyr::ldply(Newman, 'data.frame'), 
+       aes(x=Time_h, y=OD_no1st)) + 
+    geom_point() + geom_line(aes(group = Well)) +
+  scale_y_continuous(limits = c(min(unlist(lapply(annotated,function(df) min(df$OD_no1st)))),
+                                max(unlist(lapply(annotated,function(df) max(df$OD_no1st)))))) +
+    facet_wrap(~ plate_id) +
+    ggtitle("S.aureus Newman") +
+    theme_bw() +
+    theme(plot.title = element_text(hjust = 0.5))
+
+ggplot(plyr::ldply(DSM20231, 'data.frame'), 
+       aes(x=Time_h, y=OD_no1st)) + 
+    geom_point() + geom_line(aes(group = Well)) +
+  scale_y_continuous(limits = c(min(unlist(lapply(annotated,function(df) min(df$OD_no1st)))),
+                                max(unlist(lapply(annotated,function(df) max(df$OD_no1st)))))) +
+    facet_wrap(~ plate_id) +
+    ggtitle("S.aureus DSM20231") +
+    theme_bw() +
+    theme(plot.title = element_text(hjust = 0.5))
+
+dev.off()
+
+```
+
+Observations:
+* a tailored approach should be adopted for each strain
+* common point: smooth down 3rd time point
+* optimal time points to trim before AUC calculation:
+  + SA Newman: 18th tp
+  + SA DSM20231: 18th tp
+  + E. faecium: 22nd tp for plates with lower volume ("P5_N_2", "P5_N_5", "P6_N_2", "P6_N_5", "P7_N_5", "P8_N_5"). 16th for plates with higher volume ("P9_N_1", "P9_N_2"). These two are already smoothed so can process separately and put back when calculating fitness.
+
+
+```{r}
+# process each strain separately
+
+#important note: from now on we act on "OD_no1st", i.e. the background-subtracted OD measurements (background subtraction was previously performed by subtracting the 1st time point OD). Raw OD still present in this data for reference.
+
+#-----smoothing (initial condensation artifacts and background)-----
+#smooth 3rd time point condensation if needed (S.aureus and E.faecium)
+myfun = function(x){
+  ind <- which(x[ , "Time_points"] == 3)
+  x$OD_no1st[ind] <- with(x, ((OD_no1st[ind-1] + OD_no1st[ind+1])/2))
+  return(x)
+}
+smooth_condens = function (x) {
+  x = x %>% group_by(Well) %>% myfun %>% dplyr::ungroup()
+  return(x)
+}  
+Entero = lapply(Entero, smooth_condens)
+Newman = lapply(Newman, smooth_condens)
+DSM20231 = lapply(DSM20231, smooth_condens)
+
+#---to ensure smoothing worked fine, replot curves----
+pdf(paste0(plot_dir,"/curves_smoothed.pdf"), width=10, height=8, onefile=TRUE)
+
+ggplot(plyr::ldply(Entero, 'data.frame'), 
+       aes(x=Time_h, y=OD_no1st)) + 
+    geom_point() + geom_line(aes(group = Well)) +
+    scale_y_continuous(limits = c(min(unlist(lapply(annotated,function(df) min(df$OD_no1st)))),
+                                max(unlist(lapply(annotated,function(df) max(df$OD_no1st)))))) +
+    facet_wrap(~ plate_id) +
+    ggtitle("E.faecium") +
+    theme_bw() +
+    theme(plot.title = element_text(hjust = 0.5))
+
+ggplot(plyr::ldply(Newman, 'data.frame'), 
+       aes(x=Time_h, y=OD_no1st)) + 
+    geom_point() + geom_line(aes(group = Well)) +
+  scale_y_continuous(limits = c(min(unlist(lapply(annotated,function(df) min(df$OD_no1st)))),
+                                max(unlist(lapply(annotated,function(df) max(df$OD_no1st)))))) +
+    facet_wrap(~ plate_id) +
+    ggtitle("S.aureus Newman") +
+    theme_bw() +
+    theme(plot.title = element_text(hjust = 0.5))
+
+ggplot(plyr::ldply(DSM20231, 'data.frame'), 
+       aes(x=Time_h, y=OD_no1st)) + 
+    geom_point() + geom_line(aes(group = Well)) +
+  scale_y_continuous(limits = c(min(unlist(lapply(annotated,function(df) min(df$OD_no1st)))),
+                                max(unlist(lapply(annotated,function(df) max(df$OD_no1st)))))) +
+    facet_wrap(~ plate_id) +
+    ggtitle("S.aureus DSM20231") +
+    theme_bw() +
+    theme(plot.title = element_text(hjust = 0.5))
+
+dev.off()
+
+
+#another optional step: first 6 time points in Entero are noisy: from curves it's clear it's just background
+#bring them all to 0
+myfunEntero = function(x){
+  ind <- which(x[ , "Time_points"] == 1:6)
+  x$OD_no1st[ind] <- 0
+  return(x)
+}
+smooth_noise = function (x) {
+#x = annotated$P1_K_3
+  x = x %>% group_by(Well) %>% myfunEntero %>% dplyr::ungroup()
+  return(x)
+}  
+Entero = lapply(Entero, smooth_noise)
+
+#do it also for Newman
+myfunStaph = function(x){
+  ind <- which(x[ , "Time_points"] == 1:7)
+  x$OD_no1st[ind] <- 0
+  return(x)
+}
+smooth_noise = function (x) {
+#x = annotated$P1_K_3
+  x = x %>% group_by(Well) %>% myfunStaph %>% dplyr::ungroup()
+  return(x)
+}  
+Newman = lapply(Newman, smooth_noise)
+
+#trim curves at customised time points that capture best fitness differences upon drug treatment (decided from curve inspection, roughly corresponding to beginning of stationary phase)
+Entero <- lapply (Entero, function (x) subset(x, Time_points <= 18))
+DSM20231 <- lapply (DSM20231, function (x) subset(x, Time_points <= 18))
+Newman <- lapply (Newman, function (x) subset(x, Time_points <= 18))
+
+Entero$P9_N_1 = subset(Entero$P9_N_1, Time_points <= 12)
+Entero$P9_N_2 = subset(Entero$P9_N_2, Time_points <= 12)
+
+#calculate AUC
+AUC_calc_ODno1st <- function (x) {
+  AUCs <- dplyr::group_by(x,plate_wellID) %>%
+    dplyr::summarise(AUC_well_ODno1st = DescTools::AUC(Time_points, OD_no1st, method = "spline"))
+  x= inner_join(x, AUCs, by = "plate_wellID")
+  return(x)
+}
+
+Entero = lapply(Entero, AUC_calc_ODno1st)
+DSM20231 = lapply(DSM20231, AUC_calc_ODno1st)
+Newman = lapply(Newman, AUC_calc_ODno1st)
+
+#AUC normalisation by the robust mean of no-drug control wells (per plate)
+robustMean <- function(x){
+  if(length(x) == 1){return(x)}
+  else{
+    return(smhuber(x)$mu)
+  }
+}
+
+norm_bugwells <- function (df) {
+  plate_mean_bug <- dplyr::filter(df, Concv_flag == "8" & Conch_flag == "8") %>%
+    dplyr::group_by(Time_points) %>%
+    dplyr::summarise(mean_AUC_bug = mean(AUC_well_ODno1st), med_AUC_bug = median(AUC_well_ODno1st),
+                     mean_AUC_bug_rob = robustMean(AUC_well_ODno1st),
+                     max_AUC_bug = max(AUC_well_ODno1st))
+
+  df = inner_join(df, plate_mean_bug, by = "Time_points") %>%
+    mutate(AUCnorm_bug_rob = AUC_well_ODno1st/mean_AUC_bug_rob,
+           AUC_norm_extreme = AUC_well_ODno1st/max_AUC_bug)
+  return(df)
+}
+
+Newman = lapply(Newman, norm_bugwells)
+DSM20231 = lapply(DSM20231, norm_bugwells)
+Entero = lapply(Entero, norm_bugwells)
+
+# #overview on combination IDs
+# unique(lapply(Entero, function(x) unique(x$Comb)))
+# unique(lapply(DSM20231, function(x) unique(x$Comb)))
+# unique(lapply(Newman, function(x) unique(x$Comb)))
+
+# do the same with single-time point OD (select it and normalise it)
+Newman = lapply(Newman, function (x) subset(x, Time_points == 16))
+DSM20231 = lapply(DSM20231, function (x) subset(x, Time_points == 16))
+Entero$P9_N_1 = subset(Entero$P9_N_1, Time_points == 12)
+Entero$P9_N_2 = subset(Entero$P9_N_2, Time_points == 12)
+Entero$P5_N_2 = subset(Entero$P5_N_2, Time_points == 16)
+Entero$P5_N_5 = subset(Entero$P5_N_5, Time_points == 16)
+Entero$P6_N_2 = subset(Entero$P6_N_2, Time_points == 16)
+Entero$P6_N_5 = subset(Entero$P6_N_5, Time_points == 16)
+Entero$P7_N_5 = subset(Entero$P7_N_5, Time_points == 16)
+Entero$P8_N_5 = subset(Entero$P8_N_5, Time_points == 16)
+
+# normalisation by no-drug controls
+robustMean <- function(x){
+  if(length(x) == 1){return(x)}
+  else{
+    return(smhuber(x)$mu)
+  }
+}
+
+#POC with bugs
+norm_bugwells <- function (df) {
+#df = Entero$P5_N_2  
+   plate_mean_bug <- dplyr::filter(df, Conch_flag == 8 & Concv_flag == 8) %>%
+    dplyr::group_by(Time_points) %>%
+    dplyr::summarise(meanODno1st = robustMean(OD_no1st))
+
+  df = inner_join(df, plate_mean_bug, by = "Time_points") %>% mutate(ODnorm_bug_rob = OD_no1st/meanODno1st)
+  return(df)
+}
+
+Newman = lapply(Newman, norm_bugwells)
+DSM20231 = lapply(DSM20231, norm_bugwells)
+Entero = lapply(Entero, norm_bugwells)
+
+
+#select good quality combs/plates
+combs_toextract = c("Ery_P_CUM","Ery_P_TOL")
+DSM20231 = lapply(DSM20231, function(x) subset(x, Comb %in% combs_toextract))
+
+combs_toextract = c("Ery_P_CUM", "Ery_S_CUM", "Ery_P_TOL", "Ery_S_TOL")
+Newman = lapply(Newman, function(x) subset(x, Comb %in% combs_toextract))
+
+combs_toextract = c("Ery_P_CUM","Ery_P_TOL","Ery_CUM","ERI_TOL")
+Entero = lapply(Entero, function(x) subset(x, Comb %in% combs_toextract))
+Entero = lapply(Entero, function(x) subset(x, plate_id != "P7_N_5"))
+Entero = lapply(Entero, function(x) subset(x, plate_id != "P8_N_5"))
+
+#select good quality combs/plates
+Newman = lapply(Newman, function(x) subset(x, Comb != "Ery_S_CUM"))
+Newman = lapply(Newman, function(x) subset(x, Comb != "Ery_S_TOL"))
+Newman$P2_K_3 = subset(Newman$P2_K_3, Comb != "Ery_P_CUM")
+Newman$P4_K_2 = subset(Newman$P4_K_2, Comb != "Ery_P_CUM")
+Newman$P4_K_3 = subset(Newman$P4_K_3, Comb != "Ery_P_CUM")
+Newman$P4_K_3 = subset(Newman$P4_K_3, Comb != "Ery_P_TOL")
+Newman$P2_K_3 = subset(Newman$P2_K_3, Comb != "Ery_P_TOL")
+
+DSM20231 = lapply(DSM20231, function(x) subset(x, plate_id != "P4_M_3"))
+
+#Plot checkerboards
+
+plot_cbs = function(x, plot_dir) {
+  
+  pdf(paste0(plot_dir, '/', unique(x$strain),"_CB_heatmaps_ODandAUC_cleaned.pdf"),  width=22, height=7)
+  p = ggplot(x, aes (x = factor(Conc_h), factor(Conc_v))) +
+    geom_tile(aes(fill = OD_no1st), colour = "white", size = 0.25) +   
+    scale_fill_gradient(low="#ffffff", high="#08306b") +
+    theme_classic() + 
+	facet_wrap(interaction(Comb_id, Comb) ~ plate_id, scales = "free", nrow = 8, ncol = 7) +
+    theme(axis.text.x = element_text(size = 15, angle = 60, vjust = 0.5, hjust = 0.5),
+          axis.text.y = element_text(size = 15),
+          axis.title.y = element_text(size = 30, angle = 90),
+          axis.title.x = element_text(size=30),
+          panel.background = element_rect(colour = NA),
+          plot.background = element_rect(colour = NA),
+          strip.text = element_text(face="bold", size = 20),
+          panel.spacing = unit(1, "lines"),
+          plot.title = element_text("Checkerboards", size = 30, face = "bold", margin = margin(t = 0, r = 0, b = 40, l = 0)),
+          plot.margin = unit(c(4, 4, 4, 4), "cm"),
+          legend.title = element_text(colour="black", size=20,face="bold"),
+          legend.text = element_text(colour="black", size=15),
+          legend.key = element_rect(size = 3),
+          legend.key.size = unit(1, 'cm'))
+    print(p)
+    
+    p = ggplot(x, aes (x = factor(Conc_h), factor(Conc_v))) +
+    geom_tile(aes(fill = ODnorm_bug_rob), colour = "white", size = 0.25) +   
+    scale_fill_gradient(low="#ffffff", high="#08306b") +
+    theme_classic() + 
+	facet_wrap(interaction(Comb_id, Comb) ~ plate_id, scales = "free", nrow = 8, ncol = 7) +
+    theme(axis.text.x = element_text(size = 15, angle = 60, vjust = 0.5, hjust = 0.5),
+          axis.text.y = element_text(size = 15),
+          axis.title.y = element_text(size = 30, angle = 90),
+          axis.title.x = element_text(size=30),
+          panel.background = element_rect(colour = NA),
+          plot.background = element_rect(colour = NA),
+          # strip.background=element_rect(colour="#f0f0f0",fill="#f0f0f0"),
+          strip.text = element_text(face="bold", size = 20),
+          # # panel.border = element_rect(colour = NA),
+          # strip.text.x = element_text(size=25),
+          panel.spacing = unit(1, "lines"),
+          plot.title = element_text("Checkerboards", size = 30, face = "bold", margin = margin(t = 0, r = 0, b = 40, l = 0)),
+          plot.margin = unit(c(4, 4, 4, 4), "cm"),
+          legend.title = element_text(colour="black", size=20,face="bold"),
+          legend.text = element_text(colour="black", size=15),
+          legend.key = element_rect(size = 3),
+          legend.key.size = unit(1, 'cm'))
+      print(p)
+
+    p = ggplot(x, aes (x = factor(Conc_h), factor(Conc_v))) +
+    geom_tile(aes(fill = AUC_well_ODno1st), colour = "white", size = 0.25) +   
+    scale_fill_gradient(low="#ffffff", high="#08306b") +
+    theme_classic() + 
+	facet_wrap(interaction(Comb_id, Comb) ~ plate_id, scales = "free", nrow = 8, ncol = 7) +
+    theme(axis.text.x = element_text(size = 15, angle = 60, vjust = 0.5, hjust = 0.5),
+          axis.text.y = element_text(size = 15),
+          axis.title.y = element_text(size = 30, angle = 90),
+          axis.title.x = element_text(size=30),
+          panel.background = element_rect(colour = NA),
+          plot.background = element_rect(colour = NA),
+          # strip.background=element_rect(colour="#f0f0f0",fill="#f0f0f0"),
+          strip.text = element_text(face="bold", size = 20),
+          panel.spacing = unit(1, "lines"),
+          plot.title = element_text("Checkerboards", size = 30, face = "bold", margin = margin(t = 0, r = 0, b = 40, l = 0)),
+          plot.margin = unit(c(4, 4, 4, 4), "cm"),
+          legend.title = element_text(colour="black", size=20,face="bold"),
+          legend.text = element_text(colour="black", size=15),
+          legend.key = element_rect(size = 3),
+          legend.key.size = unit(1, 'cm'))
+      print(p)
+    
+    
+    p = ggplot(x, aes (x = factor(Conc_h), factor(Conc_v))) +
+    geom_tile(aes(fill = AUCnorm_bug_rob), colour = "white", size = 0.25) +   
+    scale_fill_gradient(low="#ffffff", high="#08306b") +
+    theme_classic() + 
+	facet_wrap(interaction(Comb_id, Comb) ~ plate_id, scales = "free", nrow = 8, ncol = 7) +
+    theme(axis.text.x = element_text(size = 15, angle = 60, vjust = 0.5, hjust = 0.5),
+          axis.text.y = element_text(size = 15),
+          axis.title.y = element_text(size = 30, angle = 90),
+          axis.title.x = element_text(size=30),
+          panel.background = element_rect(colour = NA),
+          plot.background = element_rect(colour = NA),
+          # strip.background=element_rect(colour="#f0f0f0",fill="#f0f0f0"),
+          strip.text = element_text(face="bold", size = 20),
+          panel.spacing = unit(1, "lines"),
+          plot.title = element_text("Checkerboards", size = 30, face = "bold", margin = margin(t = 0, r = 0, b = 40, l = 0)),
+          plot.margin = unit(c(4, 4, 4, 4), "cm"),
+          legend.title = element_text(colour="black", size=20,face="bold"),
+          legend.text = element_text(colour="black", size=15),
+          legend.key = element_rect(size = 3),
+          legend.key.size = unit(1, 'cm'))
+      print(p)
+
+  dev.off()
+
+}
+
+allCB = plyr::ldply(Newman, data.frame)
+plot_cbs(allCB, plot_dir = plot_dir)
+
+plot_cbs = function(x, plot_dir) {
+  
+  pdf(paste0(plot_dir, '/', unique(x$strain),"_CB_heatmaps_ODandAUC_cleaned.pdf"),  width=22, height=11)
+  p = ggplot(x, aes (x = factor(Conc_h), factor(Conc_v))) +
+    geom_tile(aes(fill = OD_no1st), colour = "white", size = 0.25) +   
+    scale_fill_gradient(low="#ffffff", high="#08306b") + #, limits=c(-0.09, 1.2)) +  
+  #scale_fill_gradientn(colours = c("white","darkblue"), limits = c(min(allCB$OD_no1st),max(allCB$OD_no1st))) +
+# scale_fill_gradientn(colors = c("white", "white", "darkblue"),
+ #                      values = scales::rescale(c(0,0.005, 0.095, max(df$OD_no1st)))) +
+    theme_classic() + 
+	facet_wrap(interaction(Comb_id, Comb) ~ plate_id, scales = "free", nrow = 8, ncol = 5) +
+    theme(axis.text.x = element_text(size = 15, angle = 60, vjust = 0.5, hjust = 0.5),
+          axis.text.y = element_text(size = 15),
+          axis.title.y = element_text(size = 30, angle = 90),
+          axis.title.x = element_text(size=30),
+          panel.background = element_rect(colour = NA),
+          plot.background = element_rect(colour = NA),
+          # strip.background=element_rect(colour="#f0f0f0",fill="#f0f0f0"),
+          strip.text = element_text(face="bold", size = 20),
+          # # panel.border = element_rect(colour = NA),
+          # strip.text.x = element_text(size=25),
+          panel.spacing = unit(1, "lines"),
+          plot.title = element_text("Checkerboards", size = 30, face = "bold", margin = margin(t = 0, r = 0, b = 40, l = 0)),
+          plot.margin = unit(c(4, 4, 4, 4), "cm"),
+          legend.title = element_text(colour="black", size=20,face="bold"),
+          legend.text = element_text(colour="black", size=15),
+          legend.key = element_rect(size = 3),
+          legend.key.size = unit(1, 'cm'))
+    print(p)
+    
+    p = ggplot(x, aes (x = factor(Conc_h), factor(Conc_v))) +
+    geom_tile(aes(fill = ODnorm_bug_rob), colour = "white", size = 0.25) +   
+    scale_fill_gradient(low="#ffffff", high="#08306b") +
+  #scale_fill_gradientn(colours = c("white","darkblue"), limits = c(min(allCB$ODnorm_bug_rob),max(allCB$ODnorm_bug_rob))) +
+# scale_fill_gradientn(colors = c("white", "white", "darkblue"),
+ #                      values = scales::rescale(c(0,0.005, 0.095, max(df$OD_no1st)))) +
+    theme_classic() + 
+	facet_wrap(interaction(Comb_id, Comb) ~ plate_id, scales = "free", nrow = 8, ncol = 5) +
+    theme(axis.text.x = element_text(size = 15, angle = 60, vjust = 0.5, hjust = 0.5),
+          axis.text.y = element_text(size = 15),
+          axis.title.y = element_text(size = 30, angle = 90),
+          axis.title.x = element_text(size=30),
+          panel.background = element_rect(colour = NA),
+          plot.background = element_rect(colour = NA),
+          # strip.background=element_rect(colour="#f0f0f0",fill="#f0f0f0"),
+          strip.text = element_text(face="bold", size = 20),
+          # # panel.border = element_rect(colour = NA),
+          # strip.text.x = element_text(size=25),
+          panel.spacing = unit(1, "lines"),
+          plot.title = element_text("Checkerboards", size = 30, face = "bold", margin = margin(t = 0, r = 0, b = 40, l = 0)),
+          plot.margin = unit(c(4, 4, 4, 4), "cm"),
+          legend.title = element_text(colour="black", size=20,face="bold"),
+          legend.text = element_text(colour="black", size=15),
+          legend.key = element_rect(size = 3),
+          legend.key.size = unit(1, 'cm'))
+      print(p)
+
+    p = ggplot(x, aes (x = factor(Conc_h), factor(Conc_v))) +
+    geom_tile(aes(fill = AUC_well_ODno1st), colour = "white", size = 0.25) +   
+    scale_fill_gradient(low="#ffffff", high="#08306b") +
+  #scale_fill_gradientn(colours = c("white","darkblue"), limits = c(min(allCB$AUC_well_ODno1st),max(allCB$AUC_well_ODno1st))) +
+# scale_fill_gradientn(colors = c("white", "white", "darkblue"),
+#                      values = scales::rescale(c(0,0.1, 0.15, max(allCB$AUC_well_ODno1st)))) +
+    theme_classic() + 
+	facet_wrap(interaction(Comb_id, Comb) ~ plate_id, scales = "free", nrow = 8, ncol = 5) +
+    theme(axis.text.x = element_text(size = 15, angle = 60, vjust = 0.5, hjust = 0.5),
+          axis.text.y = element_text(size = 15),
+          axis.title.y = element_text(size = 30, angle = 90),
+          axis.title.x = element_text(size=30),
+          panel.background = element_rect(colour = NA),
+          plot.background = element_rect(colour = NA),
+          # strip.background=element_rect(colour="#f0f0f0",fill="#f0f0f0"),
+          strip.text = element_text(face="bold", size = 20),
+          # # panel.border = element_rect(colour = NA),
+          # strip.text.x = element_text(size=25),
+          panel.spacing = unit(1, "lines"),
+          plot.title = element_text("Checkerboards", size = 30, face = "bold", margin = margin(t = 0, r = 0, b = 40, l = 0)),
+          plot.margin = unit(c(4, 4, 4, 4), "cm"),
+          legend.title = element_text(colour="black", size=20,face="bold"),
+          legend.text = element_text(colour="black", size=15),
+          legend.key = element_rect(size = 3),
+          legend.key.size = unit(1, 'cm'))
+      print(p)
+    
+    
+    p = ggplot(x, aes (x = factor(Conc_h), factor(Conc_v))) +
+    geom_tile(aes(fill = AUCnorm_bug_rob), colour = "white", size = 0.25) +   
+    scale_fill_gradient(low="#ffffff", high="#08306b") +
+  #scale_fill_gradientn(colours = c("white","darkblue"), limits = c(min(allCB$AUC_well_ODno1st),max(allCB$AUC_well_ODno1st))) +
+# scale_fill_gradientn(colors = c("white", "white", "darkblue"),
+#                      values = scales::rescale(c(0,0.1, 0.15, max(allCB$AUC_well_ODno1st)))) +
+    theme_classic() + 
+	facet_wrap(interaction(Comb_id, Comb) ~ plate_id, scales = "free", nrow = 8, ncol = 5) +
+    theme(axis.text.x = element_text(size = 15, angle = 60, vjust = 0.5, hjust = 0.5),
+          axis.text.y = element_text(size = 15),
+          axis.title.y = element_text(size = 30, angle = 90),
+          axis.title.x = element_text(size=30),
+          panel.background = element_rect(colour = NA),
+          plot.background = element_rect(colour = NA),
+          # strip.background=element_rect(colour="#f0f0f0",fill="#f0f0f0"),
+          strip.text = element_text(face="bold", size = 20),
+          # # panel.border = element_rect(colour = NA),
+          # strip.text.x = element_text(size=25),
+          panel.spacing = unit(1, "lines"),
+          plot.title = element_text("Checkerboards", size = 30, face = "bold", margin = margin(t = 0, r = 0, b = 40, l = 0)),
+          plot.margin = unit(c(4, 4, 4, 4), "cm"),
+          legend.title = element_text(colour="black", size=20,face="bold"),
+          legend.text = element_text(colour="black", size=15),
+          legend.key = element_rect(size = 3),
+          legend.key.size = unit(1, 'cm'))
+      print(p)
+
+  dev.off()
+
+}
+
+allCB = plyr::ldply(DSM20231, data.frame)
+plot_cbs(allCB, plot_dir = plot_dir)
+
+plot_cbs = function(x, plot_dir) {
+  
+  pdf(paste0(plot_dir, '/', unique(x$strain),"_CB_heatmaps_ODandAUC_cleaned.pdf"),  width=22, height=9)
+  p = ggplot(x, aes (x = factor(Conc_h), factor(Conc_v))) +
+    geom_tile(aes(fill = OD_no1st), colour = "white", size = 0.25) +   
+    scale_fill_gradient(low="#ffffff", high="#08306b") + #, limits=c(-0.09, 1.2)) +  
+  #scale_fill_gradientn(colours = c("white","darkblue"), limits = c(min(allCB$OD_no1st),max(allCB$OD_no1st))) +
+# scale_fill_gradientn(colors = c("white", "white", "darkblue"),
+ #                      values = scales::rescale(c(0,0.005, 0.095, max(df$OD_no1st)))) +
+    theme_classic() + 
+	facet_wrap(interaction(Comb_id, Comb) ~ plate_id, scales = "free", nrow = 8, ncol = 6) +
+    theme(axis.text.x = element_text(size = 15, angle = 60, vjust = 0.5, hjust = 0.5),
+          axis.text.y = element_text(size = 15),
+          axis.title.y = element_text(size = 30, angle = 90),
+          axis.title.x = element_text(size=30),
+          panel.background = element_rect(colour = NA),
+          plot.background = element_rect(colour = NA),
+          # strip.background=element_rect(colour="#f0f0f0",fill="#f0f0f0"),
+          strip.text = element_text(face="bold", size = 20),
+          # # panel.border = element_rect(colour = NA),
+          # strip.text.x = element_text(size=25),
+          panel.spacing = unit(1, "lines"),
+          plot.title = element_text("Checkerboards", size = 30, face = "bold", margin = margin(t = 0, r = 0, b = 40, l = 0)),
+          plot.margin = unit(c(4, 4, 4, 4), "cm"),
+          legend.title = element_text(colour="black", size=20,face="bold"),
+          legend.text = element_text(colour="black", size=15),
+          legend.key = element_rect(size = 3),
+          legend.key.size = unit(1, 'cm'))
+    print(p)
+    
+    p = ggplot(x, aes (x = factor(Conc_h), factor(Conc_v))) +
+    geom_tile(aes(fill = ODnorm_bug_rob), colour = "white", size = 0.25) +   
+    scale_fill_gradient(low="#ffffff", high="#08306b") +
+  #scale_fill_gradientn(colours = c("white","darkblue"), limits = c(min(allCB$ODnorm_bug_rob),max(allCB$ODnorm_bug_rob))) +
+# scale_fill_gradientn(colors = c("white", "white", "darkblue"),
+ #                      values = scales::rescale(c(0,0.005, 0.095, max(df$OD_no1st)))) +
+    theme_classic() + 
+	facet_wrap(interaction(Comb_id, Comb) ~ plate_id, scales = "free", nrow = 8, ncol = 6) +
+    theme(axis.text.x = element_text(size = 15, angle = 60, vjust = 0.5, hjust = 0.5),
+          axis.text.y = element_text(size = 15),
+          axis.title.y = element_text(size = 30, angle = 90),
+          axis.title.x = element_text(size=30),
+          panel.background = element_rect(colour = NA),
+          plot.background = element_rect(colour = NA),
+          # strip.background=element_rect(colour="#f0f0f0",fill="#f0f0f0"),
+          strip.text = element_text(face="bold", size = 20),
+          # # panel.border = element_rect(colour = NA),
+          # strip.text.x = element_text(size=25),
+          panel.spacing = unit(1, "lines"),
+          plot.title = element_text("Checkerboards", size = 30, face = "bold", margin = margin(t = 0, r = 0, b = 40, l = 0)),
+          plot.margin = unit(c(4, 4, 4, 4), "cm"),
+          legend.title = element_text(colour="black", size=20,face="bold"),
+          legend.text = element_text(colour="black", size=15),
+          legend.key = element_rect(size = 3),
+          legend.key.size = unit(1, 'cm'))
+      print(p)
+
+    p = ggplot(x, aes (x = factor(Conc_h), factor(Conc_v))) +
+    geom_tile(aes(fill = AUC_well_ODno1st), colour = "white", size = 0.25) +   
+    scale_fill_gradient(low="#ffffff", high="#08306b") +
+  #scale_fill_gradientn(colours = c("white","darkblue"), limits = c(min(allCB$AUC_well_ODno1st),max(allCB$AUC_well_ODno1st))) +
+# scale_fill_gradientn(colors = c("white", "white", "darkblue"),
+#                      values = scales::rescale(c(0,0.1, 0.15, max(allCB$AUC_well_ODno1st)))) +
+    theme_classic() + 
+	facet_wrap(interaction(Comb_id, Comb) ~ plate_id, scales = "free", nrow = 8, ncol = 6) +
+    theme(axis.text.x = element_text(size = 15, angle = 60, vjust = 0.5, hjust = 0.5),
+          axis.text.y = element_text(size = 15),
+          axis.title.y = element_text(size = 30, angle = 90),
+          axis.title.x = element_text(size=30),
+          panel.background = element_rect(colour = NA),
+          plot.background = element_rect(colour = NA),
+          # strip.background=element_rect(colour="#f0f0f0",fill="#f0f0f0"),
+          strip.text = element_text(face="bold", size = 20),
+          # # panel.border = element_rect(colour = NA),
+          # strip.text.x = element_text(size=25),
+          panel.spacing = unit(1, "lines"),
+          plot.title = element_text("Checkerboards", size = 30, face = "bold", margin = margin(t = 0, r = 0, b = 40, l = 0)),
+          plot.margin = unit(c(4, 4, 4, 4), "cm"),
+          legend.title = element_text(colour="black", size=20,face="bold"),
+          legend.text = element_text(colour="black", size=15),
+          legend.key = element_rect(size = 3),
+          legend.key.size = unit(1, 'cm'))
+      print(p)
+    
+    
+    p = ggplot(x, aes (x = factor(Conc_h), factor(Conc_v))) +
+    geom_tile(aes(fill = AUCnorm_bug_rob), colour = "white", size = 0.25) +   
+    scale_fill_gradient(low="#ffffff", high="#08306b") +
+  #scale_fill_gradientn(colours = c("white","darkblue"), limits = c(min(allCB$AUC_well_ODno1st),max(allCB$AUC_well_ODno1st))) +
+# scale_fill_gradientn(colors = c("white", "white", "darkblue"),
+#                      values = scales::rescale(c(0,0.1, 0.15, max(allCB$AUC_well_ODno1st)))) +
+    theme_classic() + 
+	facet_wrap(interaction(Comb_id, Comb) ~ plate_id, scales = "free", nrow = 8, ncol = 6) +
+    theme(axis.text.x = element_text(size = 15, angle = 60, vjust = 0.5, hjust = 0.5),
+          axis.text.y = element_text(size = 15),
+          axis.title.y = element_text(size = 30, angle = 90),
+          axis.title.x = element_text(size=30),
+          panel.background = element_rect(colour = NA),
+          plot.background = element_rect(colour = NA),
+          # strip.background=element_rect(colour="#f0f0f0",fill="#f0f0f0"),
+          strip.text = element_text(face="bold", size = 20),
+          # # panel.border = element_rect(colour = NA),
+          # strip.text.x = element_text(size=25),
+          panel.spacing = unit(1, "lines"),
+          plot.title = element_text("Checkerboards", size = 30, face = "bold", margin = margin(t = 0, r = 0, b = 40, l = 0)),
+          plot.margin = unit(c(4, 4, 4, 4), "cm"),
+          legend.title = element_text(colour="black", size=20,face="bold"),
+          legend.text = element_text(colour="black", size=15),
+          legend.key = element_rect(size = 3),
+          legend.key.size = unit(1, 'cm'))
+      print(p)
+
+  dev.off()
+
+}
+
+allCB = plyr::ldply(Entero, data.frame)
+plot_cbs(allCB, plot_dir = plot_dir)
+
+```
+
+# Calculate interaction scores according to Bliss model.
+
+```{r}
+#remove empty plates
+exclude <- function(list,names){
+     ## return the elements of the list not belonging to names
+     member..names <- names(list)
+     index <- which(!(member..names %in% names))
+    list[index]
+}
+
+lapply(DSM20231, head, n=3)
+DSM20231 = exclude(DSM20231, c("P3_M_5","P4_M_3", "P4_M_5"))
+
+lapply(Newman, head, n=3)
+Newman = exclude(Newman, c("P1_K_5","P2_K_3", "P2_K_5", "P4_K_3"))
+
+lapply(Entero, head, n=3)
+Entero = exclude(Entero, c("P7_N_5","P8_N_5"))
+
+
+#calculate epsilon score for each combo, per plate
+eps = function (x) {
+  #x = DSM20231$P3_M_5
+  x = mutate(x, drugh_flag_cb = paste0(Drug_h, "_", Conch_flag, "_", Comb_id))
+  x = mutate(x, drugv_flag_cb = paste0(Drug_v, "_", Concv_flag, "_", Comb_id))
+  x = mutate(x, drugHf_drugVf_cb = paste0(drugh_flag_cb, "_",drugv_flag_cb))
+  
+  hzt_alone = x%>% subset(Conc_v == 0.00) %>%
+    dplyr::select(c("Comb_id", "drugh_flag_cb", "AUCnorm_bug_rob")) %>%
+    dplyr::rename("fit_hzt"= "AUCnorm_bug_rob")
+  
+  vert_alone = x %>% subset(Conc_h == 0.00) %>%
+    dplyr::select(c("Comb_id", "drugv_flag_cb", "AUCnorm_bug_rob")) %>%
+    dplyr::rename("fit_vert"= "AUCnorm_bug_rob")
+  
+  out = inner_join(hzt_alone, x, by = c("drugh_flag_cb","Comb_id"))
+  out = inner_join(vert_alone, out, by = c("drugv_flag_cb", "Comb_id"))
+  
+  out$fit_comb = out$AUCnorm_bug_rob
+  
+  out = mutate(out, exp_fit = fit_vert * fit_hzt,
+               bliss = fit_comb - exp_fit)
+  out$cumBliss = with(out, ave(bliss, Comb, FUN = median))
+  out$cumBliss = round(out$cumBliss, digits = 3)
+  return(out)
+}
+
+M_blissed = lapply(DSM20231,eps)
+K_blissed = lapply(Newman,eps)
+N_blissed = lapply(Entero,eps)
+
+
+all_blissed = c(M_blissed, K_blissed, N_blissed)
+
+
+#-----assign and analyse interactions----
+blissed_df = data.table::rbindlist(all_blissed, use.names=TRUE)
+
+#check if eps distribution is zero-centered
+densityplot(blissed_df$bliss)
+
+
+pdf(paste0(plot_dir, "/eps_density_strain.pdf"), width = 8, height =4)
+mu <- plyr::ddply(blissed_df, "strain", summarise, grp.median=median(bliss))
+
+ggplot(blissed_df, aes(x = bliss, color = strain)) +
+  geom_density() +
+  geom_vline(data = mu, aes(xintercept=grp.median),
+            color="blue", linetype="dashed", size=0.5) +
+  facet_wrap( ~ strain)
+
+dev.off()
+
+
+```
+
+
+# Quality control plots of interactions:
+- boxplot of epsilons for each strain (only good quality CBs, no Pneumo)
+- heatmaps of checkerboards with epsilon score marked on top
+- scatter of additivity vs epsilon
+
+
+```{r}
+
+pdf(paste0(plot_dir, "/scatter_fitcomb_mult.pdf"), width = 15, height = 15)
+
+ggplot(blissed_df, aes(x = as.numeric(exp_fit), y = as.numeric(fit_comb))) +
+  geom_point(aes(color = as.factor(Concv_flag))) +
+  geom_smooth(method = "lm", level = 0.8, fullrange = TRUE) +
+  labs (x = "expected fitness (neutrality)", y = "observed fitness", color = "Concentration of vertical drug") +
+  facet_wrap(Comb ~ plate_id) +
+  theme_bw() +
+  geom_abline(slope=1, size = 0.3)
+
+dev.off()
+
+pdf(paste0(plot_dir, "/scatter_fitcomb_mult_nocolor.pdf"), width = 15, height = 15)
+
+ggplot(blissed_df, aes(x = as.numeric(exp_fit), y = as.numeric(fit_comb))) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  labs (x = "expected fitness (neutrality)", y = "observed fitness") +
+  facet_wrap(Comb ~ plate_id) +
+  theme_bw() +
+  geom_abline(slope=1, size = 0.3)
+
+dev.off()
+
+#store this data
+write.table(blissed_df, paste0(home_dir, "/all_CBs_Gram+_AUCs_Bliss.tsv"), sep = "\t", quote = F, row.names = F)
+
+```
+
+# Cumulative metrics of interactions and final plots
+
+
+```{r}
+#pool together drugs and combs id - get rid of the P S E annotation for Ery
+key = bind_cols( "Comb" = c("Ery_P_CUM", "Ery_P_TOL", "Ery_CUM", "ERI_TOL"),
+                    "newComb" = c("Ery_CUM", "Ery_TOL", "Ery_CUM", "Ery_TOL"))
+
+new = inner_join(blissed_df, key, by = "Comb")
+
+#replace names of strains
+new$strain <- gsub('N', 'Efaecium', new$strain)
+new$strain <- gsub('K', 'SANewman', new$strain)
+new$strain <- gsub('M', 'SADSM20231', new$strain)
+
+
+pdf(paste0(plot_dir, "/distrib_epsilon_dotplot_repspooled.pdf"), width = 10, height =7)
+new$cumBlissstrain = ave(new$bliss, interaction(new$newComb, new$strain), FUN = median)
+new$cumBlisscomb = ave(new$bliss, new$newComb, FUN = median)
+new$cumBlisscomb = round(new$cumBlisscomb, digits = 4)
+new$plot_label <- sprintf("epsilon = %0.4f", as.numeric(new$cumBlissstrain))
+ 
+ggplot(new, aes(x = as.numeric(bliss), fill = factor(strain), color = factor(strain))) +
+  geom_dotplot(stackratio = .7, show.legend = F) +
+  geom_vline(aes(xintercept = cumBlissstrain, color = strain), linetype="dashed") +
+  geom_density(adjust = 5, alpha = 0.1) +
+  #annotate("text", x = -0.25, y = 6, label = new$plot_label, parse = T, size = 2.8) +
+  labs (x = "Interaction score") +
+  scale_color_discrete(name = "Strain") +
+  facet_rep_wrap(newComb ~ strain + plot_label, scales = "fixed", repeat.tick.labels = T, ncol = 3) +
+  theme_bw() +
+  guides(fill=FALSE)
+
+dev.off()
+
+
+pdf(paste0(plot_dir, "/boxplot_epsilons_pooled.pdf"), width = 6, height = 3)
+
+ggplot (new, aes(x= strain, y = bliss, colour = factor(strain))) +
+  geom_boxplot() +
+  facet_rep_wrap(~newComb, scales = "fixed", repeat.tick.labels = T, ncol = 5) +
+  scale_x_discrete(name = "Strains") +
+  scale_color_discrete(name = "Strains") +
+  labs(y = "Bliss score", geom_boxplot=guide_legend(title="Strains")) +
+  theme(axis.text.x = element_text(size=8, angle=60, hjust=1),
+        strip.text = element_text(size=12, margin = margin(0.3,0,0.3,0, "cm")))
+
+dev.off()
+
+
+pdf(paste0(plot_dir, "/scatter_fitcomb_mult_combspooled.pdf"), width = 10, height = 5)
+
+ggplot(new, aes(x = as.numeric(exp_fit), y = as.numeric(fit_comb))) +
+  geom_point(aes(color = as.factor(strain))) +
+  geom_smooth(aes(group = new$strain, color = strain), method = "lm") +
+  labs (x = "expected fitness (neutrality)", y = "observed fitness") +
+  facet_wrap (newComb ~ cumBlisscomb,  scales = "fixed", ncol = 8) +
+  scale_colour_discrete(name = "Strain") +
+  theme_bw() +
+  geom_abline(slope=1, size = 0.3)
+
+dev.off()
+
+#average the fitness checkerboards for each comb-strain pair
+
+new$Drug_h = sapply(strsplit(as.character(new$newComb), "_"), '[', 1)
+new$Drug_v = sapply(strsplit(as.character(new$newComb), "_"), '[', 2)
+new$DRUGH_FLAG = interaction(new$Drug_h, new$Conch_flag, sep = "_")
+new$DRUGV_FLAG = interaction(new$Drug_v, new$Concv_flag, sep = "_")
+new$Comb_flags = interaction(new$DRUGH_FLAG, new$DRUGV_FLAG, sep = "_")
+new$strainCombflags = interaction(new$strain, new$Comb_flags, sep = "_")
+
+new$AUCnorm_averep = ave(new$AUCnorm_bug_rob, new$strainCombflags, FUN = mean)
+new$AUCnorm_medrep = ave(new$AUCnorm_bug_rob, new$strainCombflags, FUN = median)
+
+new$Conc_h = round(new$Conc_h, digits = 2)
+new$cumBlissstrain = round(new$cumBlissstrain, digits = 4)
+```
+
+# Load the biological and technical replicate annotation
+
+```{r}
+plates = read.table(paste0(home_dir, "/plates.txt"), sep = "\t", header = T)
+
+new = inner_join(new, plates, by = c("plate_id", "Comb_id"))
+
+plot_cbs = function(x, plot_dir) {
+  
+  pdf(paste0(plot_dir, '/', unique(x$strain),"_CB_heatmaps_ODandAUC_newComb_withBiolTechreps.pdf"),  width=24, height=10)
+  p = ggplot(x, aes (x = factor(Conc_h), factor(Conc_v))) +
+    geom_tile(aes(fill = OD_no1st), colour = "white", size = 0.25) +   
+    scale_fill_gradient(low="#ffffff", high="#08306b") + #, limits=c(-0.09, 1.2)) + 
+    theme_classic() + 
+	facet_wrap(newComb ~ interaction(biol_rep, tech_rep, sep = "_"), scales = "free", nrow = 8, ncol = 7) +
+    theme(axis.text.x = element_text(size = 15, angle = 60, vjust = 0.5, hjust = 0.5),
+          axis.text.y = element_text(size = 15),
+          axis.title.y = element_text(size = 30, angle = 90),
+          axis.title.x = element_text(size=30),
+          panel.background = element_rect(colour = NA),
+          plot.background = element_rect(colour = NA),
+          strip.text = element_text(face="bold", size = 20),
+          panel.spacing = unit(1, "lines"),
+          plot.title = element_text("Checkerboards", size = 30, face = "bold", margin = margin(t = 0, r = 0, b = 40, l = 0)),
+          plot.margin = unit(c(4, 4, 4, 4), "cm"),
+          legend.title = element_text(colour="black", size=20,face="bold"),
+          legend.text = element_text(colour="black", size=15),
+          legend.key = element_rect(size = 3),
+          legend.key.size = unit(1, 'cm'))
+    print(p)
+    
+    p = ggplot(x, aes (x = factor(Conc_h), factor(Conc_v))) +
+    geom_tile(aes(fill = ODnorm_bug_rob), colour = "white", size = 0.25) +   
+    scale_fill_gradient(low="#ffffff", high="#08306b") +
+    theme_classic() + 
+		facet_wrap(newComb ~ interaction(biol_rep, tech_rep, sep = "_"), scales = "free", nrow = 8, ncol = 7) +
+    theme(axis.text.x = element_text(size = 15, angle = 60, vjust = 0.5, hjust = 0.5),
+          axis.text.y = element_text(size = 15),
+          axis.title.y = element_text(size = 30, angle = 90),
+          axis.title.x = element_text(size=30),
+          panel.background = element_rect(colour = NA),
+          plot.background = element_rect(colour = NA),
+          strip.text = element_text(face="bold", size = 20),
+          panel.spacing = unit(1, "lines"),
+          plot.title = element_text("Checkerboards", size = 30, face = "bold", margin = margin(t = 0, r = 0, b = 40, l = 0)),
+          plot.margin = unit(c(4, 4, 4, 4), "cm"),
+          legend.title = element_text(colour="black", size=20,face="bold"),
+          legend.text = element_text(colour="black", size=15),
+          legend.key = element_rect(size = 3),
+          legend.key.size = unit(1, 'cm'))
+      print(p)
+
+    p = ggplot(x, aes (x = factor(Conc_h), factor(Conc_v))) +
+    geom_tile(aes(fill = AUC_well_ODno1st), colour = "white", size = 0.25) +   
+    scale_fill_gradient(low="#ffffff", high="#08306b") +
+    theme_classic() + 
+		facet_wrap(newComb ~ interaction(biol_rep, tech_rep, sep = "_"), scales = "free", nrow = 8, ncol = 7) +
+    theme(axis.text.x = element_text(size = 15, angle = 60, vjust = 0.5, hjust = 0.5),
+          axis.text.y = element_text(size = 15),
+          axis.title.y = element_text(size = 30, angle = 90),
+          axis.title.x = element_text(size=30),
+          panel.background = element_rect(colour = NA),
+          plot.background = element_rect(colour = NA),
+          strip.text = element_text(face="bold", size = 20),
+          panel.spacing = unit(1, "lines"),
+          plot.title = element_text("Checkerboards", size = 30, face = "bold", margin = margin(t = 0, r = 0, b = 40, l = 0)),
+          plot.margin = unit(c(4, 4, 4, 4), "cm"),
+          legend.title = element_text(colour="black", size=20,face="bold"),
+          legend.text = element_text(colour="black", size=15),
+          legend.key = element_rect(size = 3),
+          legend.key.size = unit(1, 'cm'))
+      print(p)
+    
+    
+    p = ggplot(x, aes (x = factor(Conc_h), factor(Conc_v))) +
+    geom_tile(aes(fill = AUCnorm_bug_rob), colour = "white", size = 0.25) +   
+    scale_fill_gradient(low="#ffffff", high="#08306b") +
+    theme_classic() + 
+		facet_wrap(newComb ~ interaction(biol_rep, tech_rep, sep = "_"), scales = "free", nrow = 8, ncol = 7) +
+    theme(axis.text.x = element_text(size = 15, angle = 60, vjust = 0.5, hjust = 0.5),
+          axis.text.y = element_text(size = 15),
+          axis.title.y = element_text(size = 30, angle = 90),
+          axis.title.x = element_text(size=30),
+          panel.background = element_rect(colour = NA),
+          plot.background = element_rect(colour = NA),
+          strip.text = element_text(face="bold", size = 20),
+          panel.spacing = unit(1, "lines"),
+          plot.title = element_text("Checkerboards", size = 30, face = "bold", margin = margin(t = 0, r = 0, b = 40, l = 0)),
+          plot.margin = unit(c(4, 4, 4, 4), "cm"),
+          legend.title = element_text(colour="black", size=20,face="bold"),
+          legend.text = element_text(colour="black", size=15),
+          legend.key = element_rect(size = 3),
+          legend.key.size = unit(1, 'cm'))
+      print(p)
+
+  dev.off()
+
+}
+
+plot_cbs(subset(new, strain == "SANewman"), plot_dir = plot_dir)
+plot_cbs(subset(new, strain == "SADSM20231"), plot_dir = plot_dir)
+plot_cbs(subset(new, strain == "Efaecium"), plot_dir = plot_dir)
+
+
+write.table(new, paste0(home_dir, "/all_CBs_pathogens_Bliss_medianAUC_bioltechreps.tsv"), quote = F, row.names = F, sep = "\t")
+
+```
+
+
+# Final plot for paper - median across replicate
+
+```{r}
+
+pdf(paste0(plot_dir, "/CB_heatmaps_median_reps_AUCnorm.pdf"),  width=22, height=7)
+
+ggplot(new, aes (x = factor(Conc_h), factor(Conc_v))) +
+    geom_tile(aes(fill = AUCnorm_medrep), colour = "white", size = 0.25) +   
+    scale_fill_gradient(low="#ffffff", high="#08306b") +
+  #scale_fill_gradientn(colours = c("white","darkblue"), limits = c(min(allCB$AUC_well_ODno1st),max(allCB$AUC_well_ODno1st))) +
+# scale_fill_gradientn(colors = c("white", "white", "darkblue"),
+#                      values = scales::rescale(c(0,0.1, 0.15, max(allCB$AUC_well_ODno1st)))) +
+    theme_classic() + 
+	facet_wrap(newComb + strain ~ cumBlissstrain, scales = "free", nrow = 8, ncol = 7) +
+    theme(axis.text.x = element_text(size = 15, angle = 60, vjust = 0.5, hjust = 0.5),
+          axis.text.y = element_text(size = 15),
+          axis.title.y = element_text(size = 30, angle = 90),
+          axis.title.x = element_text(size=30),
+          panel.background = element_rect(colour = NA),
+          plot.background = element_rect(colour = NA),
+          # strip.background=element_rect(colour="#f0f0f0",fill="#f0f0f0"),
+          strip.text = element_text(face="bold", size = 20),
+          # # panel.border = element_rect(colour = NA),
+          # strip.text.x = element_text(size=25),
+          panel.spacing = unit(1, "lines"),
+          plot.title = element_text("Checkerboards", size = 30, face = "bold", margin = margin(t = 0, r = 0, b = 40, l = 0)),
+          plot.margin = unit(c(4, 4, 4, 4), "cm"),
+          legend.title = element_text(colour="black", size=20,face="bold"),
+          legend.text = element_text(colour="black", size=15),
+          legend.key = element_rect(size = 3),
+          legend.key.size = unit(1, 'cm'))
+
+dev.off()
+
+
+```

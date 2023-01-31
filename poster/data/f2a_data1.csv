@@ -1,0 +1,109 @@
+Strain	% Survival	Survial(log)	Drug
+B. fragilis	1.17	-1.931814138	Erythromycin
+B. fragilis	0.0714	-3.146301788	Erythromycin
+B. fragilis	0.833	-2.079354999	Erythromycin
+B. fragilis	1.67	-1.777283529	Azithromycin
+B. fragilis	0.857	-2.067019178	Azithromycin
+B. fragilis	1	-2	Azithromycin
+B. fragilis	1.17	-1.931814138	Doxycycline
+B. fragilis	0.143	-2.844663963	Doxycycline
+B. fragilis	1.33	-1.876148359	Doxycycline
+B. uniformis	0.000464	-5.333482019	Erythromycin
+B. uniformis	0.00128	-4.89279003	Erythromycin
+B. uniformis	0.000367	-5.435333936	Erythromycin
+B. uniformis	0.0012	-4.920818754	Azithromycin
+B. uniformis	0.000221	-5.655607726	Azithromycin
+B. uniformis	0.000439	-5.35753548	Azithromycin
+B. uniformis	0.0714	-3.146301788	Doxycycline
+B. uniformis	0.07	-3.15490196	Doxycycline
+B. uniformis	0.0889	-3.051098239	Doxycycline
+B. thetaiotamicron	0.00015	-5.823908741	Erythromycin
+B. thetaiotamicron	0.001	-5	Erythromycin
+B. thetaiotamicron	0.000667	-5.175874166	Erythromycin
+B. thetaiotamicron	0.000005	-7.301029996	Azithromycin
+B. thetaiotamicron	0.003	-4.522878745	Azithromycin
+B. thetaiotamicron	0.00667	-4.175874166	Azithromycin
+B. thetaiotamicron	0.0003	-5.522878745	Doxycycline
+B. thetaiotamicron	0.006	-4.22184875	Doxycycline
+B. thetaiotamicron	0.00667	-4.175874166	Doxycycline
+B. ovatus	0.002	-4.698970004	Erythromycin
+B. ovatus	0.00137	-4.863279433	Erythromycin
+B. ovatus	0.0714	-3.146301788	Erythromycin
+B. ovatus	0.00078	-5.107905397	Azithromycin
+B. ovatus	0.0022	-4.657577319	Azithromycin
+B. ovatus	0.0007	-5.15490196	Azithromycin
+B. ovatus	0.3	-2.522878745	Doxycycline
+B. ovatus	0.833	-2.079354999	Doxycycline
+B. ovatus	0.0714	-3.146301788	Doxycycline
+B. caccae	95.2	-0.021363052	Erythromycin
+B. caccae	1980	1.29666519	Erythromycin
+B. caccae	11	-0.958607315	Erythromycin
+B. caccae	114	0.056904851	Azithromycin
+B. caccae	440	0.643452676	Azithromycin
+B. caccae	10	-1	Azithromycin
+B. caccae	0.00114	-4.943095149	Doxycycline
+B. caccae	0.0022	-4.657577319	Doxycycline
+B. caccae	0.0000476	-6.322393047	Doxycycline
+B. vulgatus	0.0000108	-6.966576245	Erythromycin
+B. vulgatus	0.0000483	-6.316052869	Erythromycin
+B. vulgatus	0.00000292	-7.534617149	Erythromycin
+B. vulgatus	0.000187	-5.728158393	Azithromycin
+B. vulgatus	0.00024	-5.619788758	Azithromycin
+B. vulgatus	0.0000161	-6.793174124	Azithromycin
+B. vulgatus	0.0000617	-6.209714836	Doxycycline
+B. vulgatus	0.0000933	-6.030118356	Doxycycline
+B. vulgatus	0.0000289	-6.539102157	Doxycycline
+P. copri	2	-1.698970004	Erythromycin
+P. copri	0.5	-2.301029996	Erythromycin
+P. copri	0.0667	-3.175874166	Erythromycin
+P. copri	3	-1.522878745	Azithromycin
+P. copri	1.5	-1.823908741	Azithromycin
+P. copri	0.667	-2.175874166	Azithromycin
+P. copri	0.0000825	-6.083546051	Doxycycline
+P. copri	0.000138	-5.860120914	Doxycycline
+P. copri	0.0000608	-6.216096421	Doxycycline
+E. coli ED7a	6.38	-1.195179321	Erythromycin
+E. coli ED6a	1.4	-1.853871964	Erythromycin
+E. coli ED5a	0.0286	-3.543633967	Erythromycin
+E. coli ED4a	5.63	-1.249491605	Azithromycin
+E. coli ED3a	2.2	-1.657577319	Azithromycin
+E. coli ED2a	0.00429	-4.367542708	Azithromycin
+E. coli ED1a	0.00015	-5.823908741	Doxycycline
+E. coli ED0a	0.0000009	-8.045757491	Doxycycline
+E. coli ED1a	0.000000571	-8.243363892	Doxycycline
+F. nucleatum	93.3	-0.030118356	Erythromycin
+F. nucleatum	3000	1.477121255	Erythromycin
+F. nucleatum	66.7	-0.175874166	Erythromycin
+F. nucleatum	240	0.380211242	Azithromycin
+F. nucleatum	1430	1.155336037	Azithromycin
+F. nucleatum	0.167	-2.777283529	Azithromycin
+F. nucleatum	213	0.328379603	Doxycycline
+F. nucleatum	3270	1.514547753	Doxycycline
+F. nucleatum	0.4	-2.397940009	Doxycycline
+C. bolteae			Erythromycin
+C. bolteae			Erythromycin
+C. bolteae			Erythromycin
+C. bolteae			Azithromycin
+C. bolteae			Azithromycin
+C. bolteae			Azithromycin
+C. bolteae	0.0267	-3.573488739	Doxycycline
+C. bolteae	0.0267	-3.573488739	Doxycycline
+C. bolteae	0.0875	-3.057991947	Doxycycline
+E. rectale	0.00244	-4.612610174	Erythromycin
+E. rectale	0.00345	-4.462180905	Erythromycin
+E. rectale	0.000893	-5.049148541	Erythromycin
+E. rectale	0.00025	-5.602059991	Azithromycin
+E. rectale	0.000292	-5.534617149	Azithromycin
+E. rectale	0.00232	-4.634512015	Azithromycin
+E. rectale	0.000444	-5.35261703	Doxycycline
+E. rectale	0.00117	-4.931814138	Doxycycline
+E. rectale	0.00821	-4.085656843	Doxycycline
+R. intestinalis	0.0000625	-6.204119983	Erythromycin
+R. intestinalis	0.00000142	-7.847711656	Erythromycin
+R. intestinalis	0.00000123	-7.910094889	Erythromycin
+R. intestinalis	0.000374	-5.427128398	Azithromycin
+R. intestinalis	0.00000231	-7.63638802	Azithromycin
+R. intestinalis	0.00000653	-7.185086819	Azithromycin
+R. intestinalis			Doxycycline
+R. intestinalis			Doxycycline
+R. intestinalis			Doxycycline

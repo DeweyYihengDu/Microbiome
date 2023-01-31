@@ -1,0 +1,349 @@
+Time (h)	replicate	Strain	Drug										
+0	0.001	B. vulgatus 	 no drug										
+1	0.004	B. vulgatus 	 no drug										
+2	0.033	B. vulgatus 	 no drug										
+3	0.118	B. vulgatus 	 no drug										
+4	0.246	B. vulgatus 	 no drug										
+5	0.503	B. vulgatus 	 no drug										
+6	0.648	B. vulgatus 	 no drug										
+7	0.725	B. vulgatus 	 no drug										
+8	0.778	B. vulgatus 	 no drug										
+9	0.805	B. vulgatus 	 no drug										
+10	0.823	B. vulgatus 	 no drug										
+11	0.835	B. vulgatus 	 no drug										
+12	0.842	B. vulgatus 	 no drug										
+13	0.846	B. vulgatus 	 no drug										
+14	0.85	B. vulgatus 	 no drug										
+15	0.851	B. vulgatus 	 no drug										
+16	0.852	B. vulgatus 	 no drug										
+17	0.85	B. vulgatus 	 no drug										
+18	0.851	B. vulgatus 	 no drug										
+19	0.849	B. vulgatus 	 no drug										
+20	0.848	B. vulgatus 	 no drug										
+21	0.846	B. vulgatus 	 no drug										
+22	0.845	B. vulgatus 	 no drug										
+23	0.846	B. vulgatus 	 no drug										
+24	0.844	B. vulgatus 	 no drug										
+25	0.843	B. vulgatus 	 no drug										
+26	0.841	B. vulgatus 	 no drug										
+27	0.842	B. vulgatus 	 no drug										
+28	0.844	B. vulgatus 	 no drug										
+0	0.001	B. uniformis	 no drug										
+1	0.01	B. uniformis	 no drug										
+2	0.042	B. uniformis	 no drug										
+3	0.101	B. uniformis	 no drug										
+4	0.156	B. uniformis	 no drug										
+5	0.31	B. uniformis	 no drug										
+6	0.569	B. uniformis	 no drug										
+7	0.756	B. uniformis	 no drug										
+8	0.855	B. uniformis	 no drug										
+9	0.914	B. uniformis	 no drug										
+10	0.95	B. uniformis	 no drug										
+11	0.975	B. uniformis	 no drug										
+12	0.99	B. uniformis	 no drug										
+13	1.002	B. uniformis	 no drug										
+14	1.01	B. uniformis	 no drug										
+15	1.015	B. uniformis	 no drug										
+16	1.022	B. uniformis	 no drug										
+17	1.025	B. uniformis	 no drug										
+18	1.031	B. uniformis	 no drug										
+19	1.035	B. uniformis	 no drug										
+20	1.04	B. uniformis	 no drug										
+21	1.046	B. uniformis	 no drug										
+22	1.052	B. uniformis	 no drug										
+23	1.059	B. uniformis	 no drug										
+24	1.066	B. uniformis	 no drug										
+25	1.071	B. uniformis	 no drug										
+26	1.075	B. uniformis	 no drug										
+27	1.078	B. uniformis	 no drug										
+28	1.081	B. uniformis	 no drug										
+0	0.001	B. vulgatus	 erythromycin										
+1	0.004	B. vulgatus	 erythromycin										
+2	0.033	B. vulgatus	 erythromycin										
+3	0.118	B. vulgatus	 erythromycin										
+4	0.27	B. vulgatus	 erythromycin										
+5	0.371	B. vulgatus	 erythromycin										
+6	0.438	B. vulgatus	 erythromycin										
+7	0.432	B. vulgatus	 erythromycin										
+8	0.37	B. vulgatus	 erythromycin										
+9	0.324	B. vulgatus	 erythromycin										
+10	0.309	B. vulgatus	 erythromycin										
+11	0.304	B. vulgatus	 erythromycin										
+12	0.309	B. vulgatus	 erythromycin										
+13	0.309	B. vulgatus	 erythromycin										
+14	0.306	B. vulgatus	 erythromycin										
+15	0.291	B. vulgatus	 erythromycin										
+16	0.285	B. vulgatus	 erythromycin										
+17	0.281	B. vulgatus	 erythromycin										
+18	0.27	B. vulgatus	 erythromycin										
+19	0.269	B. vulgatus	 erythromycin										
+20	0.282	B. vulgatus	 erythromycin										
+21	0.284	B. vulgatus	 erythromycin										
+22	0.277	B. vulgatus	 erythromycin										
+23	0.263	B. vulgatus	 erythromycin										
+24	0.258	B. vulgatus	 erythromycin										
+25	0.246	B. vulgatus	 erythromycin										
+26	0.244	B. vulgatus	 erythromycin										
+27	0.241	B. vulgatus	 erythromycin										
+28	0.233	B. vulgatus	 erythromycin										
+0	0.001	B. uniformis	 erythromycin										
+1	0.01	B. uniformis	 erythromycin										
+2	0.042	B. uniformis	 erythromycin										
+3	0.101	B. uniformis	 erythromycin										
+4	0.143	B. uniformis	 erythromycin										
+5	0.192	B. uniformis	 erythromycin										
+6	0.17	B. uniformis	 erythromycin										
+7	0.095	B. uniformis	 erythromycin										
+8	0.057	B. uniformis	 erythromycin										
+9	0.039	B. uniformis	 erythromycin										
+10	0.031	B. uniformis	 erythromycin										
+11	0.026	B. uniformis	 erythromycin										
+12	0.023	B. uniformis	 erythromycin										
+13	0.021	B. uniformis	 erythromycin										
+14	0.02	B. uniformis	 erythromycin										
+15	0.019	B. uniformis	 erythromycin										
+16	0.018	B. uniformis	 erythromycin										
+17	0.017	B. uniformis	 erythromycin										
+18	0.017	B. uniformis	 erythromycin										
+19	0.016	B. uniformis	 erythromycin										
+20	0.015	B. uniformis	 erythromycin										
+21	0.015	B. uniformis	 erythromycin										
+22	0.014	B. uniformis	 erythromycin										
+23	0.013	B. uniformis	 erythromycin										
+24	0.013	B. uniformis	 erythromycin										
+25	0.013	B. uniformis	 erythromycin										
+26	0.012	B. uniformis	 erythromycin										
+27	0.012	B. uniformis	 erythromycin										
+28	0.011	B. uniformis	 erythromycin										
+0	0.001	B. vulgatus 	 no drug										
+1	0.015	B. vulgatus 	 no drug										
+2	0.049	B. vulgatus 	 no drug										
+3	0.141	B. vulgatus 	 no drug										
+4	0.24	B. vulgatus 	 no drug										
+5	0.551	B. vulgatus 	 no drug										
+6	0.718	B. vulgatus 	 no drug										
+7	0.811	B. vulgatus 	 no drug										
+8	0.859	B. vulgatus 	 no drug										
+9	0.895	B. vulgatus 	 no drug										
+10	0.916	B. vulgatus 	 no drug										
+11	0.928	B. vulgatus 	 no drug										
+12	0.937	B. vulgatus 	 no drug										
+13	0.943	B. vulgatus 	 no drug										
+14	0.948	B. vulgatus 	 no drug										
+15	0.952	B. vulgatus 	 no drug										
+16	0.954	B. vulgatus 	 no drug										
+17	0.955	B. vulgatus 	 no drug										
+18	0.955	B. vulgatus 	 no drug										
+19	0.956	B. vulgatus 	 no drug										
+20	0.957	B. vulgatus 	 no drug										
+21	0.956	B. vulgatus 	 no drug										
+22	0.956	B. vulgatus 	 no drug										
+23	0.956	B. vulgatus 	 no drug										
+24	0.955	B. vulgatus 	 no drug										
+25	0.953	B. vulgatus 	 no drug										
+26	0.952	B. vulgatus 	 no drug										
+27	0.949	B. vulgatus 	 no drug										
+28	0.95	B. vulgatus 	 no drug										
+0	0.001	B. uniformis	 no drug										
+1	0.004	B. uniformis	 no drug										
+2	0.035	B. uniformis	 no drug										
+3	0.095	B. uniformis	 no drug										
+4	0.16	B. uniformis	 no drug										
+5	0.272	B. uniformis	 no drug										
+6	0.512	B. uniformis	 no drug										
+7	0.666	B. uniformis	 no drug										
+8	0.766	B. uniformis	 no drug										
+9	0.818	B. uniformis	 no drug										
+10	0.852	B. uniformis	 no drug										
+11	0.875	B. uniformis	 no drug										
+12	0.888	B. uniformis	 no drug										
+13	0.897	B. uniformis	 no drug										
+14	0.901	B. uniformis	 no drug										
+15	0.906	B. uniformis	 no drug										
+16	0.909	B. uniformis	 no drug										
+17	0.913	B. uniformis	 no drug										
+18	0.919	B. uniformis	 no drug										
+19	0.927	B. uniformis	 no drug										
+20	0.933	B. uniformis	 no drug										
+21	0.939	B. uniformis	 no drug										
+22	0.941	B. uniformis	 no drug										
+23	0.942	B. uniformis	 no drug										
+24	0.947	B. uniformis	 no drug										
+25	0.951	B. uniformis	 no drug										
+26	0.953	B. uniformis	 no drug										
+27	0.958	B. uniformis	 no drug										
+28	0.961	B. uniformis	 no drug										
+0	0.001	B. vulgatus	 erythromycin										
+1	0.015	B. vulgatus	 erythromycin										
+2	0.049	B. vulgatus	 erythromycin										
+3	0.141	B. vulgatus	 erythromycin										
+4	0.209	B. vulgatus	 erythromycin										
+5	0.304	B. vulgatus	 erythromycin										
+6	0.375	B. vulgatus	 erythromycin										
+7	0.368	B. vulgatus	 erythromycin										
+8	0.307	B. vulgatus	 erythromycin										
+9	0.261	B. vulgatus	 erythromycin										
+10	0.249	B. vulgatus	 erythromycin										
+11	0.253	B. vulgatus	 erythromycin										
+12	0.258	B. vulgatus	 erythromycin										
+13	0.258	B. vulgatus	 erythromycin										
+14	0.261	B. vulgatus	 erythromycin										
+15	0.244	B. vulgatus	 erythromycin										
+16	0.222	B. vulgatus	 erythromycin										
+17	0.22	B. vulgatus	 erythromycin										
+18	0.221	B. vulgatus	 erythromycin										
+19	0.217	B. vulgatus	 erythromycin										
+20	0.238	B. vulgatus	 erythromycin										
+21	0.224	B. vulgatus	 erythromycin										
+22	0.217	B. vulgatus	 erythromycin										
+23	0.206	B. vulgatus	 erythromycin										
+24	0.206	B. vulgatus	 erythromycin										
+25	0.184	B. vulgatus	 erythromycin										
+26	0.182	B. vulgatus	 erythromycin										
+27	0.187	B. vulgatus	 erythromycin										
+28	0.183	B. vulgatus	 erythromycin										
+0	0.001	B. uniformis	 erythromycin										
+1	0.004	B. uniformis	 erythromycin										
+2	0.035	B. uniformis	 erythromycin										
+3	0.095	B. uniformis	 erythromycin										
+4	0.18	B. uniformis	 erythromycin										
+5	0.201	B. uniformis	 erythromycin										
+6	0.171	B. uniformis	 erythromycin										
+7	0.095	B. uniformis	 erythromycin										
+8	0.06	B. uniformis	 erythromycin										
+9	0.044	B. uniformis	 erythromycin										
+10	0.035	B. uniformis	 erythromycin										
+11	0.031	B. uniformis	 erythromycin										
+12	0.028	B. uniformis	 erythromycin										
+13	0.027	B. uniformis	 erythromycin										
+14	0.025	B. uniformis	 erythromycin										
+15	0.024	B. uniformis	 erythromycin										
+16	0.023	B. uniformis	 erythromycin										
+17	0.023	B. uniformis	 erythromycin										
+18	0.022	B. uniformis	 erythromycin										
+19	0.021	B. uniformis	 erythromycin										
+20	0.02	B. uniformis	 erythromycin										
+21	0.02	B. uniformis	 erythromycin										
+22	0.019	B. uniformis	 erythromycin										
+23	0.019	B. uniformis	 erythromycin										
+24	0.018	B. uniformis	 erythromycin										
+25	0.018	B. uniformis	 erythromycin										
+26	0.018	B. uniformis	 erythromycin										
+27	0.017	B. uniformis	 erythromycin										
+28	0.017	B. uniformis	 erythromycin										
+0	0.001	B. vulgatus 	 no drug										
+1	0.012	B. vulgatus 	 no drug										
+2	0.042	B. vulgatus 	 no drug										
+3	0.122	B. vulgatus 	 no drug										
+4	0.235	B. vulgatus 	 no drug										
+5	0.499	B. vulgatus 	 no drug										
+6	0.7	B. vulgatus 	 no drug										
+7	0.781	B. vulgatus 	 no drug										
+8	0.83	B. vulgatus 	 no drug										
+9	0.863	B. vulgatus 	 no drug										
+10	0.886	B. vulgatus 	 no drug										
+11	0.898	B. vulgatus 	 no drug										
+12	0.905	B. vulgatus 	 no drug										
+13	0.911	B. vulgatus 	 no drug										
+14	0.914	B. vulgatus 	 no drug										
+15	0.914	B. vulgatus 	 no drug										
+16	0.916	B. vulgatus 	 no drug										
+17	0.916	B. vulgatus 	 no drug										
+18	0.918	B. vulgatus 	 no drug										
+19	0.918	B. vulgatus 	 no drug										
+20	0.922	B. vulgatus 	 no drug										
+21	0.921	B. vulgatus 	 no drug										
+22	0.92	B. vulgatus 	 no drug										
+23	0.921	B. vulgatus 	 no drug										
+24	0.919	B. vulgatus 	 no drug										
+25	0.918	B. vulgatus 	 no drug										
+26	0.918	B. vulgatus 	 no drug										
+27	0.919	B. vulgatus 	 no drug										
+28	0.921	B. vulgatus 	 no drug										
+0	0.001	B. uniformis	 no drug										
+1	0.007	B. uniformis	 no drug										
+2	0.041	B. uniformis	 no drug										
+3	0.103	B. uniformis	 no drug										
+4	0.171	B. uniformis	 no drug										
+5	0.294	B. uniformis	 no drug										
+6	0.53	B. uniformis	 no drug										
+7	0.677	B. uniformis	 no drug										
+8	0.773	B. uniformis	 no drug										
+9	0.825	B. uniformis	 no drug										
+10	0.859	B. uniformis	 no drug										
+11	0.88	B. uniformis	 no drug										
+12	0.892	B. uniformis	 no drug										
+13	0.901	B. uniformis	 no drug										
+14	0.908	B. uniformis	 no drug										
+15	0.912	B. uniformis	 no drug										
+16	0.916	B. uniformis	 no drug										
+17	0.92	B. uniformis	 no drug										
+18	0.925	B. uniformis	 no drug										
+19	0.933	B. uniformis	 no drug										
+20	0.94	B. uniformis	 no drug										
+21	0.944	B. uniformis	 no drug										
+22	0.945	B. uniformis	 no drug										
+23	0.947	B. uniformis	 no drug										
+24	0.953	B. uniformis	 no drug										
+25	0.957	B. uniformis	 no drug										
+26	0.959	B. uniformis	 no drug										
+27	0.964	B. uniformis	 no drug										
+28	0.965	B. uniformis	 no drug										
+0	0.001	B. vulgatus	 erythromycin										
+1	0.012	B. vulgatus	 erythromycin										
+2	0.042	B. vulgatus	 erythromycin										
+3	0.122	B. vulgatus	 erythromycin										
+4	0.22	B. vulgatus	 erythromycin										
+5	0.318	B. vulgatus	 erythromycin										
+6	0.39	B. vulgatus	 erythromycin										
+7	0.385	B. vulgatus	 erythromycin										
+8	0.369	B. vulgatus	 erythromycin										
+9	0.347	B. vulgatus	 erythromycin										
+10	0.276	B. vulgatus	 erythromycin										
+11	0.231	B. vulgatus	 erythromycin										
+12	0.202	B. vulgatus	 erythromycin										
+13	0.193	B. vulgatus	 erythromycin										
+14	0.188	B. vulgatus	 erythromycin										
+15	0.235	B. vulgatus	 erythromycin										
+16	0.194	B. vulgatus	 erythromycin										
+17	0.226	B. vulgatus	 erythromycin										
+18	0.23	B. vulgatus	 erythromycin										
+19	0.222	B. vulgatus	 erythromycin										
+20	0.218	B. vulgatus	 erythromycin										
+21	0.218	B. vulgatus	 erythromycin										
+22	0.225	B. vulgatus	 erythromycin										
+23	0.229	B. vulgatus	 erythromycin										
+24	0.237	B. vulgatus	 erythromycin										
+25	0.239	B. vulgatus	 erythromycin										
+26	0.238	B. vulgatus	 erythromycin										
+27	0.237	B. vulgatus	 erythromycin										
+28	0.23	B. vulgatus	 erythromycin										
+0	0.001	B. uniformis	 erythromycin										
+1	0.014	B. uniformis	 erythromycin										
+2	0.048	B. uniformis	 erythromycin										
+3	0.11	B. uniformis	 erythromycin										
+4	0.143	B. uniformis	 erythromycin										
+5	0.181	B. uniformis	 erythromycin										
+6	0.151	B. uniformis	 erythromycin										
+7	0.076	B. uniformis	 erythromycin										
+8	0.042	B. uniformis	 erythromycin										
+9	0.027	B. uniformis	 erythromycin										
+10	0.018	B. uniformis	 erythromycin										
+11	0.014	B. uniformis	 erythromycin										
+12	0.012	B. uniformis	 erythromycin										
+13	0.01	B. uniformis	 erythromycin										
+14	0.009	B. uniformis	 erythromycin										
+15	0.008	B. uniformis	 erythromycin										
+16	0.007	B. uniformis	 erythromycin										
+17	0.006	B. uniformis	 erythromycin										
+18	0.005	B. uniformis	 erythromycin										
+19	0.004	B. uniformis	 erythromycin										
+20	0.004	B. uniformis	 erythromycin										
+21	0.003	B. uniformis	 erythromycin										
+22	0.003	B. uniformis	 erythromycin										
+23	0.002	B. uniformis	 erythromycin										
+24	0.002	B. uniformis	 erythromycin										
+25	0.001	B. uniformis	 erythromycin										
+26	0.001	B. uniformis	 erythromycin										
+27	0	B. uniformis	 erythromycin										
+28	0	B. uniformis	 erythromycin										

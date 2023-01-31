@@ -1,0 +1,20 @@
+Drug	ABX	Strain	mean_z_score	followup
+Hexestrol	Erythromycin	B.uniformis	9.63	Yes
+Diethylstilbestrol	Erythromycin	B.uniformis	9.258	Yes
+Famprofazone	Erythromycin	B.uniformis	7.832	Yes
+Tolfenamic acid	Erythromycin	B.vulgatus	7.381	Yes
+Dicumarol	Erythromycin	B.vulgatus	7.313	Yes
+Lorglumide sodium salt	Erythromycin	B.uniformis	6.106	Yes
+Benzbromarone	Erythromycin	B.uniformis	6.034	Yes
+Iopanoic acid	Doxycycline	B.vulgatus	5.698	Yes
+Tiratricol, 3,3',5-triiodothyroacetic acid	Doxycycline	B.uniformis	4.333	Yes
+Tolfenamic acid	Doxycycline	B.vulgatus	4	Yes
+Losartan	Doxycycline	B.uniformis	3.421	Yes
+Diethylstilbestrol	Doxycycline	B.vulgatus	3.296	No
+Celecoxib	Doxycycline	B.uniformis	3.275	Yes
+Diflunisal	Doxycycline	B.vulgatus	3.265	Yes
+Efavirenz	Doxycycline	B.vulgatus	3.138	No
+Diclazuril	Doxycycline	B.vulgatus	3.117	No
+Triclosan	Doxycycline	B.uniformis	3.066	Yes
+Clonixin Lysinate	Doxycycline	B.vulgatus	3.061	No
+Meclofenamic acid sodium salt monohydrate	Doxycycline	B.vulgatus	3.01	No

@@ -1,0 +1,313 @@
+species	sample	abundance	Plate	Row	Column	Experiment	Location_LM	Time	Community	Antibiotic	[antibiotic]	Antidote	[antidote]	Replicate	Index BC	Reverse Complement	Sequence (5' - 3')	deltaOD	group	group_2	plot_group
+B.thetaiotaomicron	sample_145	0.134505867916811	2	E	1	LM	ep1	11h	c3	Erythromycin	0	none	0	1	293	ATACACACATGG	CCATGTGTGTAT	0.927	no_abx	no_antidote	no_abx-no_antidote
+B.thetaiotaomicron	sample_146	0.157015181194907	2	E	3	LM	ep3	11h	c3	Erythromycin	0	none	0	2	309	CGGCCTTCCCAA	TTGGGAAGGCCG	0.897	no_abx	no_antidote	no_abx-no_antidote
+B.thetaiotaomicron	sample_147	0.143006854359032	2	E	5	LM	ep5	11h	c3	Erythromycin	0	none	0	3	325	TCTGGCTTGAAA	TTTCAAGCCAGA	0.889	no_abx	no_antidote	no_abx-no_antidote
+B.thetaiotaomicron	sample_148	0.107692307692308	2	E	7	LM	pl1C1	24h	c3	Erythromycin	0	none	0	1	341	ATTGCGGTGAAA	TTTCACCGCAAT	0.841	no_abx	no_antidote	no_abx-no_antidote
+B.thetaiotaomicron	sample_149	0.00886652288521447	2	E	8	LM	pl1A1	24h	c3	Erythromycin	0.65	none	0	1	349	GTCTTACTATTT	AAATAGTAAGAC	0.686	abx	no_antidote	abx-no_antidote
+B.thetaiotaomicron	sample_150	0.865670543206242	2	E	9	LM	pl1A3	24h	c3	Erythromycin	0.65	dicoumarol	20	1	357	TAGTTTGTATTT	AAATACAAACTA	0.628	abx	dicoumarol	abx-dicoumarol
+B.thetaiotaomicron	sample_151	0.318826285291579	2	E	10	LM	pl1C3	24h	c3	Erythromycin	0	dicoumarol	20	1	365	GGGCTTCAGGCC	GGCCTGAAGCCC	0.641	no_abx	dicoumarol	no_abx-dicoumarol
+B.thetaiotaomicron	sample_152	0.240351103653027	2	E	11	LM	pl1C4	24h	c3	Erythromycin	0	none	0	1	373	GGCAGTCTCTGG	CCAGAGACTGCC	0.828	no_abx	no_antidote	no_abx-no_antidote
+B.thetaiotaomicron	sample_153	0.0374222908455569	2	E	12	LM	pl1A4	24h	c3	Erythromycin	0.65	none	0	1	381	GGCCAACCACGG	CCGTGGTTGGCC	0.668	abx	no_antidote	abx-no_antidote
+B.thetaiotaomicron	sample_154	0.640662141650199	2	F	1	LM	pl1A6	24h	c3	Erythromycin	0.65	benzbromarone	40	1	294	TAGTTGGTTCAA	TTGAACCAACTA	0.578	abx	benzbromarone	abx-benzbromarone
+B.thetaiotaomicron	sample_155	0.357550119551223	2	F	2	LM	pl1C6	24h	c3	Erythromycin	0	benzbromarone	40	1	302	ATCGGCCTTTCC	GGAAAGGCCGAT	0.59	no_abx	benzbromarone	no_abx-benzbromarone
+B.thetaiotaomicron	sample_156	0.252991370349779	2	F	3	LM	pl1C7	24h	c3	Erythromycin	0	none	0	1	310	GACGTCATGTTT	AAACATGACGTC	0.8	no_abx	no_antidote	no_abx-no_antidote
+B.thetaiotaomicron	sample_157	0.057845979775122	2	F	4	LM	pl1A7	24h	c3	Erythromycin	0.65	none	0	1	318	TGCCATACCAGG	CCTGGTATGGCA	0.678	abx	no_antidote	abx-no_antidote
+B.thetaiotaomicron	sample_158	0.516839419047919	2	F	5	LM	pl1A9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	1	326	CGCACTACCGTT	AACGGTAGTGCG	0.476	abx	tolfenamic acid	abx-tolfenamic acid
+B.thetaiotaomicron	sample_159	0.251324255573844	2	F	6	LM	pl1C9	24h	c3	Erythromycin	0	tolfenamic acid	40	1	334	CGTACGCTTATT	AATAAGCGTACG	0.577	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+B.thetaiotaomicron	sample_160	0.249488702165932	2	F	7	LM	pl2C1	24h	c3	Erythromycin	0	none	0	2	342	GACAGACCCTTT	AAAGGGTCTGTC	0.844	no_abx	no_antidote	no_abx-no_antidote
+B.thetaiotaomicron	sample_161	0.0121321051449113	2	F	8	LM	pl2A1	24h	c3	Erythromycin	0.65	none	0	2	350	CATCATTCTACC	GGTAGAATGATG	0.68	abx	no_antidote	abx-no_antidote
+B.thetaiotaomicron	sample_162	0.883555936480728	2	F	9	LM	pl2A3	24h	c3	Erythromycin	0.65	dicoumarol	20	2	358	ATACAAACTCCC	GGGAGTTTGTAT	0.619	abx	dicoumarol	abx-dicoumarol
+B.thetaiotaomicron	sample_163	0.3186733030121	2	F	10	LM	pl2C3	24h	c3	Erythromycin	0	dicoumarol	20	2	366	ACATACGGCCGG	CCGGCCGTATGT	0.65	no_abx	dicoumarol	no_abx-dicoumarol
+B.thetaiotaomicron	sample_164	0.230778708723509	2	F	11	LM	pl2C4	24h	c3	Erythromycin	0	none	0	2	374	CCTGCATCGCAA	TTGCGATGCAGG	0.83	no_abx	no_antidote	no_abx-no_antidote
+B.thetaiotaomicron	sample_165	0.0289355526327725	2	F	12	LM	pl2A4	24h	c3	Erythromycin	0.65	none	0	2	382	ACTTTGGTTGCC	GGCAACCAAAGT	0.678	abx	no_antidote	abx-no_antidote
+B.thetaiotaomicron	sample_166	0.703502001659033	2	G	1	LM	pl2A6	24h	c3	Erythromycin	0.65	benzbromarone	40	2	295	AGCGTTGCACGG	CCGTGCAACGCT	0.58	abx	benzbromarone	abx-benzbromarone
+B.thetaiotaomicron	sample_167	0.377269774491911	2	G	2	LM	pl2C6	24h	c3	Erythromycin	0	benzbromarone	40	2	303	CCGGTACCATGG	CCATGGTACCGG	0.587	no_abx	benzbromarone	no_abx-benzbromarone
+B.thetaiotaomicron	sample_168	0.257217234589327	2	G	3	LM	pl2C7	24h	c3	Erythromycin	0	none	0	2	311	ACACACATGTCC	GGACATGTGTGT	0.806	no_abx	no_antidote	no_abx-no_antidote
+B.thetaiotaomicron	sample_169	0.129677571193222	2	G	4	LM	pl2A7	24h	c3	Erythromycin	0.65	none	0	2	319	AAGAAGATGGAA	TTCCATCTTCTT	0.683	abx	no_antidote	abx-no_antidote
+B.thetaiotaomicron	sample_170	0.439131000390269	2	G	5	LM	pl2A9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	2	327	GAGTTCTTGGAA	TTCCAAGAACTC	0.478	abx	tolfenamic acid	abx-tolfenamic acid
+B.thetaiotaomicron	sample_171	0.325989953133331	2	G	6	LM	pl2C9	24h	c3	Erythromycin	0	tolfenamic acid	40	2	335	TAACCGACATAA	TTATGTCGGTTA	0.58	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+B.thetaiotaomicron	sample_172	0.236558406113537	2	G	7	LM	pl1H10	24h	c3	Erythromycin	0	none	0	3	343	GATATCTAATTT	AAATTAGATATC	0.85	no_abx	no_antidote	no_abx-no_antidote
+B.thetaiotaomicron	sample_173	0.0156459544032186	2	G	8	LM	pl1G1	24h	c3	Erythromycin	0.65	none	0	3	351	CGACCTGTATTT	AAATACAGGTCG	0.691	abx	no_antidote	abx-no_antidote
+B.thetaiotaomicron	sample_174	0.870640348528732	2	G	9	LM	pl1G3	24h	c3	Erythromycin	0.65	dicoumarol	20	3	359	GAGCCCATAATT	AATTATGGGCTC	0.608	abx	dicoumarol	abx-dicoumarol
+B.thetaiotaomicron	sample_175	0.265109796723095	2	G	10	LM	pl1F10	24h	c3	Erythromycin	0	dicoumarol	20	3	367	CATACACCATCC	GGATGGTGTATG	0.629	no_abx	dicoumarol	no_abx-dicoumarol
+B.thetaiotaomicron	sample_176	0.209350143390509	2	G	11	LM	pl1E10	24h	c3	Erythromycin	0	none	0	3	375	GGGAGCTAGTGG	CCACTAGCTCCC	0.842	no_abx	no_antidote	no_abx-no_antidote
+B.thetaiotaomicron	sample_177	0.28868316644625	2	G	12	LM	pl1G4	24h	c3	Erythromycin	0.65	none	0	3	383	AACTGCATGCGG	CCGCATGCAGTT	0.682	abx	no_antidote	abx-no_antidote
+B.thetaiotaomicron	sample_178	0.70969450101833	2	H	1	LM	pl1G6	24h	c3	Erythromycin	0.65	benzbromarone	40	3	296	GAGCCAATTGAA	TTCAATTGGCTC	0.576	abx	benzbromarone	abx-benzbromarone
+B.thetaiotaomicron	sample_179	0.320837211315772	2	H	2	LM	pl1C10	24h	c3	Erythromycin	0	benzbromarone	40	3	304	GTCCCGGTTCCC	GGGAACCGGGAC	0.567	no_abx	benzbromarone	no_abx-benzbromarone
+B.thetaiotaomicron	sample_180	0.234650300473085	2	H	3	LM	pl1B10	24h	c3	Erythromycin	0	none	0	3	312	TGGTTGGCCCTT	AAGGGCCAACCA	0.821	no_abx	no_antidote	no_abx-no_antidote
+B.thetaiotaomicron	sample_181	0.063400990890203	2	H	4	LM	pl1G7	24h	c3	Erythromycin	0.65	none	0	3	320	GTAGTATCCATT	AATGGATACTAC	0.676	abx	no_antidote	abx-no_antidote
+B.thetaiotaomicron	sample_182	0.481872997451876	2	H	5	LM	pl1G9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	3	328	ATACATACCATT	AATGGTATGTAT	0.46	abx	tolfenamic acid	abx-tolfenamic acid
+B.thetaiotaomicron	sample_183	0.206946245856752	2	H	6	LM	pl1H11	24h	c3	Erythromycin	0	tolfenamic acid	40	3	336	AGTGTATTTATT	AATAAATACACT	0.565	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+B.fragilis	sample_145	0.37296668030079	2	E	1	LM	ep1	11h	c3	Erythromycin	0	none	0	1	293	ATACACACATGG	CCATGTGTGTAT	0.927	no_abx	no_antidote	no_abx-no_antidote
+B.fragilis	sample_146	0.362695886385896	2	E	3	LM	ep3	11h	c3	Erythromycin	0	none	0	2	309	CGGCCTTCCCAA	TTGGGAAGGCCG	0.897	no_abx	no_antidote	no_abx-no_antidote
+B.fragilis	sample_147	0.372741177137031	2	E	5	LM	ep5	11h	c3	Erythromycin	0	none	0	3	325	TCTGGCTTGAAA	TTTCAAGCCAGA	0.889	no_abx	no_antidote	no_abx-no_antidote
+B.fragilis	sample_148	0.123076923076923	2	E	7	LM	pl1C1	24h	c3	Erythromycin	0	none	0	1	341	ATTGCGGTGAAA	TTTCACCGCAAT	0.841	no_abx	no_antidote	no_abx-no_antidote
+B.fragilis	sample_149	0.001078360891445	2	E	8	LM	pl1A1	24h	c3	Erythromycin	0.65	none	0	1	349	GTCTTACTATTT	AAATAGTAAGAC	0.686	abx	no_antidote	abx-no_antidote
+B.fragilis	sample_150	0.0074341233622847	2	E	9	LM	pl1A3	24h	c3	Erythromycin	0.65	dicoumarol	20	1	357	TAGTTTGTATTT	AAATACAAACTA	0.628	abx	dicoumarol	abx-dicoumarol
+B.fragilis	sample_151	0.282579213413882	2	E	10	LM	pl1C3	24h	c3	Erythromycin	0	dicoumarol	20	1	365	GGGCTTCAGGCC	GGCCTGAAGCCC	0.641	no_abx	dicoumarol	no_abx-dicoumarol
+B.fragilis	sample_152	0.28152833354847	2	E	11	LM	pl1C4	24h	c3	Erythromycin	0	none	0	1	373	GGCAGTCTCTGG	CCAGAGACTGCC	0.828	no_abx	no_antidote	no_abx-no_antidote
+B.fragilis	sample_153	0.00300678558368209	2	E	12	LM	pl1A4	24h	c3	Erythromycin	0.65	none	0	1	381	GGCCAACCACGG	CCGTGGTTGGCC	0.668	abx	no_antidote	abx-no_antidote
+B.fragilis	sample_154	0.0418420826531489	2	F	1	LM	pl1A6	24h	c3	Erythromycin	0.65	benzbromarone	40	1	294	TAGTTGGTTCAA	TTGAACCAACTA	0.578	abx	benzbromarone	abx-benzbromarone
+B.fragilis	sample_155	0.300625344859297	2	F	2	LM	pl1C6	24h	c3	Erythromycin	0	benzbromarone	40	1	302	ATCGGCCTTTCC	GGAAAGGCCGAT	0.59	no_abx	benzbromarone	no_abx-benzbromarone
+B.fragilis	sample_156	0.238076820807851	2	F	3	LM	pl1C7	24h	c3	Erythromycin	0	none	0	1	310	GACGTCATGTTT	AAACATGACGTC	0.8	no_abx	no_antidote	no_abx-no_antidote
+B.fragilis	sample_157	0.00275793791103882	2	F	4	LM	pl1A7	24h	c3	Erythromycin	0.65	none	0	1	318	TGCCATACCAGG	CCTGGTATGGCA	0.678	abx	no_antidote	abx-no_antidote
+B.fragilis	sample_158	0.0221480104596579	2	F	5	LM	pl1A9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	1	326	CGCACTACCGTT	AACGGTAGTGCG	0.476	abx	tolfenamic acid	abx-tolfenamic acid
+B.fragilis	sample_159	0.182822085889571	2	F	6	LM	pl1C9	24h	c3	Erythromycin	0	tolfenamic acid	40	1	334	CGTACGCTTATT	AATAAGCGTACG	0.577	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+B.fragilis	sample_160	0.243032796983959	2	F	7	LM	pl2C1	24h	c3	Erythromycin	0	none	0	2	342	GACAGACCCTTT	AAAGGGTCTGTC	0.844	no_abx	no_antidote	no_abx-no_antidote
+B.fragilis	sample_161	0.00149779075863102	2	F	8	LM	pl2A1	24h	c3	Erythromycin	0.65	none	0	2	350	CATCATTCTACC	GGTAGAATGATG	0.68	abx	no_antidote	abx-no_antidote
+B.fragilis	sample_162	0.00523772111515844	2	F	9	LM	pl2A3	24h	c3	Erythromycin	0.65	dicoumarol	20	2	358	ATACAAACTCCC	GGGAGTTTGTAT	0.619	abx	dicoumarol	abx-dicoumarol
+B.fragilis	sample_163	0.360851282931434	2	F	10	LM	pl2C3	24h	c3	Erythromycin	0	dicoumarol	20	2	366	ACATACGGCCGG	CCGGCCGTATGT	0.65	no_abx	dicoumarol	no_abx-dicoumarol
+B.fragilis	sample_164	0.293371118777723	2	F	11	LM	pl2C4	24h	c3	Erythromycin	0	none	0	2	374	CCTGCATCGCAA	TTGCGATGCAGG	0.83	no_abx	no_antidote	no_abx-no_antidote
+B.fragilis	sample_165	0.00208626241552905	2	F	12	LM	pl2A4	24h	c3	Erythromycin	0.65	none	0	2	382	ACTTTGGTTGCC	GGCAACCAAAGT	0.678	abx	no_antidote	abx-no_antidote
+B.fragilis	sample_166	0.0383380820139214	2	G	1	LM	pl2A6	24h	c3	Erythromycin	0.65	benzbromarone	40	2	295	AGCGTTGCACGG	CCGTGCAACGCT	0.58	abx	benzbromarone	abx-benzbromarone
+B.fragilis	sample_167	0.302997494354564	2	G	2	LM	pl2C6	24h	c3	Erythromycin	0	benzbromarone	40	2	303	CCGGTACCATGG	CCATGGTACCGG	0.587	no_abx	benzbromarone	no_abx-benzbromarone
+B.fragilis	sample_168	0.240062744050996	2	G	3	LM	pl2C7	24h	c3	Erythromycin	0	none	0	2	311	ACACACATGTCC	GGACATGTGTGT	0.806	no_abx	no_antidote	no_abx-no_antidote
+B.fragilis	sample_169	0.00400094139797599	2	G	4	LM	pl2A7	24h	c3	Erythromycin	0.65	none	0	2	319	AAGAAGATGGAA	TTCCATCTTCTT	0.683	abx	no_antidote	abx-no_antidote
+B.fragilis	sample_170	0.0255496292441785	2	G	5	LM	pl2A9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	2	327	GAGTTCTTGGAA	TTCCAAGAACTC	0.478	abx	tolfenamic acid	abx-tolfenamic acid
+B.fragilis	sample_171	0.382286083125193	2	G	6	LM	pl2C9	24h	c3	Erythromycin	0	tolfenamic acid	40	2	335	TAACCGACATAA	TTATGTCGGTTA	0.58	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+B.fragilis	sample_172	0.534456877729258	2	G	7	LM	pl1H10	24h	c3	Erythromycin	0	none	0	3	343	GATATCTAATTT	AAATTAGATATC	0.85	no_abx	no_antidote	no_abx-no_antidote
+B.fragilis	sample_173	0.00142622985716414	2	G	8	LM	pl1G1	24h	c3	Erythromycin	0.65	none	0	3	351	CGACCTGTATTT	AAATACAGGTCG	0.691	abx	no_antidote	abx-no_antidote
+B.fragilis	sample_174	0.00618200404020736	2	G	9	LM	pl1G3	24h	c3	Erythromycin	0.65	dicoumarol	20	3	359	GAGCCCATAATT	AATTATGGGCTC	0.608	abx	dicoumarol	abx-dicoumarol
+B.fragilis	sample_175	0.40189679787885	2	G	10	LM	pl1F10	24h	c3	Erythromycin	0	dicoumarol	20	3	367	CATACACCATCC	GGATGGTGTATG	0.629	no_abx	dicoumarol	no_abx-dicoumarol
+B.fragilis	sample_176	0.30696390887939	2	G	11	LM	pl1E10	24h	c3	Erythromycin	0	none	0	3	375	GGGAGCTAGTGG	CCACTAGCTCCC	0.842	no_abx	no_antidote	no_abx-no_antidote
+B.fragilis	sample_177	0.00808615152087663	2	G	12	LM	pl1G4	24h	c3	Erythromycin	0.65	none	0	3	383	AACTGCATGCGG	CCGCATGCAGTT	0.682	abx	no_antidote	abx-no_antidote
+B.fragilis	sample_178	0.044928716904277	2	H	1	LM	pl1G6	24h	c3	Erythromycin	0.65	benzbromarone	40	3	296	GAGCCAATTGAA	TTCAATTGGCTC	0.576	abx	benzbromarone	abx-benzbromarone
+B.fragilis	sample_179	0.411484599900435	2	H	2	LM	pl1C10	24h	c3	Erythromycin	0	benzbromarone	40	3	304	GTCCCGGTTCCC	GGGAACCGGGAC	0.567	no_abx	benzbromarone	no_abx-benzbromarone
+B.fragilis	sample_180	0.303771896176959	2	H	3	LM	pl1B10	24h	c3	Erythromycin	0	none	0	3	312	TGGTTGGCCCTT	AAGGGCCAACCA	0.821	no_abx	no_antidote	no_abx-no_antidote
+B.fragilis	sample_181	0.0017260668051782	2	H	4	LM	pl1G7	24h	c3	Erythromycin	0.65	none	0	3	320	GTAGTATCCATT	AATGGATACTAC	0.676	abx	no_antidote	abx-no_antidote
+B.fragilis	sample_182	0.0243963973055478	2	H	5	LM	pl1G9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	3	328	ATACATACCATT	AATGGTATGTAT	0.46	abx	tolfenamic acid	abx-tolfenamic acid
+B.fragilis	sample_183	0.265023778642456	2	H	6	LM	pl1H11	24h	c3	Erythromycin	0	tolfenamic acid	40	3	336	AGTGTATTTATT	AATAAATACACT	0.565	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+P.copri	sample_145	0.047100651291571	2	E	1	LM	ep1	11h	c3	Erythromycin	0	none	0	1	293	ATACACACATGG	CCATGTGTGTAT	0.927	no_abx	no_antidote	no_abx-no_antidote
+P.copri	sample_146	0.0559500489715965	2	E	3	LM	ep3	11h	c3	Erythromycin	0	none	0	2	309	CGGCCTTCCCAA	TTGGGAAGGCCG	0.897	no_abx	no_antidote	no_abx-no_antidote
+P.copri	sample_147	0.113578428595706	2	E	5	LM	ep5	11h	c3	Erythromycin	0	none	0	3	325	TCTGGCTTGAAA	TTTCAAGCCAGA	0.889	no_abx	no_antidote	no_abx-no_antidote
+P.copri	sample_148	0.1	2	E	7	LM	pl1C1	24h	c3	Erythromycin	0	none	0	1	341	ATTGCGGTGAAA	TTTCACCGCAAT	0.841	no_abx	no_antidote	no_abx-no_antidote
+P.copri	sample_149	0.980264284002602	2	E	8	LM	pl1A1	24h	c3	Erythromycin	0.65	none	0	1	349	GTCTTACTATTT	AAATAGTAAGAC	0.686	abx	no_antidote	abx-no_antidote
+P.copri	sample_150	0.0584179792924088	2	E	9	LM	pl1A3	24h	c3	Erythromycin	0.65	dicoumarol	20	1	357	TAGTTTGTATTT	AAATACAAACTA	0.628	abx	dicoumarol	abx-dicoumarol
+P.copri	sample_151	0.00871244811572761	2	E	10	LM	pl1C3	24h	c3	Erythromycin	0	dicoumarol	20	1	365	GGGCTTCAGGCC	GGCCTGAAGCCC	0.641	no_abx	dicoumarol	no_abx-dicoumarol
+P.copri	sample_152	0.0607547007443742	2	E	11	LM	pl1C4	24h	c3	Erythromycin	0	none	0	1	373	GGCAGTCTCTGG	CCAGAGACTGCC	0.828	no_abx	no_antidote	no_abx-no_antidote
+P.copri	sample_153	0.942708544959571	2	E	12	LM	pl1A4	24h	c3	Erythromycin	0.65	none	0	1	381	GGCCAACCACGG	CCGTGGTTGGCC	0.668	abx	no_antidote	abx-no_antidote
+P.copri	sample_154	0.0414984105163674	2	F	1	LM	pl1A6	24h	c3	Erythromycin	0.65	benzbromarone	40	1	294	TAGTTGGTTCAA	TTGAACCAACTA	0.578	abx	benzbromarone	abx-benzbromarone
+P.copri	sample_155	0.0187603457789222	2	F	2	LM	pl1C6	24h	c3	Erythromycin	0	benzbromarone	40	1	302	ATCGGCCTTTCC	GGAAAGGCCGAT	0.59	no_abx	benzbromarone	no_abx-benzbromarone
+P.copri	sample_156	0.105513790519471	2	F	3	LM	pl1C7	24h	c3	Erythromycin	0	none	0	1	310	GACGTCATGTTT	AAACATGACGTC	0.8	no_abx	no_antidote	no_abx-no_antidote
+P.copri	sample_157	0.925429601866912	2	F	4	LM	pl1A7	24h	c3	Erythromycin	0.65	none	0	1	318	TGCCATACCAGG	CCTGGTATGGCA	0.678	abx	no_antidote	abx-no_antidote
+P.copri	sample_158	0.073154595003308	2	F	5	LM	pl1A9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	1	326	CGCACTACCGTT	AACGGTAGTGCG	0.476	abx	tolfenamic acid	abx-tolfenamic acid
+P.copri	sample_159	0.019003441568158	2	F	6	LM	pl1C9	24h	c3	Erythromycin	0	tolfenamic acid	40	1	334	CGTACGCTTATT	AATAAGCGTACG	0.577	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+P.copri	sample_160	0.116107729837617	2	F	7	LM	pl2C1	24h	c3	Erythromycin	0	none	0	2	342	GACAGACCCTTT	AAAGGGTCTGTC	0.844	no_abx	no_antidote	no_abx-no_antidote
+P.copri	sample_161	0.967104770463566	2	F	8	LM	pl2A1	24h	c3	Erythromycin	0.65	none	0	2	350	CATCATTCTACC	GGTAGAATGATG	0.68	abx	no_antidote	abx-no_antidote
+P.copri	sample_162	0.0534723710211175	2	F	9	LM	pl2A3	24h	c3	Erythromycin	0.65	dicoumarol	20	2	358	ATACAAACTCCC	GGGAGTTTGTAT	0.619	abx	dicoumarol	abx-dicoumarol
+P.copri	sample_163	0.0048485368574616	2	F	10	LM	pl2C3	24h	c3	Erythromycin	0	dicoumarol	20	2	366	ACATACGGCCGG	CCGGCCGTATGT	0.65	no_abx	dicoumarol	no_abx-dicoumarol
+P.copri	sample_164	0.079534253326762	2	F	11	LM	pl2C4	24h	c3	Erythromycin	0	none	0	2	374	CCTGCATCGCAA	TTGCGATGCAGG	0.83	no_abx	no_antidote	no_abx-no_antidote
+P.copri	sample_165	0.959612680847204	2	F	12	LM	pl2A4	24h	c3	Erythromycin	0.65	none	0	2	382	ACTTTGGTTGCC	GGCAACCAAAGT	0.678	abx	no_antidote	abx-no_antidote
+P.copri	sample_166	0.0214231615392938	2	G	1	LM	pl2A6	24h	c3	Erythromycin	0.65	benzbromarone	40	2	295	AGCGTTGCACGG	CCGTGCAACGCT	0.58	abx	benzbromarone	abx-benzbromarone
+P.copri	sample_167	0.0157762860766542	2	G	2	LM	pl2C6	24h	c3	Erythromycin	0	benzbromarone	40	2	303	CCGGTACCATGG	CCATGGTACCGG	0.587	no_abx	benzbromarone	no_abx-benzbromarone
+P.copri	sample_168	0.0637119113573407	2	G	3	LM	pl2C7	24h	c3	Erythromycin	0	none	0	2	311	ACACACATGTCC	GGACATGTGTGT	0.806	no_abx	no_antidote	no_abx-no_antidote
+P.copri	sample_169	0.851494469286891	2	G	4	LM	pl2A7	24h	c3	Erythromycin	0.65	none	0	2	319	AAGAAGATGGAA	TTCCATCTTCTT	0.683	abx	no_antidote	abx-no_antidote
+P.copri	sample_170	0.0635618576818004	2	G	5	LM	pl2A9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	2	327	GAGTTCTTGGAA	TTCCAAGAACTC	0.478	abx	tolfenamic acid	abx-tolfenamic acid
+P.copri	sample_171	0.0148738528891758	2	G	6	LM	pl2C9	24h	c3	Erythromycin	0	tolfenamic acid	40	2	335	TAACCGACATAA	TTATGTCGGTTA	0.58	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+P.copri	sample_172	0.00641375545851528	2	G	7	LM	pl1H10	24h	c3	Erythromycin	0	none	0	3	343	GATATCTAATTT	AAATTAGATATC	0.85	no_abx	no_antidote	no_abx-no_antidote
+P.copri	sample_173	0.968090767822551	2	G	8	LM	pl1G1	24h	c3	Erythromycin	0.65	none	0	3	351	CGACCTGTATTT	AAATACAGGTCG	0.691	abx	no_antidote	abx-no_antidote
+P.copri	sample_174	0.0601163385012291	2	G	9	LM	pl1G3	24h	c3	Erythromycin	0.65	dicoumarol	20	3	359	GAGCCCATAATT	AATTATGGGCTC	0.608	abx	dicoumarol	abx-dicoumarol
+P.copri	sample_175	0.00734244340199878	2	G	10	LM	pl1F10	24h	c3	Erythromycin	0	dicoumarol	20	3	367	CATACACCATCC	GGATGGTGTATG	0.629	no_abx	dicoumarol	no_abx-dicoumarol
+P.copri	sample_176	0.0694226502894865	2	G	11	LM	pl1E10	24h	c3	Erythromycin	0	none	0	3	375	GGGAGCTAGTGG	CCACTAGCTCCC	0.842	no_abx	no_antidote	no_abx-no_antidote
+P.copri	sample_177	0.665860570564897	2	G	12	LM	pl1G4	24h	c3	Erythromycin	0.65	none	0	3	383	AACTGCATGCGG	CCGCATGCAGTT	0.682	abx	no_antidote	abx-no_antidote
+P.copri	sample_178	0.0207739307535642	2	H	1	LM	pl1G6	24h	c3	Erythromycin	0.65	benzbromarone	40	3	296	GAGCCAATTGAA	TTCAATTGGCTC	0.576	abx	benzbromarone	abx-benzbromarone
+P.copri	sample_179	0.0120993052098439	2	H	2	LM	pl1C10	24h	c3	Erythromycin	0	benzbromarone	40	3	304	GTCCCGGTTCCC	GGGAACCGGGAC	0.567	no_abx	benzbromarone	no_abx-benzbromarone
+P.copri	sample_180	0.0918552614755146	2	H	3	LM	pl1B10	24h	c3	Erythromycin	0	none	0	3	312	TGGTTGGCCCTT	AAGGGCCAACCA	0.821	no_abx	no_antidote	no_abx-no_antidote
+P.copri	sample_181	0.920968515262906	2	H	4	LM	pl1G7	24h	c3	Erythromycin	0.65	none	0	3	320	GTAGTATCCATT	AATGGATACTAC	0.676	abx	no_antidote	abx-no_antidote
+P.copri	sample_182	0.0553775512778465	2	H	5	LM	pl1G9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	3	328	ATACATACCATT	AATGGTATGTAT	0.46	abx	tolfenamic acid	abx-tolfenamic acid
+P.copri	sample_183	0.00936734399769419	2	H	6	LM	pl1H11	24h	c3	Erythromycin	0	tolfenamic acid	40	3	336	AGTGTATTTATT	AATAAATACACT	0.565	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+B.vulgatus	sample_145	0.246798603026775	2	E	1	LM	ep1	11h	c3	Erythromycin	0	none	0	1	293	ATACACACATGG	CCATGTGTGTAT	0.927	no_abx	no_antidote	no_abx-no_antidote
+B.vulgatus	sample_146	0.218199069539667	2	E	3	LM	ep3	11h	c3	Erythromycin	0	none	0	2	309	CGGCCTTCCCAA	TTGGGAAGGCCG	0.897	no_abx	no_antidote	no_abx-no_antidote
+B.vulgatus	sample_147	0.188806435166827	2	E	5	LM	ep5	11h	c3	Erythromycin	0	none	0	3	325	TCTGGCTTGAAA	TTTCAAGCCAGA	0.889	no_abx	no_antidote	no_abx-no_antidote
+B.vulgatus	sample_148	0.261538461538462	2	E	7	LM	pl1C1	24h	c3	Erythromycin	0	none	0	1	341	ATTGCGGTGAAA	TTTCACCGCAAT	0.841	no_abx	no_antidote	no_abx-no_antidote
+B.vulgatus	sample_149	0.00275581116702612	2	E	8	LM	pl1A1	24h	c3	Erythromycin	0.65	none	0	1	349	GTCTTACTATTT	AAATAGTAAGAC	0.686	abx	no_antidote	abx-no_antidote
+B.vulgatus	sample_150	0.0130035821188478	2	E	9	LM	pl1A3	24h	c3	Erythromycin	0.65	dicoumarol	20	1	357	TAGTTTGTATTT	AAATACAAACTA	0.628	abx	dicoumarol	abx-dicoumarol
+B.vulgatus	sample_151	0.135864874861299	2	E	10	LM	pl1C3	24h	c3	Erythromycin	0	dicoumarol	20	1	365	GGGCTTCAGGCC	GGCCTGAAGCCC	0.641	no_abx	dicoumarol	no_abx-dicoumarol
+B.vulgatus	sample_152	0.20838173916785	2	E	11	LM	pl1C4	24h	c3	Erythromycin	0	none	0	1	373	GGCAGTCTCTGG	CCAGAGACTGCC	0.828	no_abx	no_antidote	no_abx-no_antidote
+B.vulgatus	sample_153	0.00426638494981919	2	E	12	LM	pl1A4	24h	c3	Erythromycin	0.65	none	0	1	381	GGCCAACCACGG	CCGTGGTTGGCC	0.668	abx	no_antidote	abx-no_antidote
+B.vulgatus	sample_154	0.16902941260704	2	F	1	LM	pl1A6	24h	c3	Erythromycin	0.65	benzbromarone	40	1	294	TAGTTGGTTCAA	TTGAACCAACTA	0.578	abx	benzbromarone	abx-benzbromarone
+B.vulgatus	sample_155	0.117941879713077	2	F	2	LM	pl1C6	24h	c3	Erythromycin	0	benzbromarone	40	1	302	ATCGGCCTTTCC	GGAAAGGCCGAT	0.59	no_abx	benzbromarone	no_abx-benzbromarone
+B.vulgatus	sample_156	0.194638497425609	2	F	3	LM	pl1C7	24h	c3	Erythromycin	0	none	0	1	310	GACGTCATGTTT	AAACATGACGTC	0.8	no_abx	no_antidote	no_abx-no_antidote
+B.vulgatus	sample_157	0.00367725054805176	2	F	4	LM	pl1A7	24h	c3	Erythromycin	0.65	none	0	1	318	TGCCATACCAGG	CCTGGTATGGCA	0.678	abx	no_antidote	abx-no_antidote
+B.vulgatus	sample_158	0.346176869033742	2	F	5	LM	pl1A9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	1	326	CGCACTACCGTT	AACGGTAGTGCG	0.476	abx	tolfenamic acid	abx-tolfenamic acid
+B.vulgatus	sample_159	0.34472542271435	2	F	6	LM	pl1C9	24h	c3	Erythromycin	0	tolfenamic acid	40	1	334	CGTACGCTTATT	AATAAGCGTACG	0.577	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+B.vulgatus	sample_160	0.192592957642363	2	F	7	LM	pl2C1	24h	c3	Erythromycin	0	none	0	2	342	GACAGACCCTTT	AAAGGGTCTGTC	0.844	no_abx	no_antidote	no_abx-no_antidote
+B.vulgatus	sample_161	0.00417509173968397	2	F	8	LM	pl2A1	24h	c3	Erythromycin	0.65	none	0	2	350	CATCATTCTACC	GGTAGAATGATG	0.68	abx	no_antidote	abx-no_antidote
+B.vulgatus	sample_162	0.0111182534580863	2	F	9	LM	pl2A3	24h	c3	Erythromycin	0.65	dicoumarol	20	2	358	ATACAAACTCCC	GGGAGTTTGTAT	0.619	abx	dicoumarol	abx-dicoumarol
+B.vulgatus	sample_163	0.0737149231957436	2	F	10	LM	pl2C3	24h	c3	Erythromycin	0	dicoumarol	20	2	366	ACATACGGCCGG	CCGGCCGTATGT	0.65	no_abx	dicoumarol	no_abx-dicoumarol
+B.vulgatus	sample_164	0.200899457861015	2	F	11	LM	pl2C4	24h	c3	Erythromycin	0	none	0	2	374	CCTGCATCGCAA	TTGCGATGCAGG	0.83	no_abx	no_antidote	no_abx-no_antidote
+B.vulgatus	sample_165	0.00233570683477709	2	F	12	LM	pl2A4	24h	c3	Erythromycin	0.65	none	0	2	382	ACTTTGGTTGCC	GGCAACCAAAGT	0.678	abx	no_antidote	abx-no_antidote
+B.vulgatus	sample_166	0.142929274714178	2	G	1	LM	pl2A6	24h	c3	Erythromycin	0.65	benzbromarone	40	2	295	AGCGTTGCACGG	CCGTGCAACGCT	0.58	abx	benzbromarone	abx-benzbromarone
+B.vulgatus	sample_167	0.0983388498778111	2	G	2	LM	pl2C6	24h	c3	Erythromycin	0	benzbromarone	40	2	303	CCGGTACCATGG	CCATGGTACCGG	0.587	no_abx	benzbromarone	no_abx-benzbromarone
+B.vulgatus	sample_168	0.198044254580649	2	G	3	LM	pl2C7	24h	c3	Erythromycin	0	none	0	2	311	ACACACATGTCC	GGACATGTGTGT	0.806	no_abx	no_antidote	no_abx-no_antidote
+B.vulgatus	sample_169	0.00517768886796893	2	G	4	LM	pl2A7	24h	c3	Erythromycin	0.65	none	0	2	319	AAGAAGATGGAA	TTCCATCTTCTT	0.683	abx	no_antidote	abx-no_antidote
+B.vulgatus	sample_170	0.427006634577859	2	G	5	LM	pl2A9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	2	327	GAGTTCTTGGAA	TTCCAAGAACTC	0.478	abx	tolfenamic acid	abx-tolfenamic acid
+B.vulgatus	sample_171	0.0971010018802795	2	G	6	LM	pl2C9	24h	c3	Erythromycin	0	tolfenamic acid	40	2	335	TAACCGACATAA	TTATGTCGGTTA	0.58	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+B.vulgatus	sample_172	0.12100846069869	2	G	7	LM	pl1H10	24h	c3	Erythromycin	0	none	0	3	343	GATATCTAATTT	AAATTAGATATC	0.85	no_abx	no_antidote	no_abx-no_antidote
+B.vulgatus	sample_173	0.00391681035400302	2	G	8	LM	pl1G1	24h	c3	Erythromycin	0.65	none	0	3	351	CGACCTGTATTT	AAATACAGGTCG	0.691	abx	no_antidote	abx-no_antidote
+B.vulgatus	sample_174	0.0120719448974128	2	G	9	LM	pl1G3	24h	c3	Erythromycin	0.65	dicoumarol	20	3	359	GAGCCCATAATT	AATTATGGGCTC	0.608	abx	dicoumarol	abx-dicoumarol
+B.vulgatus	sample_175	0.108538989734176	2	G	10	LM	pl1F10	24h	c3	Erythromycin	0	dicoumarol	20	3	367	CATACACCATCC	GGATGGTGTATG	0.629	no_abx	dicoumarol	no_abx-dicoumarol
+B.vulgatus	sample_176	0.231264541962015	2	G	11	LM	pl1E10	24h	c3	Erythromycin	0	none	0	3	375	GGGAGCTAGTGG	CCACTAGCTCCC	0.842	no_abx	no_antidote	no_abx-no_antidote
+B.vulgatus	sample_177	0.00695257887776308	2	G	12	LM	pl1G4	24h	c3	Erythromycin	0.65	none	0	3	383	AACTGCATGCGG	CCGCATGCAGTT	0.682	abx	no_antidote	abx-no_antidote
+B.vulgatus	sample_178	0.124358452138493	2	H	1	LM	pl1G6	24h	c3	Erythromycin	0.65	benzbromarone	40	3	296	GAGCCAATTGAA	TTCAATTGGCTC	0.576	abx	benzbromarone	abx-benzbromarone
+B.vulgatus	sample_179	0.0881149758663232	2	H	2	LM	pl1C10	24h	c3	Erythromycin	0	benzbromarone	40	3	304	GTCCCGGTTCCC	GGGAACCGGGAC	0.567	no_abx	benzbromarone	no_abx-benzbromarone
+B.vulgatus	sample_180	0.182125047947833	2	H	3	LM	pl1B10	24h	c3	Erythromycin	0	none	0	3	312	TGGTTGGCCCTT	AAGGGCCAACCA	0.821	no_abx	no_antidote	no_abx-no_antidote
+B.vulgatus	sample_181	0.00362793671088381	2	H	4	LM	pl1G7	24h	c3	Erythromycin	0.65	none	0	3	320	GTAGTATCCATT	AATGGATACTAC	0.676	abx	no_antidote	abx-no_antidote
+B.vulgatus	sample_182	0.399298635113656	2	H	5	LM	pl1G9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	3	328	ATACATACCATT	AATGGTATGTAT	0.46	abx	tolfenamic acid	abx-tolfenamic acid
+B.vulgatus	sample_183	0.331267713887688	2	H	6	LM	pl1H11	24h	c3	Erythromycin	0	tolfenamic acid	40	3	336	AGTGTATTTATT	AATAAATACACT	0.565	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+B.caccae	sample_145	0.0943900827486392	2	E	1	LM	ep1	11h	c3	Erythromycin	0	none	0	1	293	ATACACACATGG	CCATGTGTGTAT	0.927	no_abx	no_antidote	no_abx-no_antidote
+B.caccae	sample_146	0.101248775710088	2	E	3	LM	ep3	11h	c3	Erythromycin	0	none	0	2	309	CGGCCTTCCCAA	TTGGGAAGGCCG	0.897	no_abx	no_antidote	no_abx-no_antidote
+B.caccae	sample_147	0.086670820823656	2	E	5	LM	ep5	11h	c3	Erythromycin	0	none	0	3	325	TCTGGCTTGAAA	TTTCAAGCCAGA	0.889	no_abx	no_antidote	no_abx-no_antidote
+B.caccae	sample_148	0.384615384615385	2	E	7	LM	pl1C1	24h	c3	Erythromycin	0	none	0	1	341	ATTGCGGTGAAA	TTTCACCGCAAT	0.841	no_abx	no_antidote	no_abx-no_antidote
+B.caccae	sample_149	0.00136934716373969	2	E	8	LM	pl1A1	24h	c3	Erythromycin	0.65	none	0	1	349	GTCTTACTATTT	AAATAGTAAGAC	0.686	abx	no_antidote	abx-no_antidote
+B.caccae	sample_150	0.00218362039354237	2	E	9	LM	pl1A3	24h	c3	Erythromycin	0.65	dicoumarol	20	1	357	TAGTTTGTATTT	AAATACAAACTA	0.628	abx	dicoumarol	abx-dicoumarol
+B.caccae	sample_151	0.117289277935314	2	E	10	LM	pl1C3	24h	c3	Erythromycin	0	dicoumarol	20	1	365	GGGCTTCAGGCC	GGCCTGAAGCCC	0.641	no_abx	dicoumarol	no_abx-dicoumarol
+B.caccae	sample_152	0.10601953444344	2	E	11	LM	pl1C4	24h	c3	Erythromycin	0	none	0	1	373	GGCAGTCTCTGG	CCAGAGACTGCC	0.828	no_abx	no_antidote	no_abx-no_antidote
+B.caccae	sample_153	0.00235666978180488	2	E	12	LM	pl1A4	24h	c3	Erythromycin	0.65	none	0	1	381	GGCCAACCACGG	CCGTGGTTGGCC	0.668	abx	no_antidote	abx-no_antidote
+B.caccae	sample_154	0.00323624595469256	2	F	1	LM	pl1A6	24h	c3	Erythromycin	0.65	benzbromarone	40	1	294	TAGTTGGTTCAA	TTGAACCAACTA	0.578	abx	benzbromarone	abx-benzbromarone
+B.caccae	sample_155	0.105480963766783	2	F	2	LM	pl1C6	24h	c3	Erythromycin	0	benzbromarone	40	1	302	ATCGGCCTTTCC	GGAAAGGCCGAT	0.59	no_abx	benzbromarone	no_abx-benzbromarone
+B.caccae	sample_156	0.104861127897701	2	F	3	LM	pl1C7	24h	c3	Erythromycin	0	none	0	1	310	GACGTCATGTTT	AAACATGACGTC	0.8	no_abx	no_antidote	no_abx-no_antidote
+B.caccae	sample_157	0.00201541616575914	2	F	4	LM	pl1A7	24h	c3	Erythromycin	0.65	none	0	1	318	TGCCATACCAGG	CCTGGTATGGCA	0.678	abx	no_antidote	abx-no_antidote
+B.caccae	sample_158	0.00286695441227435	2	F	5	LM	pl1A9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	1	326	CGCACTACCGTT	AACGGTAGTGCG	0.476	abx	tolfenamic acid	abx-tolfenamic acid
+B.caccae	sample_159	0.1303606164896	2	F	6	LM	pl1C9	24h	c3	Erythromycin	0	tolfenamic acid	40	1	334	CGTACGCTTATT	AATAAGCGTACG	0.577	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+B.caccae	sample_160	0.106694921518863	2	F	7	LM	pl2C1	24h	c3	Erythromycin	0	none	0	2	342	GACAGACCCTTT	AAAGGGTCTGTC	0.844	no_abx	no_antidote	no_abx-no_antidote
+B.caccae	sample_161	0.00134801168276792	2	F	8	LM	pl2A1	24h	c3	Erythromycin	0.65	none	0	2	350	CATCATTCTACC	GGTAGAATGATG	0.68	abx	no_antidote	abx-no_antidote
+B.caccae	sample_162	0.00195224150655906	2	F	9	LM	pl2A3	24h	c3	Erythromycin	0.65	dicoumarol	20	2	358	ATACAAACTCCC	GGGAGTTTGTAT	0.619	abx	dicoumarol	abx-dicoumarol
+B.caccae	sample_163	0.114176606882348	2	F	10	LM	pl2C3	24h	c3	Erythromycin	0	dicoumarol	20	2	366	ACATACGGCCGG	CCGGCCGTATGT	0.65	no_abx	dicoumarol	no_abx-dicoumarol
+B.caccae	sample_164	0.109351897486447	2	F	11	LM	pl2C4	24h	c3	Erythromycin	0	none	0	2	374	CCTGCATCGCAA	TTGCGATGCAGG	0.83	no_abx	no_antidote	no_abx-no_antidote
+B.caccae	sample_165	0.0013832826885573	2	F	12	LM	pl2A4	24h	c3	Erythromycin	0.65	none	0	2	382	ACTTTGGTTGCC	GGCAACCAAAGT	0.678	abx	no_antidote	abx-no_antidote
+B.caccae	sample_166	0.00382298842283695	2	G	1	LM	pl2A6	24h	c3	Erythromycin	0.65	benzbromarone	40	2	295	AGCGTTGCACGG	CCGTGCAACGCT	0.58	abx	benzbromarone	abx-benzbromarone
+B.caccae	sample_167	0.103999752528846	2	G	2	LM	pl2C6	24h	c3	Erythromycin	0	benzbromarone	40	2	303	CCGGTACCATGG	CCATGGTACCGG	0.587	no_abx	benzbromarone	no_abx-benzbromarone
+B.caccae	sample_168	0.114975136001068	2	G	3	LM	pl2C7	24h	c3	Erythromycin	0	none	0	2	311	ACACACATGTCC	GGACATGTGTGT	0.806	no_abx	no_antidote	no_abx-no_antidote
+B.caccae	sample_169	0.00235349493998588	2	G	4	LM	pl2A7	24h	c3	Erythromycin	0.65	none	0	2	319	AAGAAGATGGAA	TTCCATCTTCTT	0.683	abx	no_antidote	abx-no_antidote
+B.caccae	sample_170	0.00322622609600624	2	G	5	LM	pl2A9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	2	327	GAGTTCTTGGAA	TTCCAAGAACTC	0.478	abx	tolfenamic acid	abx-tolfenamic acid
+B.caccae	sample_171	0.0926669098869026	2	G	6	LM	pl2C9	24h	c3	Erythromycin	0	tolfenamic acid	40	2	335	TAACCGACATAA	TTATGTCGGTTA	0.58	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+B.caccae	sample_172	0.0611012554585153	2	G	7	LM	pl1H10	24h	c3	Erythromycin	0	none	0	3	343	GATATCTAATTT	AAATTAGATATC	0.85	no_abx	no_antidote	no_abx-no_antidote
+B.caccae	sample_173	0.00168167401068608	2	G	8	LM	pl1G1	24h	c3	Erythromycin	0.65	none	0	3	351	CGACCTGTATTT	AAATACAGGTCG	0.691	abx	no_antidote	abx-no_antidote
+B.caccae	sample_174	0.00260423004843381	2	G	9	LM	pl1G3	24h	c3	Erythromycin	0.65	dicoumarol	20	3	359	GAGCCCATAATT	AATTATGGGCTC	0.608	abx	dicoumarol	abx-dicoumarol
+B.caccae	sample_175	0.10588755183901	2	G	10	LM	pl1F10	24h	c3	Erythromycin	0	dicoumarol	20	3	367	CATACACCATCC	GGATGGTGTATG	0.629	no_abx	dicoumarol	no_abx-dicoumarol
+B.caccae	sample_176	0.094204859044424	2	G	11	LM	pl1E10	24h	c3	Erythromycin	0	none	0	3	375	GGGAGCTAGTGG	CCACTAGCTCCC	0.842	no_abx	no_antidote	no_abx-no_antidote
+B.caccae	sample_177	0.00336293217457019	2	G	12	LM	pl1G4	24h	c3	Erythromycin	0.65	none	0	3	383	AACTGCATGCGG	CCGCATGCAGTT	0.682	abx	no_antidote	abx-no_antidote
+B.caccae	sample_178	0.00395112016293279	2	H	1	LM	pl1G6	24h	c3	Erythromycin	0.65	benzbromarone	40	3	296	GAGCCAATTGAA	TTCAATTGGCTC	0.576	abx	benzbromarone	abx-benzbromarone
+B.caccae	sample_179	0.0757342914655527	2	H	2	LM	pl1C10	24h	c3	Erythromycin	0	benzbromarone	40	3	304	GTCCCGGTTCCC	GGGAACCGGGAC	0.567	no_abx	benzbromarone	no_abx-benzbromarone
+B.caccae	sample_180	0.0968674082598133	2	H	3	LM	pl1B10	24h	c3	Erythromycin	0	none	0	3	312	TGGTTGGCCCTT	AAGGGCCAACCA	0.821	no_abx	no_antidote	no_abx-no_antidote
+B.caccae	sample_181	0.00105481860316446	2	H	4	LM	pl1G7	24h	c3	Erythromycin	0.65	none	0	3	320	GTAGTATCCATT	AATGGATACTAC	0.676	abx	no_antidote	abx-no_antidote
+B.caccae	sample_182	0.00322930595150995	2	H	5	LM	pl1G9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	3	328	ATACATACCATT	AATGGTATGTAT	0.46	abx	tolfenamic acid	abx-tolfenamic acid
+B.caccae	sample_183	0.121871547293078	2	H	6	LM	pl1H11	24h	c3	Erythromycin	0	tolfenamic acid	40	3	336	AGTGTATTTATT	AATAAATACACT	0.565	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+B.ovatus	sample_145	0.0921876474845043	2	E	1	LM	ep1	11h	c3	Erythromycin	0	none	0	1	293	ATACACACATGG	CCATGTGTGTAT	0.927	no_abx	no_antidote	no_abx-no_antidote
+B.ovatus	sample_146	0.0926175318315377	2	E	3	LM	ep3	11h	c3	Erythromycin	0	none	0	2	309	CGGCCTTCCCAA	TTGGGAAGGCCG	0.897	no_abx	no_antidote	no_abx-no_antidote
+B.ovatus	sample_147	0.0870956777884779	2	E	5	LM	ep5	11h	c3	Erythromycin	0	none	0	3	325	TCTGGCTTGAAA	TTTCAAGCCAGA	0.889	no_abx	no_antidote	no_abx-no_antidote
+B.ovatus	sample_148	0	2	E	7	LM	pl1C1	24h	c3	Erythromycin	0	none	0	1	341	ATTGCGGTGAAA	TTTCACCGCAAT	0.841	no_abx	no_antidote	no_abx-no_antidote
+B.ovatus	sample_149	0.00359453630481668	2	E	8	LM	pl1A1	24h	c3	Erythromycin	0.65	none	0	1	349	GTCTTACTATTT	AAATAGTAAGAC	0.686	abx	no_antidote	abx-no_antidote
+B.ovatus	sample_150	0.0492909367486138	2	E	9	LM	pl1A3	24h	c3	Erythromycin	0.65	dicoumarol	20	1	357	TAGTTTGTATTT	AAATACAAACTA	0.628	abx	dicoumarol	abx-dicoumarol
+B.ovatus	sample_151	0.13031685365553	2	E	10	LM	pl1C3	24h	c3	Erythromycin	0	dicoumarol	20	1	365	GGGCTTCAGGCC	GGCCTGAAGCCC	0.641	no_abx	dicoumarol	no_abx-dicoumarol
+B.ovatus	sample_152	0.097457080160062	2	E	11	LM	pl1C4	24h	c3	Erythromycin	0	none	0	1	373	GGCAGTCTCTGG	CCAGAGACTGCC	0.828	no_abx	no_antidote	no_abx-no_antidote
+B.ovatus	sample_153	0.00633862906830279	2	E	12	LM	pl1A4	24h	c3	Erythromycin	0.65	none	0	1	381	GGCCAACCACGG	CCGTGGTTGGCC	0.668	abx	no_antidote	abx-no_antidote
+B.ovatus	sample_154	0.0970300999513131	2	F	1	LM	pl1A6	24h	c3	Erythromycin	0.65	benzbromarone	40	1	294	TAGTTGGTTCAA	TTGAACCAACTA	0.578	abx	benzbromarone	abx-benzbromarone
+B.ovatus	sample_155	0.0921923855067133	2	F	2	LM	pl1C6	24h	c3	Erythromycin	0	benzbromarone	40	1	302	ATCGGCCTTTCC	GGAAAGGCCGAT	0.59	no_abx	benzbromarone	no_abx-benzbromarone
+B.ovatus	sample_156	0.0955788150547511	2	F	3	LM	pl1C7	24h	c3	Erythromycin	0	none	0	1	310	GACGTCATGTTT	AAACATGACGTC	0.8	no_abx	no_antidote	no_abx-no_antidote
+B.ovatus	sample_157	0.00449048865002475	2	F	4	LM	pl1A7	24h	c3	Erythromycin	0.65	none	0	1	318	TGCCATACCAGG	CCTGGTATGGCA	0.678	abx	no_antidote	abx-no_antidote
+B.ovatus	sample_158	0.0274093443810844	2	F	5	LM	pl1A9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	1	326	CGCACTACCGTT	AACGGTAGTGCG	0.476	abx	tolfenamic acid	abx-tolfenamic acid
+B.ovatus	sample_159	0.0668861289839892	2	F	6	LM	pl1C9	24h	c3	Erythromycin	0	tolfenamic acid	40	1	334	CGTACGCTTATT	AATAAGCGTACG	0.577	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+B.ovatus	sample_160	0.081068427666757	2	F	7	LM	pl2C1	24h	c3	Erythromycin	0	none	0	2	342	GACAGACCCTTT	AAAGGGTCTGTC	0.844	no_abx	no_antidote	no_abx-no_antidote
+B.ovatus	sample_161	0.00718939564142889	2	F	8	LM	pl2A1	24h	c3	Erythromycin	0.65	none	0	2	350	CATCATTCTACC	GGTAGAATGATG	0.68	abx	no_antidote	abx-no_antidote
+B.ovatus	sample_162	0.0413065733399995	2	F	9	LM	pl2A3	24h	c3	Erythromycin	0.65	dicoumarol	20	2	358	ATACAAACTCCC	GGGAGTTTGTAT	0.619	abx	dicoumarol	abx-dicoumarol
+B.ovatus	sample_163	0.121899939929632	2	F	10	LM	pl2C3	24h	c3	Erythromycin	0	dicoumarol	20	2	366	ACATACGGCCGG	CCGGCCGTATGT	0.65	no_abx	dicoumarol	no_abx-dicoumarol
+B.ovatus	sample_164	0.0815672745194677	2	F	11	LM	pl2C4	24h	c3	Erythromycin	0	none	0	2	374	CCTGCATCGCAA	TTGCGATGCAGG	0.83	no_abx	no_antidote	no_abx-no_antidote
+B.ovatus	sample_165	0.00387772688103769	2	F	12	LM	pl2A4	24h	c3	Erythromycin	0.65	none	0	2	382	ACTTTGGTTGCC	GGCAACCAAAGT	0.678	abx	no_antidote	abx-no_antidote
+B.ovatus	sample_166	0.0828434378043063	2	G	1	LM	pl2A6	24h	c3	Erythromycin	0.65	benzbromarone	40	2	295	AGCGTTGCACGG	CCGTGCAACGCT	0.58	abx	benzbromarone	abx-benzbromarone
+B.ovatus	sample_167	0.092894484486652	2	G	2	LM	pl2C6	24h	c3	Erythromycin	0	benzbromarone	40	2	303	CCGGTACCATGG	CCATGGTACCGG	0.587	no_abx	benzbromarone	no_abx-benzbromarone
+B.ovatus	sample_168	0.11460801655375	2	G	3	LM	pl2C7	24h	c3	Erythromycin	0	none	0	2	311	ACACACATGTCC	GGACATGTGTGT	0.806	no_abx	no_antidote	no_abx-no_antidote
+B.ovatus	sample_169	0.00494233937397035	2	G	4	LM	pl2A7	24h	c3	Erythromycin	0.65	none	0	2	319	AAGAAGATGGAA	TTCCATCTTCTT	0.683	abx	no_antidote	abx-no_antidote
+B.ovatus	sample_170	0.0290880707688305	2	G	5	LM	pl2A9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	2	327	GAGTTCTTGGAA	TTCCAAGAACTC	0.478	abx	tolfenamic acid	abx-tolfenamic acid
+B.ovatus	sample_171	0.0807397637021862	2	G	6	LM	pl2C9	24h	c3	Erythromycin	0	tolfenamic acid	40	2	335	TAACCGACATAA	TTATGTCGGTTA	0.58	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+B.ovatus	sample_172	0.0361967794759825	2	G	7	LM	pl1H10	24h	c3	Erythromycin	0	none	0	3	343	GATATCTAATTT	AAATTAGATATC	0.85	no_abx	no_antidote	no_abx-no_antidote
+B.ovatus	sample_173	0.0051940311216127	2	G	8	LM	pl1G1	24h	c3	Erythromycin	0.65	none	0	3	351	CGACCTGTATTT	AAATACAGGTCG	0.691	abx	no_antidote	abx-no_antidote
+B.ovatus	sample_174	0.0449533915837126	2	G	9	LM	pl1G3	24h	c3	Erythromycin	0.65	dicoumarol	20	3	359	GAGCCCATAATT	AATTATGGGCTC	0.608	abx	dicoumarol	abx-dicoumarol
+B.ovatus	sample_175	0.107757155483038	2	G	10	LM	pl1F10	24h	c3	Erythromycin	0	dicoumarol	20	3	367	CATACACCATCC	GGATGGTGTATG	0.629	no_abx	dicoumarol	no_abx-dicoumarol
+B.ovatus	sample_176	0.084356907093772	2	G	11	LM	pl1E10	24h	c3	Erythromycin	0	none	0	3	375	GGGAGCTAGTGG	CCACTAGCTCCC	0.842	no_abx	no_antidote	no_abx-no_antidote
+B.ovatus	sample_177	0.0137540147364444	2	G	12	LM	pl1G4	24h	c3	Erythromycin	0.65	none	0	3	383	AACTGCATGCGG	CCGCATGCAGTT	0.682	abx	no_antidote	abx-no_antidote
+B.ovatus	sample_178	0.0874949083503055	2	H	1	LM	pl1G6	24h	c3	Erythromycin	0.65	benzbromarone	40	3	296	GAGCCAATTGAA	TTCAATTGGCTC	0.576	abx	benzbromarone	abx-benzbromarone
+B.ovatus	sample_179	0.0829852167701998	2	H	2	LM	pl1C10	24h	c3	Erythromycin	0	benzbromarone	40	3	304	GTCCCGGTTCCC	GGGAACCGGGAC	0.567	no_abx	benzbromarone	no_abx-benzbromarone
+B.ovatus	sample_180	0.0791970336274134	2	H	3	LM	pl1B10	24h	c3	Erythromycin	0	none	0	3	312	TGGTTGGCCCTT	AAGGGCCAACCA	0.821	no_abx	no_antidote	no_abx-no_antidote
+B.ovatus	sample_181	0.00513025411539076	2	H	4	LM	pl1G7	24h	c3	Erythromycin	0.65	none	0	3	320	GTAGTATCCATT	AATGGATACTAC	0.676	abx	no_antidote	abx-no_antidote
+B.ovatus	sample_182	0.0269445215329112	2	H	5	LM	pl1G9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	3	328	ATACATACCATT	AATGGTATGTAT	0.46	abx	tolfenamic acid	abx-tolfenamic acid
+B.ovatus	sample_183	0.0595667002930297	2	H	6	LM	pl1H11	24h	c3	Erythromycin	0	tolfenamic acid	40	3	336	AGTGTATTTATT	AATAAATACACT	0.565	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+P.distasonis	sample_145	0.0028946292042916	2	E	1	LM	ep1	11h	c3	Erythromycin	0	none	0	1	293	ATACACACATGG	CCATGTGTGTAT	0.927	no_abx	no_antidote	no_abx-no_antidote
+P.distasonis	sample_146	0.00281586679725759	2	E	3	LM	ep3	11h	c3	Erythromycin	0	none	0	2	309	CGGCCTTCCCAA	TTGGGAAGGCCG	0.897	no_abx	no_antidote	no_abx-no_antidote
+P.distasonis	sample_147	0	2	E	5	LM	ep5	11h	c3	Erythromycin	0	none	0	3	325	TCTGGCTTGAAA	TTTCAAGCCAGA	0.889	no_abx	no_antidote	no_abx-no_antidote
+P.distasonis	sample_148	0	2	E	7	LM	pl1C1	24h	c3	Erythromycin	0	none	0	1	341	ATTGCGGTGAAA	TTTCACCGCAAT	0.841	no_abx	no_antidote	no_abx-no_antidote
+P.distasonis	sample_149	0	2	E	8	LM	pl1A1	24h	c3	Erythromycin	0.65	none	0	1	349	GTCTTACTATTT	AAATAGTAAGAC	0.686	abx	no_antidote	abx-no_antidote
+P.distasonis	sample_150	0	2	E	9	LM	pl1A3	24h	c3	Erythromycin	0.65	dicoumarol	20	1	357	TAGTTTGTATTT	AAATACAAACTA	0.628	abx	dicoumarol	abx-dicoumarol
+P.distasonis	sample_151	0.00147947232153865	2	E	10	LM	pl1C3	24h	c3	Erythromycin	0	dicoumarol	20	1	365	GGGCTTCAGGCC	GGCCTGAAGCCC	0.641	no_abx	dicoumarol	no_abx-dicoumarol
+P.distasonis	sample_152	0.00193623338066348	2	E	11	LM	pl1C4	24h	c3	Erythromycin	0	none	0	1	373	GGCAGTCTCTGG	CCAGAGACTGCC	0.828	no_abx	no_antidote	no_abx-no_antidote
+P.distasonis	sample_153	0	2	E	12	LM	pl1A4	24h	c3	Erythromycin	0.65	none	0	1	381	GGCCAACCACGG	CCGTGGTTGGCC	0.668	abx	no_antidote	abx-no_antidote
+P.distasonis	sample_154	0	2	F	1	LM	pl1A6	24h	c3	Erythromycin	0.65	benzbromarone	40	1	294	TAGTTGGTTCAA	TTGAACCAACTA	0.578	abx	benzbromarone	abx-benzbromarone
+P.distasonis	sample_155	0	2	F	2	LM	pl1C6	24h	c3	Erythromycin	0	benzbromarone	40	1	302	ATCGGCCTTTCC	GGAAAGGCCGAT	0.59	no_abx	benzbromarone	no_abx-benzbromarone
+P.distasonis	sample_156	0.00471367449056056	2	F	3	LM	pl1C7	24h	c3	Erythromycin	0	none	0	1	310	GACGTCATGTTT	AAACATGACGTC	0.8	no_abx	no_antidote	no_abx-no_antidote
+P.distasonis	sample_157	0	2	F	4	LM	pl1A7	24h	c3	Erythromycin	0.65	none	0	1	318	TGCCATACCAGG	CCTGGTATGGCA	0.678	abx	no_antidote	abx-no_antidote
+P.distasonis	sample_158	0.00522982892788507	2	F	5	LM	pl1A9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	1	326	CGCACTACCGTT	AACGGTAGTGCG	0.476	abx	tolfenamic acid	abx-tolfenamic acid
+P.distasonis	sample_159	0	2	F	6	LM	pl1C9	24h	c3	Erythromycin	0	tolfenamic acid	40	1	334	CGTACGCTTATT	AATAAGCGTACG	0.577	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+P.distasonis	sample_160	0.00500209447305522	2	F	7	LM	pl2C1	24h	c3	Erythromycin	0	none	0	2	342	GACAGACCCTTT	AAAGGGTCTGTC	0.844	no_abx	no_antidote	no_abx-no_antidote
+P.distasonis	sample_161	0	2	F	8	LM	pl2A1	24h	c3	Erythromycin	0.65	none	0	2	350	CATCATTCTACC	GGTAGAATGATG	0.68	abx	no_antidote	abx-no_antidote
+P.distasonis	sample_162	0	2	F	9	LM	pl2A3	24h	c3	Erythromycin	0.65	dicoumarol	20	2	358	ATACAAACTCCC	GGGAGTTTGTAT	0.619	abx	dicoumarol	abx-dicoumarol
+P.distasonis	sample_163	0	2	F	10	LM	pl2C3	24h	c3	Erythromycin	0	dicoumarol	20	2	366	ACATACGGCCGG	CCGGCCGTATGT	0.65	no_abx	dicoumarol	no_abx-dicoumarol
+P.distasonis	sample_164	0	2	F	11	LM	pl2C4	24h	c3	Erythromycin	0	none	0	2	374	CCTGCATCGCAA	TTGCGATGCAGG	0.83	no_abx	no_antidote	no_abx-no_antidote
+P.distasonis	sample_165	0	2	F	12	LM	pl2A4	24h	c3	Erythromycin	0.65	none	0	2	382	ACTTTGGTTGCC	GGCAACCAAAGT	0.678	abx	no_antidote	abx-no_antidote
+P.distasonis	sample_166	0	2	G	1	LM	pl2A6	24h	c3	Erythromycin	0.65	benzbromarone	40	2	295	AGCGTTGCACGG	CCGTGCAACGCT	0.58	abx	benzbromarone	abx-benzbromarone
+P.distasonis	sample_167	0	2	G	2	LM	pl2C6	24h	c3	Erythromycin	0	benzbromarone	40	2	303	CCGGTACCATGG	CCATGGTACCGG	0.587	no_abx	benzbromarone	no_abx-benzbromarone
+P.distasonis	sample_168	0.00430530988218803	2	G	3	LM	pl2C7	24h	c3	Erythromycin	0	none	0	2	311	ACACACATGTCC	GGACATGTGTGT	0.806	no_abx	no_antidote	no_abx-no_antidote
+P.distasonis	sample_169	0	2	G	4	LM	pl2A7	24h	c3	Erythromycin	0.65	none	0	2	319	AAGAAGATGGAA	TTCCATCTTCTT	0.683	abx	no_antidote	abx-no_antidote
+P.distasonis	sample_170	0.00473526733446078	2	G	5	LM	pl2A9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	2	327	GAGTTCTTGGAA	TTCCAAGAACTC	0.478	abx	tolfenamic acid	abx-tolfenamic acid
+P.distasonis	sample_171	0	2	G	6	LM	pl2C9	24h	c3	Erythromycin	0	tolfenamic acid	40	2	335	TAACCGACATAA	TTATGTCGGTTA	0.58	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+P.distasonis	sample_172	0	2	G	7	LM	pl1H10	24h	c3	Erythromycin	0	none	0	3	343	GATATCTAATTT	AAATTAGATATC	0.85	no_abx	no_antidote	no_abx-no_antidote
+P.distasonis	sample_173	0	2	G	8	LM	pl1G1	24h	c3	Erythromycin	0.65	none	0	3	351	CGACCTGTATTT	AAATACAGGTCG	0.691	abx	no_antidote	abx-no_antidote
+P.distasonis	sample_174	0	2	G	9	LM	pl1G3	24h	c3	Erythromycin	0.65	dicoumarol	20	3	359	GAGCCCATAATT	AATTATGGGCTC	0.608	abx	dicoumarol	abx-dicoumarol
+P.distasonis	sample_175	0	2	G	10	LM	pl1F10	24h	c3	Erythromycin	0	dicoumarol	20	3	367	CATACACCATCC	GGATGGTGTATG	0.629	no_abx	dicoumarol	no_abx-dicoumarol
+P.distasonis	sample_176	0	2	G	11	LM	pl1E10	24h	c3	Erythromycin	0	none	0	3	375	GGGAGCTAGTGG	CCACTAGCTCCC	0.842	no_abx	no_antidote	no_abx-no_antidote
+P.distasonis	sample_177	0	2	G	12	LM	pl1G4	24h	c3	Erythromycin	0.65	none	0	3	383	AACTGCATGCGG	CCGCATGCAGTT	0.682	abx	no_antidote	abx-no_antidote
+P.distasonis	sample_178	0	2	H	1	LM	pl1G6	24h	c3	Erythromycin	0.65	benzbromarone	40	3	296	GAGCCAATTGAA	TTCAATTGGCTC	0.576	abx	benzbromarone	abx-benzbromarone
+P.distasonis	sample_179	0.00294365922815523	2	H	2	LM	pl1C10	24h	c3	Erythromycin	0	benzbromarone	40	3	304	GTCCCGGTTCCC	GGGAACCGGGAC	0.567	no_abx	benzbromarone	no_abx-benzbromarone
+P.distasonis	sample_180	0.00516557984912415	2	H	3	LM	pl1B10	24h	c3	Erythromycin	0	none	0	3	312	TGGTTGGCCCTT	AAGGGCCAACCA	0.821	no_abx	no_antidote	no_abx-no_antidote
+P.distasonis	sample_181	0	2	H	4	LM	pl1G7	24h	c3	Erythromycin	0.65	none	0	3	320	GTAGTATCCATT	AATGGATACTAC	0.676	abx	no_antidote	abx-no_antidote
+P.distasonis	sample_182	0.00373388500643338	2	H	5	LM	pl1G9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	3	328	ATACATACCATT	AATGGTATGTAT	0.46	abx	tolfenamic acid	abx-tolfenamic acid
+P.distasonis	sample_183	0	2	H	6	LM	pl1H11	24h	c3	Erythromycin	0	tolfenamic acid	40	3	336	AGTGTATTTATT	AATAAATACACT	0.565	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+Other	sample_145	0.00915583802661801	2	E	1	LM	ep1	11h	c3	Erythromycin	0	none	0	1	293	ATACACACATGG	CCATGTGTGTAT	0.927	no_abx	no_antidote	no_abx-no_antidote
+Other	sample_146	0.00945763956904999	2	E	3	LM	ep3	11h	c3	Erythromycin	0	none	0	2	309	CGGCCTTCCCAA	TTGGGAAGGCCG	0.897	no_abx	no_antidote	no_abx-no_antidote
+Other	sample_147	0.00810060612926977	2	E	5	LM	ep5	11h	c3	Erythromycin	0	none	0	3	325	TCTGGCTTGAAA	TTTCAAGCCAGA	0.889	no_abx	no_antidote	no_abx-no_antidote
+Other	sample_148	0.023076923076923	2	E	7	LM	pl1C1	24h	c3	Erythromycin	0	none	0	1	341	ATTGCGGTGAAA	TTTCACCGCAAT	0.841	no_abx	no_antidote	no_abx-no_antidote
+Other	sample_149	0.0020711375851562	2	E	8	LM	pl1A1	24h	c3	Erythromycin	0.65	none	0	1	349	GTCTTACTATTT	AAATAGTAAGAC	0.686	abx	no_antidote	abx-no_antidote
+Other	sample_150	0.00399921487806076	2	E	9	LM	pl1A3	24h	c3	Erythromycin	0.65	dicoumarol	20	1	357	TAGTTTGTATTT	AAATACAAACTA	0.628	abx	dicoumarol	abx-dicoumarol
+Other	sample_151	0.00493157440512881	2	E	10	LM	pl1C3	24h	c3	Erythromycin	0	dicoumarol	20	1	365	GGGCTTCAGGCC	GGCCTGAAGCCC	0.641	no_abx	dicoumarol	no_abx-dicoumarol
+Other	sample_152	0.00357127490211262	2	E	11	LM	pl1C4	24h	c3	Erythromycin	0	none	0	1	373	GGCAGTCTCTGG	CCAGAGACTGCC	0.828	no_abx	no_antidote	no_abx-no_antidote
+Other	sample_153	0.00390069481126332	2	E	12	LM	pl1A4	24h	c3	Erythromycin	0.65	none	0	1	381	GGCCAACCACGG	CCGTGGTTGGCC	0.668	abx	no_antidote	abx-no_antidote
+Other	sample_154	0.0067016066672394	2	F	1	LM	pl1A6	24h	c3	Erythromycin	0.65	benzbromarone	40	1	294	TAGTTGGTTCAA	TTGAACCAACTA	0.578	abx	benzbromarone	abx-benzbromarone
+Other	sample_155	0.00744896082398383	2	F	2	LM	pl1C6	24h	c3	Erythromycin	0	benzbromarone	40	1	302	ATCGGCCTTTCC	GGAAAGGCCGAT	0.59	no_abx	benzbromarone	no_abx-benzbromarone
+Other	sample_156	0.00362590345427738	2	F	3	LM	pl1C7	24h	c3	Erythromycin	0	none	0	1	310	GACGTCATGTTT	AAACATGACGTC	0.8	no_abx	no_antidote	no_abx-no_antidote
+Other	sample_157	0.00378332508309176	2	F	4	LM	pl1A7	24h	c3	Erythromycin	0.65	none	0	1	318	TGCCATACCAGG	CCTGGTATGGCA	0.678	abx	no_antidote	abx-no_antidote
+Other	sample_158	0.00617497873412942	2	F	5	LM	pl1A9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	1	326	CGCACTACCGTT	AACGGTAGTGCG	0.476	abx	tolfenamic acid	abx-tolfenamic acid
+Other	sample_159	0.00487804878048781	2	F	6	LM	pl1C9	24h	c3	Erythromycin	0	tolfenamic acid	40	1	334	CGTACGCTTATT	AATAAGCGTACG	0.577	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+Other	sample_160	0.00601236971145558	2	F	7	LM	pl2C1	24h	c3	Erythromycin	0	none	0	2	342	GACAGACCCTTT	AAAGGGTCTGTC	0.844	no_abx	no_antidote	no_abx-no_antidote
+Other	sample_161	0.00655283456901068	2	F	8	LM	pl2A1	24h	c3	Erythromycin	0.65	none	0	2	350	CATCATTCTACC	GGTAGAATGATG	0.68	abx	no_antidote	abx-no_antidote
+Other	sample_162	0.00335690307835146	2	F	9	LM	pl2A3	24h	c3	Erythromycin	0.65	dicoumarol	20	2	358	ATACAAACTCCC	GGGAGTTTGTAT	0.619	abx	dicoumarol	abx-dicoumarol
+Other	sample_163	0.00583540719128117	2	F	10	LM	pl2C3	24h	c3	Erythromycin	0	dicoumarol	20	2	366	ACATACGGCCGG	CCGGCCGTATGT	0.65	no_abx	dicoumarol	no_abx-dicoumarol
+Other	sample_164	0.00449728930507631	2	F	11	LM	pl2C4	24h	c3	Erythromycin	0	none	0	2	374	CCTGCATCGCAA	TTGCGATGCAGG	0.83	no_abx	no_antidote	no_abx-no_antidote
+Other	sample_165	0.00176878770012245	2	F	12	LM	pl2A4	24h	c3	Erythromycin	0.65	none	0	2	382	ACTTTGGTTGCC	GGCAACCAAAGT	0.678	abx	no_antidote	abx-no_antidote
+Other	sample_166	0.00714105384643127	2	G	1	LM	pl2A6	24h	c3	Erythromycin	0.65	benzbromarone	40	2	295	AGCGTTGCACGG	CCGTGCAACGCT	0.58	abx	benzbromarone	abx-benzbromarone
+Other	sample_167	0.00872335818356174	2	G	2	LM	pl2C6	24h	c3	Erythromycin	0	benzbromarone	40	2	303	CCGGTACCATGG	CCATGGTACCGG	0.587	no_abx	benzbromarone	no_abx-benzbromarone
+Other	sample_168	0.00707539298468107	2	G	3	LM	pl2C7	24h	c3	Erythromycin	0	none	0	2	311	ACACACATGTCC	GGACATGTGTGT	0.806	no_abx	no_antidote	no_abx-no_antidote
+Other	sample_169	0.00235349493998593	2	G	4	LM	pl2A7	24h	c3	Erythromycin	0.65	none	0	2	319	AAGAAGATGGAA	TTCCATCTTCTT	0.683	abx	no_antidote	abx-no_antidote
+Other	sample_170	0.00770131390659556	2	G	5	LM	pl2A9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	2	327	GAGTTCTTGGAA	TTCCAAGAACTC	0.478	abx	tolfenamic acid	abx-tolfenamic acid
+Other	sample_171	0.00634243538293155	2	G	6	LM	pl2C9	24h	c3	Erythromycin	0	tolfenamic acid	40	2	335	TAACCGACATAA	TTATGTCGGTTA	0.58	no_abx	tolfenamic acid	no_abx-tolfenamic acid
+Other	sample_172	0.00426446506550215	2	G	7	LM	pl1H10	24h	c3	Erythromycin	0	none	0	3	343	GATATCTAATTT	AAATTAGATATC	0.85	no_abx	no_antidote	no_abx-no_antidote
+Other	sample_173	0.00404453243076397	2	G	8	LM	pl1G1	24h	c3	Erythromycin	0.65	none	0	3	351	CGACCTGTATTT	AAATACAGGTCG	0.691	abx	no_antidote	abx-no_antidote
+Other	sample_174	0.00343174240027255	2	G	9	LM	pl1G3	24h	c3	Erythromycin	0.65	dicoumarol	20	3	359	GAGCCCATAATT	AATTATGGGCTC	0.608	abx	dicoumarol	abx-dicoumarol
+Other	sample_175	0.00346726493983274	2	G	10	LM	pl1F10	24h	c3	Erythromycin	0	dicoumarol	20	3	367	CATACACCATCC	GGATGGTGTATG	0.629	no_abx	dicoumarol	no_abx-dicoumarol
+Other	sample_176	0.00443698934040371	2	G	11	LM	pl1E10	24h	c3	Erythromycin	0	none	0	3	375	GGGAGCTAGTGG	CCACTAGCTCCC	0.842	no_abx	no_antidote	no_abx-no_antidote
+Other	sample_177	0.013300585679199	2	G	12	LM	pl1G4	24h	c3	Erythromycin	0.65	none	0	3	383	AACTGCATGCGG	CCGCATGCAGTT	0.682	abx	no_antidote	abx-no_antidote
+Other	sample_178	0.00879837067209766	2	H	1	LM	pl1G6	24h	c3	Erythromycin	0.65	benzbromarone	40	3	296	GAGCCAATTGAA	TTCAATTGGCTC	0.576	abx	benzbromarone	abx-benzbromarone
+Other	sample_179	0.00580074024371768	2	H	2	LM	pl1C10	24h	c3	Erythromycin	0	benzbromarone	40	3	304	GTCCCGGTTCCC	GGGAACCGGGAC	0.567	no_abx	benzbromarone	no_abx-benzbromarone
+Other	sample_180	0.00636747219025702	2	H	3	LM	pl1B10	24h	c3	Erythromycin	0	none	0	3	312	TGGTTGGCCCTT	AAGGGCCAACCA	0.821	no_abx	no_antidote	no_abx-no_antidote
+Other	sample_181	0.00409141761227427	2	H	4	LM	pl1G7	24h	c3	Erythromycin	0.65	none	0	3	320	GTAGTATCCATT	AATGGATACTAC	0.676	abx	no_antidote	abx-no_antidote
+Other	sample_182	0.00514670636021897	2	H	5	LM	pl1G9	24h	c3	Erythromycin	0.65	tolfenamic acid	40	3	328	ATACATACCATT	AATGGTATGTAT	0.46	abx	tolfenamic acid	abx-tolfenamic acid
+Other	sample_183	0.005956670029303	2	H	6	LM	pl1H11	24h	c3	Erythromycin	0	tolfenamic acid	40	3	336	AGTGTATTTATT	AATAAATACACT	0.565	no_abx	tolfenamic acid	no_abx-tolfenamic acid

@@ -1,0 +1,260 @@
+{
+  "files": [
+    {
+      "links": {
+        "self": "https://zenodo.org/api/files/fe65c9e1-6449-48a3-b001-6c394902a512/eggNOG_profiles_crc_external.tsv"
+      },
+      "checksum": "md5:3193c0af38ddf196c25f335b220273e2",
+      "bucket": "fe65c9e1-6449-48a3-b001-6c394902a512",
+      "key": "eggNOG_profiles_crc_external.tsv",
+      "type": "tsv",
+      "size": 214416720
+    },
+    {
+      "links": {
+        "self": "https://zenodo.org/api/files/fe65c9e1-6449-48a3-b001-6c394902a512/eggNOG_profiles_crc_meta.tsv"
+      },
+      "checksum": "md5:1e9f98607beae88c541a8440088b345b",
+      "bucket": "fe65c9e1-6449-48a3-b001-6c394902a512",
+      "key": "eggNOG_profiles_crc_meta.tsv",
+      "type": "tsv",
+      "size": 182900491
+    },
+    {
+      "links": {
+        "self": "https://zenodo.org/api/files/fe65c9e1-6449-48a3-b001-6c394902a512/KEGG_profiles_crc_external.tsv"
+      },
+      "checksum": "md5:ecc818a60e47b237beed6539d9833577",
+      "bucket": "fe65c9e1-6449-48a3-b001-6c394902a512",
+      "key": "KEGG_profiles_crc_external.tsv",
+      "type": "tsv",
+      "size": 63471935
+    },
+    {
+      "links": {
+        "self": "https://zenodo.org/api/files/fe65c9e1-6449-48a3-b001-6c394902a512/KEGG_profiles_crc_meta.tsv"
+      },
+      "checksum": "md5:630a0265fb17c03c595d6e3d62b47a39",
+      "bucket": "fe65c9e1-6449-48a3-b001-6c394902a512",
+      "key": "KEGG_profiles_crc_meta.tsv",
+      "type": "tsv",
+      "size": 53658754
+    },
+    {
+      "links": {
+        "self": "https://zenodo.org/api/files/fe65c9e1-6449-48a3-b001-6c394902a512/meta_all.tsv"
+      },
+      "checksum": "md5:da18b10fdabae6308329e80b73991f84",
+      "bucket": "fe65c9e1-6449-48a3-b001-6c394902a512",
+      "key": "meta_all.tsv",
+      "type": "tsv",
+      "size": 147694
+    },
+    {
+      "links": {
+        "self": "https://zenodo.org/api/files/fe65c9e1-6449-48a3-b001-6c394902a512/species_profiles_g2_l75_motus2.0.0.tsv"
+      },
+      "checksum": "md5:7c754ad66c39d4f13da4d0df1549bd76",
+      "bucket": "fe65c9e1-6449-48a3-b001-6c394902a512",
+      "key": "species_profiles_g2_l75_motus2.0.0.tsv",
+      "type": "tsv",
+      "size": 73478613
+    }
+  ],
+  "owners": [
+    80778
+  ],
+  "doi": "10.5281/zenodo.3517209",
+  "stats": {
+    "version_unique_downloads": 1.0,
+    "unique_views": 4.0,
+    "views": 10.0,
+    "downloads": 1.0,
+    "unique_downloads": 1.0,
+    "version_unique_views": 4.0,
+    "volume": 63471935.0,
+    "version_downloads": 1.0,
+    "version_views": 10.0,
+    "version_volume": 63471935.0
+  },
+  "links": {
+    "doi": "https://doi.org/10.5281/zenodo.3517209",
+    "conceptdoi": "https://doi.org/10.5281/zenodo.3517208",
+    "bucket": "https://zenodo.org/api/files/fe65c9e1-6449-48a3-b001-6c394902a512",
+    "conceptbadge": "https://zenodo.org/badge/doi/10.5281/zenodo.3517208.svg",
+    "html": "https://zenodo.org/record/3517209",
+    "latest_html": "https://zenodo.org/record/3517209",
+    "badge": "https://zenodo.org/badge/doi/10.5281/zenodo.3517209.svg",
+    "latest": "https://zenodo.org/api/records/3517209"
+  },
+  "conceptdoi": "10.5281/zenodo.3517208",
+  "created": "2019-10-25T14:36:10.794129+00:00",
+  "updated": "2019-11-01T07:10:22.409146+00:00",
+  "conceptrecid": "3517208",
+  "revision": 3,
+  "id": 3517209,
+  "metadata": {
+    "access_right_category": "success",
+    "doi": "10.5281/zenodo.3517209",
+    "description": "<p>This dataset encompasses all data needed to reproduce the analyses presented in&nbsp;<a href=\"https://www.nature.com/articles/s41591-019-0406-6\">Meta-analysis of fecal metagenomes reveals global microbial signatures that are specific for colorectal cancer</a></p>\n\n<p>You can also check the&nbsp;<a href=\"https://github.com/zellerlab/crc_meta\">GitHub repository</a></p>",
+    "language": "eng",
+    "title": "Data for the publication \"Meta-analysis of fecal metagenomes reveals global microbial signatures that are specific for colorectal cancer\"",
+    "license": {
+      "id": "CC-BY-4.0"
+    },
+    "relations": {
+      "version": [
+        {
+          "count": 1,
+          "index": 0,
+          "parent": {
+            "pid_type": "recid",
+            "pid_value": "3517208"
+          },
+          "is_last": true,
+          "last_child": {
+            "pid_type": "recid",
+            "pid_value": "3517209"
+          }
+        }
+      ]
+    },
+    "version": "1.0",
+    "publication_date": "2019-04-01",
+    "creators": [
+      {
+        "orcid": "0000-0002-4073-3562",
+        "affiliation": "EMBL",
+        "name": "Wirbel, Jakob"
+      },
+      {
+        "name": "Pyl, Paul Theodor"
+      },
+      {
+        "affiliation": "EMBL",
+        "name": "Kartal, Ece"
+      },
+      {
+        "affiliation": "EMBL",
+        "name": "Zych, Konrad"
+      },
+      {
+        "name": "Kashani, Alireza"
+      },
+      {
+        "affiliation": "EMBL",
+        "name": "Milanese, Alessio"
+      },
+      {
+        "affiliation": "EMBL",
+        "name": "Fleck, Jonas S."
+      },
+      {
+        "name": "Voigt, Anita Y."
+      },
+      {
+        "name": "Palleja, Albert"
+      },
+      {
+        "affiliation": "EMBL",
+        "name": "Ponnudurai, Ruby"
+      },
+      {
+        "name": "Sunagawa, Shinichi"
+      },
+      {
+        "affiliation": "EMBL",
+        "name": "Coelho, Luis Pedro"
+      },
+      {
+        "name": "Schrotz-Kind, Petra"
+      },
+      {
+        "name": "Vogtmann, Emily"
+      },
+      {
+        "name": "Habermann, Nina"
+      },
+      {
+        "name": "Nimeus, Emma"
+      },
+      {
+        "name": "Thomas, Andrew M."
+      },
+      {
+        "name": "Manghi, Paolo"
+      },
+      {
+        "name": "Gandini, Sara"
+      },
+      {
+        "name": "Serrano, Davide"
+      },
+      {
+        "name": "Mizutani, Sayaka"
+      },
+      {
+        "name": "Shiroma, Hirotsugu"
+      },
+      {
+        "name": "Shiba, Satoshi"
+      },
+      {
+        "name": "Shibata, Tatsuhiro"
+      },
+      {
+        "name": "Yachida, Shinichi"
+      },
+      {
+        "name": "Yamada, Takuji"
+      },
+      {
+        "name": "Waldron, Levi"
+      },
+      {
+        "name": "Naccarati, Alessio"
+      },
+      {
+        "name": "Segata, Nicola"
+      },
+      {
+        "name": "Sinha, Rashmi"
+      },
+      {
+        "name": "Ulrich, Cornelia M."
+      },
+      {
+        "name": "Brenner, Hermann"
+      },
+      {
+        "name": "Arumugam, Manimozhiyan"
+      },
+      {
+        "affiliation": "EMBL",
+        "name": "Bork, Peer"
+      },
+      {
+        "affiliation": "EMBL",
+        "name": "Zeller, Georg"
+      }
+    ],
+    "access_right": "open",
+    "resource_type": {
+      "type": "dataset",
+      "title": "Dataset"
+    },
+    "related_identifiers": [
+      {
+        "scheme": "doi",
+        "identifier": "10.1038/s41591-019-0406-6",
+        "relation": "isSupplementTo",
+        "resource_type": "publication-article"
+      },
+      {
+        "scheme": "doi",
+        "identifier": "10.5281/zenodo.3517208",
+        "relation": "isVersionOf"
+      }
+    ]
+  }
+}

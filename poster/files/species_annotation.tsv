@@ -1,0 +1,52 @@
+NT_code	Phylum	Class	Order	Family	Genus	Species	Species_short	Gram	Oxygen_tolerance	Screen
+NT5001	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides vulgatus	B. vulgatus	negative	obligate anaerobic	TRUE
+NT5002	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides uniformis	B. uniformis	negative	obligate anaerobic	TRUE
+NT5003	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides fragilis NT	B. fragilis NT	negative	obligate anaerobic	TRUE
+NT5004	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides thetaiotaomicron	B. thetaiotaomicron	negative	obligate anaerobic	TRUE
+NT5006	Firmicutes	Clostridia	Clostridiales	Clostridiaceae	Clostridium	Clostridium ramosum	C. ramosum	positive	obligate anaerobic	TRUE
+NT5009	Firmicutes	Clostridia	Clostridiales	Eubacteriaceae	Eubacterium	Eubacterium rectale	E. rectale	positive	obligate anaerobic	TRUE
+NT5011	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Roseburia	Roseburia intestinalis	R. intestinalis	positive	obligate anaerobic	TRUE
+NT5017	Firmicutes	Negativicutes	Selenomondales	Veillonellaceae	Veillonella	Veillonella parvula	V. parvula	negative	obligate anaerobic	TRUE
+NT5019	Bacteroidetes	Bacteroidia	Bacteroidales	Prevotellaceae	Prevotella	Prevotella copri	P. copri	negative	obligate anaerobic	TRUE
+NT5021	Verrucomicrobia	Verrucomicrobiae	Verrucomicrobiales	Verrucomicrobiaea	Akkermansia	Akkermansia muciniphila	A. muciniphila	negative	obligate anaerobic	TRUE
+NT5022	Actinobacteria	Actinobacteria	Bifidobacteriales	Bifidobacteriaceae	Bifidobacterium	Bifidobacterium adolescentis	B. adolescentis	positive	obligate anaerobic	TRUE
+NT5024	Actinobacteria	Actinobacteria	Coriobacteriales	Coriobacteriaceae	Eggerthella	Eggerthella lenta	E. lenta	positive	obligate anaerobic	TRUE
+NT5025	Fusobacteria	Fusobacteria	Fusobacteriales	Fusobacteriaceae	Fusobacterium	Fusobacterium nucleatum subsp. Nucleatum	F. nucleatum subsp. Nucleatum	negative	obligate anaerobic	TRUE
+NT5026	Firmicutes	Clostridia	Clostridiales	Clostridiaceae	Clostridium	Clostridium bolteae	C. bolteae	positive	obligate anaerobic	TRUE
+NT5028	Actinobacteria	Actinobacteria	Bifidobacteriales	Bifidobacteriaceae	Bifidobacterium	Bifidobacterium longum subsp. Longum	B. longum subsp. Longum	positive	obligate anaerobic	TRUE
+NT5032	Firmicutes	Clostridia	Clostridiales	Clostridiaceae	Clostridium	Clostridium perfringens	C. perfringens	positive	obligate anaerobic	TRUE
+NT5033	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides fragilis ET	B. fragilis ET	negative	obligate anaerobic	TRUE
+NT5036	Proteobacteria	Deltaproteobacteria	Desulfovibrionales	Desulfovibrionaceae	Bilophila	Bilophila wadsworthia	B. wadsworthia	negative	obligate anaerobic	TRUE
+NT5037	Firmicutes	Clostridia	Clostridiales	Clostridiaceae	Clostridium	Clostridium saccharolyticum	C. saccharolyticum	positive	obligate anaerobic	TRUE
+NT5038	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus salivarius	S. salivarius	positive	microaerophile	TRUE
+NT5042	Firmicutes	Bacilli	Lactobacillales	Lactobacillaceae	Lactobacillus	Lactobacillus paracasei	L. paracasei	positive	microaerophile	TRUE
+NT5045	Firmicutes	Clostridia	Clostridiales	Ruminococcaceae	Ruminococcus	Ruminococcus bromii	R. bromii	positive	obligate anaerobic	TRUE
+NT5046	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Blautia	Ruminococcus gnavus	R. gnavus	positive	obligate anaerobic	TRUE
+NT5047	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Blautia	Ruminococcus torques	R. torques	positive	obligate anaerobic	TRUE
+NT5048	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Coprococcus	Coprococcus comes	C. comes	positive	obligate anaerobic	TRUE
+NT5049	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides dorei	B. dorei	negative	obligate anaerobic	FALSE
+NT5050	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides caccae	B. caccae	negative	obligate anaerobic	TRUE
+NT5051	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides eggerthii	B. eggerthii	negative	obligate anaerobic	FALSE
+NT5052	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides clarus	B. clarus	negative	obligate anaerobic	FALSE
+NT5053	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides coprocola	B. coprocola	negative	obligate anaerobic	FALSE
+NT5054	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides ovatus	B. ovatus	negative	obligate anaerobic	TRUE
+NT5055	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides stercoris	B. stercoris	negative	obligate anaerobic	FALSE
+NT5056	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides vulgatus HM-720	B. vulgatus HM-720	negative	obligate anaerobic	FALSE
+NT5057	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides fragilis HM-20	B. fragilis HM-20	negative	obligate anaerobic	FALSE
+NT5058	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides fragilis HM-709	B. fragilis HM-709	negative	obligate anaerobic	FALSE
+NT5059	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides fragilis  HM-710	B. fragilis  HM-710	negative	obligate anaerobic	FALSE
+NT5064	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides xylanisolvens	B. xylanisolvens	negative	obligate anaerobic	TRUE
+NT5065	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides uniformis HM-715	B. uniformis HM-715	negative	obligate anaerobic	FALSE
+NT5066	Bacteroidetes	Bacteroidia	Bacteroidales	Bacteroidaceae	Bacteroides	Bacteroides uniformis HM-716	B. uniformis HM-716	negative	obligate anaerobic	FALSE
+NT5069	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Blautia	Blautia obeum	B. obeum	positive	obligate anaerobic	TRUE
+NT5071	Bacteroidetes	Bacteroidia	Bacteroidales	Porphyromonadaceae	Parabacteroides	Parabacteroides merdae 	P. merdae 	negative	obligate anaerobic	TRUE
+NT5072	Firmicutes	Bacilli	Lactobacillales	Streptococcaceae	Streptococcus	Streptococcus parasanguinis	S. parasanguinis	positive	microaerophile	TRUE
+NT5073	Actinobacteria	Actinobacteria	Coriobacteriales	Coriobacteriaceae	Collinsella	Collinsella aerofaciens	C. aerofaciens	positive	obligate anaerobic	TRUE
+NT5074	Bacteroidetes	Bacteroidia	Bacteroidales	Porphyromonadaceae	Parabacteroides	Parabacteroides distasonis	P. distasonis	negative	obligate anaerobic	TRUE
+NT5075	Firmicutes	Clostridia	Clostridiales	Eubacteriaceae	Eubacterium	Eubacterium eligens	E. eligens	positive	obligate anaerobic	TRUE
+NT5076	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Dorea	Dorea formicigenerans	D. formicigenerans	positive	obligate anaerobic	TRUE
+NT5077	Proteobacteria	Gammaproteobacteria	Enterobacteriales	Enterobacteriaceae	Escherichia	Escherichia coli IAI1	E. coli IAI1	negative	facultative anaerobic	TRUE
+NT5078	Proteobacteria	Gammaproteobacteria	Enterobacteriales	Enterobacteriaceae	Escherichia	Escherichia coli ED1a	E. coli ED1a	negative	facultative anaerobic	TRUE
+NT5079	Firmicutes	Clostridia	Clostridiales	Lachnospiraceae	Roseburia	Roseburia hominis	R. hominis	positive	obligate anaerobic	TRUE
+NT5081	Bacteroidetes	Bacteroidia	Bacteroidales	Porphyromonadaceae	Odoribacter	Odoribacter splanchnicus	O. splanchnicus	negative	obligate anaerobic	TRUE
+NT5083	Firmicutes	Clostridia	Clostridiales	Clostridiaceae	Peptoclostridium	Clostridium difficile	C. difficile	positive	obligate anaerobic	TRUE

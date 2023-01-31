@@ -1,0 +1,145 @@
+prestwick_ID,chemical_name,ATC_codes,target_species,screen_conc,target,general_target,class,subgroup,more_info,EUCAST_Comparison,EUCAST_subgroup
+Prestw-10,Sulfaguanidine,A07AB03,bacteria,"4,284898",Folate,Folate,Sulfonamide,NA,NA,Sulfonamide,
+Prestw-1000,Lymecycline,J01AA04,bacteria,"12,0526564",Protein Synthesis,Protein synthesis,Tetracycline,NA,NA,Tetracyclines,
+Prestw-1009,Pivampicillin,J01CA02,bacteria,"9,2709432",Cell wall,Cell wall,Beta-lactam,Penicillin,Extended spectrum,beta-lactams,Penicillins
+Prestw-1010,Talampicillin hydrochloride,J01CA15,bacteria,"9,6304184",Cell wall,Cell wall,Beta-lactam,Penicillin,Extended spectrum,beta-lactams,Penicillins
+Prestw-1011,Flucloxacillin sodium,J01CF05,bacteria,"9,07743566",Cell wall,Cell wall,Beta-lactam,Penicillin,Beta-lactamase resistant,beta-lactams,Penicillins
+Prestw-1028,Benzathine benzylpenicillin,J01CE08,bacteria,"6,6878024",Cell wall,Cell wall,Beta-lactam,Penicillin,Beta-lactamase sensitive,beta-lactams,Penicillins
+Prestw-1053,Pivmecillinam hydrochloride,J01CA08,bacteria,"8,7913764",Cell wall,Cell wall,Beta-lactam,Penicillin,Extended spectrum,beta-lactams,Penicillins
+Prestw-1067,Ticarcillin sodium,J01CA13,bacteria,"7,6885468",Cell wall,Cell wall,Beta-lactam,Penicillin,Extended spectrum,beta-lactams,Penicillins
+Prestw-1078,Benzylpenicillin sodium,J01CE01 S01AA14,bacteria,"6,6878024",Cell wall,Cell wall,Beta-lactam,Penicillin,Beta-lactamase sensitive,beta-lactams,Penicillins
+Prestw-1202,4-aminosalicylic acid,J04AA01 J04AA02,bacteria,"3,0627076",Unknown,Others,Aminosalicylic acid ,NA,Antimycobacterial,Miscellaneous agents,Others
+Prestw-25,Thiamphenicol,J01BA02,bacteria,"7,124444",Protein Synthesis,Protein synthesis,Amphenicol,NA,NA,Miscellaneous agents,Amphenicol
+Prestw-1106,Meropenem,J01DH02,bacteria,"7,66925",Cell wall,Cell wall,Beta-lactam,Carbapenem,NA,beta-lactams,Carbapenems
+Prestw-31,Chloramphenicol,D06AX02 D10AF03 J01BA01 S01AA01 G01AA05 S02AA01 S03AA08,bacteria,"6,4625876",Protein Synthesis,Protein synthesis,Amphenicol,NA,NA,Miscellaneous agents,Amphenicol
+Prestw-1315,Clavulanate potassium salt,J01CR,bacteria,"3,9832152",Cell wall,Cell wall,Beta-lactamase inhibitor,NA,NA,Miscellaneous agents,Others
+Prestw-1118,Cefepime hydrochloride,J01DE01,bacteria,"9,6112212",Cell wall,Cell wall,Beta-lactam,Cephalosporin,4th generation,beta-lactams,Cephalosporins
+Prestw-1120,Nadifloxacin,J01MA,bacteria,"7,20758886",DNA gyrase,DNA,Quinolone,Fluoroquinolone,2nd generation,(Fluoro-)quinolones,2nd generation
+Prestw-113,Ciprofloxacin hydrochloride monohydrate,J01MA02 S01AX13 S02AA15 S03AA07,bacteria,"6,62683046",DNA gyrase,DNA,Quinolone,Fluoroquinolone,2nd generation,(Fluoro-)quinolones,2nd generation
+Prestw-114,Ampicillin trihydrate,J01CA01 S01AA19,bacteria,"6,9679364",Cell wall,Cell wall,Beta-lactam,Penicillin,Extended spectrum,beta-lactams,Penicillins
+Prestw-1345,Sulbactam,J01CG01,bacteria,"4,6648328",Cell wall,Cell wall,Beta-lactamase inhibitor,NA,NA,Miscellaneous agents,Others
+Prestw-1349,Tazobactam,J01CG02,bacteria,"6,0058216",Cell wall,Cell wall,Beta-lactamase inhibitor,NA,NA,Miscellaneous agents,Others
+Prestw-1234,Azithromycin,J01FA10 S01AA26,bacteria,"14,9796896",Protein Synthesis,Protein synthesis,Macrolide,NA,NA,"Macrolides, lincosamides and streptogramins",Macrolide
+Prestw-1263,Cefdinir,J01DD15,bacteria,"7,9082704",Cell wall,Cell wall,Beta-lactam,Cephalosporin,3rd generation,beta-lactams,Cephalosporins
+Prestw-1265,Gatifloxacin,J01MA16 S01AX21,bacteria,"7,50788166",DNA gyrase,DNA,Quinolone,Fluoroquinolone,4th generation,(Fluoro-)quinolones,4th generation
+Prestw-161,Isoniazid,J04AC01,bacteria,"2,7427856",Mycolic acid layer,Cell wall ,Hydrazide,NA,Antimycobacterial,Miscellaneous agents,Others
+Prestw-1303,Pefloxacine,J01MA03,bacteria,"6,66714806",DNA gyrase,DNA,Quinolone,Fluoroquinolone,2nd generation,(Fluoro-)quinolones,2nd generation
+Prestw-164,Ornidazole,J01XD03 P01AB03 G01AF06,bacteria,"4,392512",DNA synthesis,DNA,Imidazole,NA,NA,Miscellaneous agents,Imidazole
+Prestw-766,Tinidazole,J01XD02 P01AB02,bacteria,"4,9454304",DNA synthesis,DNA,Imidazole,NA,NA,Miscellaneous agents,Imidazole
+Prestw-1338,Rufloxacin,J01MA10,bacteria,"7,26813046",DNA gyrase,DNA,Quinolone,Fluoroquinolone,2nd generation,(Fluoro-)quinolones,2nd generation
+Prestw-1339,Sarafloxacin,J01MA,bacteria,"7,70728172",DNA gyrase,DNA,Quinolone,Fluoroquinolone,2nd generation,(Fluoro-)quinolones,2nd generation
+Prestw-1343,Sparfloxacin,J01MA09,bacteria,"7,84799572",DNA gyrase,DNA,Quinolone,Fluoroquinolone,3rd generation,(Fluoro-)quinolones,3rd generation
+Prestw-81,Metronidazole,D06BX01 J01XD01 P01AB01 A01AB17 G01AF01,bacteria,"3,4230792",DNA synthesis,DNA,Imidazole,NA,NA,Miscellaneous agents,Imidazole
+Prestw-1086,D-cycloserine,J04AB01,bacteria,"2,0418388",Cell wall,Cell wall,Isoxazoline,NA,NA,Miscellaneous agents,Others
+Prestw-137,Clindamycin hydrochloride,D10AF01 J01FF01 G01AA10,bacteria,"8,4996604",Protein Synthesis,Protein synthesis,Lincosamide,NA,NA,"Macrolides, lincosamides and streptogramins",Lincosamide
+Prestw-1378,Clarithromycin,J01FA09,bacteria,"14,9590672",Protein Synthesis,Protein synthesis,Macrolide,NA,NA,"Macrolides, lincosamides and streptogramins",Macrolide
+Prestw-1379,Clinafloxacin,J01MA,bacteria,"7,31573166",DNA gyrase,DNA,Quinolone,Fluoroquinolone,4th generation,(Fluoro-)quinolones,4th generation
+Prestw-139,Cefotaxime sodium salt,J01DD01,bacteria,"9,0891508",Cell wall,Cell wall,Beta-lactam,Cephalosporin,3rd generation,beta-lactams,Cephalosporins
+Prestw-1399,Doxycycline hydrochloride,J01AA02 A01AB22,bacteria,"8,8685324",Protein Synthesis,Protein synthesis,Tetracycline,NA,NA,Tetracyclines,
+Prestw-14,Sulfacetamide sodic hydrate,S01AB04,bacteria,"4,284832",Folate,Folate,Sulfonamide,NA,NA,Sulfonamide,
+Prestw-140,Tetracycline hydrochloride,D06AA04 J01AA07 S01AA09 A01AB13 S02AA08 S03AA02,bacteria,"8,8685324",Protein Synthesis,Protein synthesis,Tetracycline,NA,NA,Tetracyclines,
+Prestw-1401,Enoxacin,J01MA04,bacteria,"6,40637766",DNA gyrase,DNA,Quinolone,Fluoroquinolone,2nd generation,(Fluoro-)quinolones,2nd generation
+Prestw-1414,Fleroxacin,J01MA08,bacteria,"7,3867666",DNA gyrase,DNA,Quinolone,Fluoroquinolone,2nd generation,(Fluoro-)quinolones,2nd generation
+Prestw-1429,Linezolid,J01XX08,bacteria,"6,74692206",Protein Synthesis,Protein synthesis,Oxazolidinone,NA,NA,Oxazolidinone,
+Prestw-1431,Loracarbef,J01DC08,bacteria,"6,9953788",Cell wall,Cell wall,Beta-lactam,Cephalosporin,2nd generation,beta-lactams,Cephalosporins
+Prestw-1446,Moxifloxacin,J01MA14 S01AX22,bacteria,"8,02862726",DNA gyrase,DNA,Quinolone,Fluoroquinolone,4th generation,(Fluoro-)quinolones,4th generation
+Prestw-1447,Nalidixic acid sodium salt,J01MB02,bacteria,"4,6447056",DNA gyrase,DNA,Quinolone,NA,1st generation,(Fluoro-)quinolones,1st generation
+Prestw-145,Chlortetracycline hydrochloride,D06AA02 J01AA03 S01AA02 A01AB21,bacteria,"9,5574336",Protein Synthesis,Protein synthesis,Tetracycline,NA,NA,Tetracyclines,
+Prestw-1464,Tosufloxacin hydrochloride,J01MA,bacteria,"8,0868522",DNA gyrase,DNA,Quinolone,Fluoroquinolone,3rd generation,(Fluoro-)quinolones,3rd generation
+Prestw-1474,Chloroxine,D06AX J01XX D01AE D11AC30,bacteria,"4,280962",Multiple,Others,Quinolone,NA,NA,(Fluoro-)quinolones,NA
+Prestw-1475,Oxacillin sodium,J01CF04,bacteria,"8,0085664",Cell wall,Cell wall,Beta-lactam,Penicillin,Beta-lactamase resistant,beta-lactams,Penicillins
+Prestw-1089,(S)-(-)-Cycloserine,J04AB01,bacteria,"2,0418388",Cell wall,Cell wall,Isoxazoline,NA,NA,Miscellaneous agents,Others
+Prestw-151,Erythromycin,D10AF02 J01FA01 S01AA17,bacteria,"14,6785356",Protein Synthesis,Protein synthesis,Macrolide,NA,NA,"Macrolides, lincosamides and streptogramins",Macrolide
+Prestw-154,Josamycin,J01FA07,bacteria,"16,5598992",Protein Synthesis,Protein synthesis,Macrolide,NA,NA,"Macrolides, lincosamides and streptogramins",Macrolide
+Prestw-158,Neomycin sulfate,D06AX04 J01GB05 R02AB01 S01AA03 S01AA07 A01AB08 D09AA01 A07AA01 B05CA09 R01AX08 S02AA07 S03AA01,bacteria,"12,2928748",Protein Synthesis,Protein synthesis,Aminoglycoside,NA,NA,Aminoglycosides,
+Prestw-159,Dihydrostreptomycin sulfate,S01AA15,bacteria,"11,6717988",Protein Synthesis,Protein synthesis,Aminoglycoside,NA,NA,Aminoglycosides,
+Prestw-16,Sulfathiazole,J01EB07 D06BA02,bacteria,"5,1063332",Folate,Folate,Sulfonamide,Short-acting,NA,Sulfonamide,
+Prestw-160,Gentamicine sulfate,J01GB03,bacteria,"9,5519084",Protein Synthesis,Protein synthesis,Aminoglycoside,NA,NA,Aminoglycosides,
+Prestw-168,Nitrofurantoin,J01XE01,bacteria,"4,7631408",Multiple,Others,Nitrofuran,NA,NA,Miscellaneous agents,Nitrofuran
+Prestw-555,Nifuroxazide,A07AX03,bacteria,"5,5043392",Multiple,Others,Nitrofuran,NA,NA,Miscellaneous agents,Nitrofuran
+Prestw-166,Mafenide hydrochloride,D06BA03,bacteria,"3,72463",Folate,Folate,Sulfonamide,NA,NA,Sulfonamide,
+Prestw-808,Furazolidone,G01AX06,bacteria,"4,5031656",Multiple,Others,Nitrofuran,NA,NA,Miscellaneous agents,Nitrofuran
+Prestw-177,Sulfamethoxazole,J01EC01,bacteria,"5,0655528",Folate,Folate,Sulfonamide,Intermediate-acting,NA,Sulfonamide,
+Prestw-185,Aztreonam,J01DF01,bacteria,"8,7086556",Cell wall,Cell wall,Beta-lactam,Monobactam,NA,beta-lactams,Monobactams
+Prestw-186,Cloxacillin sodium salt,J01CF02,bacteria,"8,6974676",Cell wall,Cell wall,Beta-lactam,Penicillin,Beta-lactamase resistant,beta-lactams,Penicillins
+Prestw-193,Oxolinic acid,J01MB05,bacteria,"5,2246028",DNA gyrase,DNA,Quinolone,NA,1st generation,(Fluoro-)quinolones,1st generation
+Prestw-204,Flumequine,J01MB07,bacteria,"5,22496766",DNA gyrase,DNA,Quinolone,NA,1st generation,(Fluoro-)quinolones,1st generation
+Prestw-28,Ethambutol dihydrochloride,J04AK02,bacteria,"4,0861952",Arabinogalactan Layer,Cell wall,Others,NA,Antimycobacterial,Miscellaneous agents,Others
+Prestw-21,Sulfaphenazole,J01ED08 S01AB05,bacteria,"6,2872452",Folate,Folate,Sulfonamide,Long-acting,NA,Sulfonamide,
+Prestw-221,Norfloxacin,J01MA06 S01AX12,bacteria,"6,38661646",DNA gyrase,DNA,Quinolone,Fluoroquinolone,2nd generation,(Fluoro-)quinolones,2nd generation
+Prestw-23,Sulfadiazine,J01EC02,bacteria,"5,00554",Folate,Folate,Sulfonamide,Intermediate-acting,NA,Sulfonamide,
+Prestw-237,Ofloxacin,J01MA01 J01MA12 S01AX11 S01AX19 S02AA16,bacteria,"7,22735006",DNA gyrase,DNA,Quinolone,Fluoroquinolone,2nd generation,(Fluoro-)quinolones,2nd generation
+Prestw-238,Lomefloxacin hydrochloride,J01MA07 S01AX17,bacteria,"7,02695732",DNA gyrase,DNA,Quinolone,Fluoroquinolone,2nd generation,(Fluoro-)quinolones,2nd generation
+Prestw-514,Pyrazinamide,J04AK01,bacteria,"2,462254",Unknown,Others,Others,NA,Antimycobacterial,Miscellaneous agents,Others
+Prestw-376,Clofazimine,J04BA01,bacteria,"9,4679276",DNA synthesis,DNA,Phenazine,NA,Antimycobacterial,Miscellaneous agents,Others
+Prestw-302,Lincomycin hydrochloride,J01FF02,bacteria,"8,1307472",Protein Synthesis,Protein synthesis,Lincosamide,NA,NA,"Macrolides, lincosamides and streptogramins",Lincosamide
+Prestw-307,Oxytetracycline dihydrate,D06AA03 J01AA06 S01AA04 G01AA07,bacteria,"9,2086792",Protein Synthesis,Protein synthesis,Tetracycline,NA,NA,Tetracyclines,
+Prestw-1282,Methenamine,J01XX05,bacteria,"2,8037256",Unknown,Others,Polymyamine,NA,NA,Miscellaneous agents,Others
+Prestw-315,Minocycline hydrochloride,J01AA08 A01AB23,bacteria,"9,1293688",Protein Synthesis,Protein synthesis,Tetracycline,NA,NA,Tetracyclines,
+Prestw-321,Streptomycin sulfate,J01GA01 A07AA04,bacteria,"11,6314812",Protein Synthesis,Protein synthesis,Aminoglycoside,NA,NA,Aminoglycosides,
+Prestw-327,Cefoperazone dihydrate,J01DD12,bacteria,"12,8931888",Cell wall,Cell wall,Beta-lactam,Cephalosporin,3rd generation,beta-lactams,Cephalosporins
+Prestw-334,Sulfisoxazole,J01EB05 S01AB02,bacteria,"5,3460844",Folate,Folate,Sulfonamide,Short-acting,NA,Sulfonamide,
+Prestw-486,Colistin sulfate,J01XB01 A07AA10,bacteria,"23,38921",LPS,Cell wall,Polymyxin,NA,NA,Miscellaneous agents,Others
+Prestw-357,Amoxicillin,J01CA04,bacteria,"7,3080832",Cell wall,Cell wall,Beta-lactam,Penicillin,Extended spectrum,beta-lactams,Penicillins
+Prestw-36,Troleandomycin,J01FA08,bacteria,"16,2793676",Protein Synthesis,Protein synthesis,Macrolide,NA,NA,"Macrolides, lincosamides and streptogramins",Macrolide
+Prestw-1109,Rifabutin,J04AB04,bacteria,"16,9400936",RNA polymerase,DNA,Rifamycin,NA,Antimycobacterial,Miscellaneous agents,Rifamycin
+Prestw-1157,Rifapentine,J04AB05,bacteria,"17,5406132",RNA polymerase,DNA,Rifamycin,NA,Antimycobacterial,Miscellaneous agents,Rifamycin
+Prestw-394,Kanamycin A sulfate,J01GB04 S01AA24 A07AA08,bacteria,"9,6899728",Protein Synthesis,Protein synthesis,Aminoglycoside,NA,NA,Aminoglycosides,
+Prestw-395,Amikacin hydrate,D06AX12 J01GB06 S01AA21,bacteria,"11,7120504",Protein Synthesis,Protein synthesis,Aminoglycoside,NA,NA,Aminoglycosides,
+Prestw-416,Bacampicillin hydrochloride,J01CA06,bacteria,"9,3103996",Cell wall,Cell wall,Beta-lactam,Penicillin,Extended spectrum,beta-lactams,Penicillins
+Prestw-424,"Cephalosporanic acid, 7-amino",J01DB,bacteria,"5,4455536",Cell wall,Cell wall,Beta-lactam,Cephalosporin,NA,beta-lactams,Cephalosporins
+Prestw-434,Cefadroxil,J01DB05,bacteria,"7,2677656",Cell wall,Cell wall,Beta-lactam,Cephalosporin,1st generation,beta-lactams,Cephalosporins
+Prestw-450,Dicloxacillin sodium salt hydrate,J01CF01,bacteria,"9,3863688",Cell wall,Cell wall,Beta-lactam,Penicillin,Beta-lactamase resistant,beta-lactams,Penicillins
+Prestw-456,Meclocycline sulfosalicylate,D10AF04,bacteria,"9,5372748",Protein Synthesis,Protein synthesis,Tetracycline,NA,NA,Tetracyclines,
+Prestw-462,Cefixime,J01DD08,bacteria,"9,068992",Cell wall,Cell wall,Beta-lactam,Cephalosporin,3rd generation,beta-lactams,Cephalosporins
+Prestw-470,Ceforanide,J01DC11,bacteria,"10,3910808",Cell wall,Cell wall,Beta-lactam,Cephalosporin,2nd generation,beta-lactams,Cephalosporins
+Prestw-473,Cefotetan,J01DC05,bacteria,"11,5123796",Cell wall,Cell wall,Beta-lactam,Cephalosporin,2nd generation,beta-lactams,Cephalosporins
+Prestw-482,Cefotiam hydrochloride,J01DC07,bacteria,"10,5125624",Cell wall,Cell wall,Beta-lactam,Cephalosporin,2nd generation,beta-lactams,Cephalosporins
+Prestw-485,Cefaclor hydrate,J01DC04,bacteria,"7,3561472",Cell wall,Cell wall,Beta-lactam,Cephalosporin,2nd generation,beta-lactams,Cephalosporins
+Prestw-1478,Rifaximin,D06AX11 A07AA11,bacteria,"15,7175708",RNA polymerase,DNA,Rifamycin,NA,Antimycobacterial,Miscellaneous agents,Rifamycin
+Prestw-489,Ceftazidime pentahydrate,J01DD02,bacteria,"10,9315216",Cell wall,Cell wall,Beta-lactam,Cephalosporin,3rd generation,beta-lactams,Cephalosporins
+Prestw-497,Vancomycin hydrochloride,J01XA01 A07AA09,bacteria,"28,985072",Cell wall,Cell wall,Peptide,Glycopeptide,NA,Glycopeptides and lipoglycopeptides,
+Prestw-506,Sisomicin sulfate,J01GB08,bacteria,"8,9505276",Protein Synthesis,Protein synthesis,Aminoglycoside,NA,NA,Aminoglycosides,
+Prestw-525,Rifampicin,J04AB02,bacteria,"16,4588044",RNA polymerase,DNA,Rifamycin,NA,Antimycobacterial,Miscellaneous agents,Rifamycin
+Prestw-519,Imipenem,J01DH51,bacteria,"5,9869216",Cell wall,Cell wall,Beta-lactam,Carbapenem,NA,beta-lactams,Carbapenems
+Prestw-390,Fusidic acid sodium salt,D06AX01 J01XC01 S01AA13 D09AA02,bacteria,"10,3341844",Protein Synthesis,Protein synthesis,Steroid,NA,NA,Miscellaneous agents,Others
+Prestw-35,Dapsone,D10AX05 J04BA02,bacteria,"4,9660176",Folate,Folate,Sulfones,NA,Antimycobacterial,Miscellaneous agents,Others
+Prestw-544,Tobramycin,J01GB01 S01AA12,bacteria,"9,3502896",Protein Synthesis,Protein synthesis,Aminoglycoside,NA,NA,Aminoglycosides,
+Prestw-1321,Prothionamide,J04AD01,bacteria,"3,6053996",Mycolic acid layer,Cell wall,Thiocarbamide,NA,Antimycobacterial,Miscellaneous agents,Others
+Prestw-557,Dirithromycin,J01FA13,bacteria,"16,7014744",Protein Synthesis,Protein synthesis,Macrolide,NA,NA,"Macrolides, lincosamides and streptogramins",Macrolide
+Prestw-694,Sulfamerazine,J01ED07 D06BA06,bacteria,"5,2860716",Folate,Folate,Sulfonamide,Long-acting,NA,Sulfonamide,
+Prestw-700,Cefmetazole sodium salt,J01DC09,bacteria,"9,4105288",Cell wall,Cell wall,Beta-lactam,Cephalosporin,2nd generation,beta-lactams,Cephalosporins
+Prestw-702,Succinylsulfathiazole,A07AB04,bacteria,"7,1077884",Folate,Folate,Sulfonamide,NA,NA,Sulfonamide,
+Prestw-719,Cephalothin sodium salt,J01DB03,bacteria,"7,9287608",Cell wall,Cell wall,Beta-lactam,Cephalosporin,1st generation,beta-lactams,Cephalosporins
+Prestw-720,Cefuroxime sodium salt,J01DC02,bacteria,"8,467546",Cell wall,Cell wall,Beta-lactam,Cephalosporin,2nd generation,beta-lactams,Cephalosporins
+Prestw-723,Phenethicillin potassium salt,J01CE05,bacteria,"7,2681632",Cell wall,Cell wall,Beta-lactam,Penicillin,Beta-lactamase sensitive,beta-lactams,Penicillins
+Prestw-724,Sulfamethoxypyridazine,J01ED05,bacteria,"5,6060596",Folate,Folate,Sulfonamide,Long-acting,NA,Sulfonamide,
+Prestw-728,Sulfadimethoxine,J01ED01,bacteria,"6,2065792",Folate,Folate,Sulfonamide,Long-acting,NA,Sulfonamide,
+Prestw-729,Sulfanilamide,J01EB06 D06BA05,bacteria,"3,4440984",Folate,Folate,Sulfonamide,Short-acting,NA,Sulfonamide,
+Prestw-736,Cefazolin sodium salt,J01DB04,bacteria,"9,0699844",Cell wall,Cell wall,Beta-lactam,Cephalosporin,1st generation,beta-lactams,Cephalosporins
+Prestw-742,Sulfamethizole,J01EB02 D06BA04 S01AB01 B05CA04,bacteria,"5,406626",Folate,Folate,Sulfonamide,Short-acting,NA,Sulfonamide,
+Prestw-745,Spiramycin,J01FA02,bacteria,"16,8610532",Protein Synthesis,Protein synthesis,Macrolide,NA,NA,"Macrolides, lincosamides and streptogramins",Macrolide
+Prestw-753,Demeclocycline hydrochloride,D06AA01 J01AA01,bacteria,"9,2970608",Protein Synthesis,Protein synthesis,Tetracycline,NA,NA,Tetracyclines,
+Prestw-755,Piperacillin sodium salt,J01CA12,bacteria,"10,3309368",Cell wall,Cell wall,Beta-lactam,Penicillin,Extended spectrum,beta-lactams,Penicillins
+Prestw-758,Ribostamycin sulfate salt,J01GB10,bacteria,"9,0894532",Protein Synthesis,Protein synthesis,Aminoglycoside,Aminocyclitol,NA,Aminoglycosides,
+Prestw-762,Sulfapyridine,J01EB04,bacteria,"4,9857788",Folate,Folate,Sulfonamide,Short-acting,NA,Sulfonamide,
+Prestw-526,Ethionamide,J04AD03,bacteria,"3,324868",Mycolic acid layer,Cell wall,Thiocarbamide,NA,Antimycobacterial,Miscellaneous agents,Others
+Prestw-769,Sulfameter,J01ED04,bacteria,"5,6060596",Folate,Folate,Sulfonamide,Long-acting,NA,Sulfonamide,
+Prestw-775,Sulfamethazine sodium salt,J01EB03,bacteria,"5,5666032",Folate,Folate,Sulfonamide,Short-acting,NA,Sulfonamide,
+Prestw-780,Cinoxacin,J01MB06,bacteria,"5,244364",DNA gyrase,DNA,Quinolone,NA,1st generation,(Fluoro-)quinolones,1st generation
+Prestw-804,Spectinomycin dihydrochloride,J01XX04,bacteria,"6,6469912",Protein Synthesis,Protein synthesis,Aminoglycoside,Aminocyclitol,NA,Aminoglycosides,
+Prestw-805,Piromidic acid,J01MB03,bacteria,"5,7660368",DNA gyrase,DNA,Quinolone,NA,1st generation,(Fluoro-)quinolones,1st generation
+Prestw-208,Trimethoprim,J01EA01,bacteria,"5,8063544",Folate,Folate,Trimethoprim,NA,NA,Miscellaneous agents,Others
+Prestw-1113,Viomycin sulfate,J04AB,bacteria,"13,7138004",Protein Synthesis,Protein synthesis,Tuberactinomycin,NA,Antimycobacterial,Miscellaneous agents,Others
+Prestw-814,Cefsulodin sodium salt,J01DD03,bacteria,"10,6307652",Cell wall,Cell wall,Beta-lactam,Cephalosporin,3rd generation,beta-lactams,Cephalosporins
+Prestw-819,Moxalactam disodium salt,J01DD06,bacteria,"10,409452",Cell wall,Cell wall,Beta-lactam,Cephalosporin,3rd generation,beta-lactams,Cephalosporins
+Prestw-821,Azlocillin sodium salt,J01CA09,bacteria,"9,2096716",Cell wall,Cell wall,Beta-lactam,Penicillin,Extended spectrum,beta-lactams,Penicillins
+Prestw-832,Cefoxitin sodium salt,J01DC01,bacteria,"8,5288828",Cell wall,Cell wall,Beta-lactam,Cephalosporin,2nd generation,beta-lactams,Cephalosporins
+Prestw-843,Nafcillin sodium salt monohydrate,J01CF06,bacteria,"8,2894956",Cell wall,Cell wall,Beta-lactam,Penicillin,Beta-lactamase resistant,beta-lactams,Penicillins
+Prestw-854,Roxithromycin,J01FA06,bacteria,"16,7409308",Protein Synthesis,Protein synthesis,Macrolide,NA,NA,"Macrolides, lincosamides and streptogramins",Macrolide
+Prestw-867,Paromomycin sulfate,A07AA06,bacteria,"12,31257",Protein Synthesis,Protein synthesis,Aminoglycoside,NA,NA,Aminoglycosides,
+Prestw-869,Phthalylsulfathiazole,A07AB02,bacteria,"8,0686444",Folate,Folate,Sulfonamide,NA,NA,Sulfonamide,
+Prestw-897,Pipemidic acid,J01MB04,bacteria,"6,0663296",DNA gyrase,DNA,Quinolone,NA,1st generation,(Fluoro-)quinolones,1st generation
+Prestw-913,2-Aminobenzenesulfonamide,J01EB,bacteria,"3,4440984",Folate,Folate,Sulfonamide,NA,NA,Sulfonamide,
+Prestw-919,Bacitracin,D06AX05 J01XX10 R02AB04,bacteria,"28,4538664",Cell wall,Cell wall,Peptide,NA,NA,Glycopeptides and lipoglycopeptides,
+Prestw-964,Methacycline hydrochloride,J01AA05,bacteria,"8,8282148",Protein Synthesis,Protein synthesis,Tetracycline,NA,NA,Tetracyclines,
