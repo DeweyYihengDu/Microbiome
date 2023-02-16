@@ -1,0 +1,7 @@
+data
+figures
+*.DS_Store
+*.Rhistory
+*.RData
+.Rproj.user
+source_data
