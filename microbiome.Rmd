@@ -1,0 +1,501 @@
+---
+title: "microbiome"
+author: Yiheng Du
+output: 
+  bookdown::html_document2:
+    code_folding: show
+    number_sections: no
+    toc: yes
+    toc_depth: 6
+    toc_float: yes
+---
+
+# Fig 1c Compare MICs to clinical breakpoints
+
+This topic is used to draw the `boxplot` about the drug sensitive and the bacteria. 
+
+## library the packages
+```{r, warning=FALSE}
+# ##############################################################################
+# 
+## Compare MICs to clinical breakpoints
+#
+# ##############################################################################
+
+library("here")
+library("tidyverse")
+library("readxl")
+library("ggpubr")
+```
+
+MICs of drug–species pairs per antibiotic class (colour scheme as in a) are depicted next to EUCAST clinical (susceptibility) breakpoints for pathogens. Numbers of drug–species pairs (MICs; coloured) and antibiotic per class (EUCAST clinical breakpoints; black) are shown in parentheses. Boxes span the interquartile range (IQR), and whiskers extend to the most extreme data points up to a maximum of 1.5× IQR. The y axis is log2 scale.
+
+## The raw data
+
+In the raw data, the data is included the sensitive and the MICs.
+```{r, warning=FALSE}
+abx.colors.df <- read_delim(here('files','ABX_color_code.csv'),delim=';')
+abx.colors <- abx.colors.df$Color
+names(abx.colors) <- abx.colors.df$ABX_class
+# ##############################################################################
+# Import breakpoints and make some formatting adjustments
+
+breakpoints <- read_tsv(here('data','eucast_2019_v9_breakpoints.tsv'))
+breakpoints
+MICs <- read_xlsx(here('data','MICs.xlsx'), sheet = 3)
+
+ABX <- read_xlsx(here('data','MICs.xlsx'), sheet = 1)
+
+species_annotation <-  read_tsv(here('files','species_annotation.tsv'))
+MICs
+ABX
+species_annotation
+```
+
+## Tidy data
+
+Divide the species and drugs into different groups and rename the data.
+```{r}
+breakpoints <- breakpoints %>% 
+  mutate(Anaerobier = case_when(
+    species == 'Anaerobes, Grampositive' ~ 'Anaerobes, Grampositive', 
+    species == 'Anaerobes, Gramnegative' ~ 'Anaerobes, Gramnegative', 
+    species == 'PK PD breakpoints' ~ 'PK PD breakpoints',
+    species != 'Anaerobes, Grampositive' & 
+      species !='Anaerobes, Gramnegative' ~ ''))
+
+breakpoints <- breakpoints %>% 
+  mutate(ABX_class = case_when(
+    drug_group == 'Penicillins' ~ 'beta-lactams', 
+    drug_group == 'Cephalosporins' ~ 'beta-lactams', 
+    drug_group == 'Carbapenems' ~ 'beta-lactams', 
+    drug_group == 'Monobactams' ~ 'beta-lactams', 
+    drug_group =='Glycopeptides' ~ 'Glycopeptides and lipoglycopeptides',
+    drug_group =='Macrolides' ~ 'Macrolides, lincosamides and streptogramins',
+    drug_group =='Macrolides and lincosamides' ~ 
+      'Macrolides, lincosamides and streptogramins',
+    is.na(drug_group) ~ 'Miscellaneous agents',
+    TRUE ~ drug_group))
+
+breakpoints$ABX_class[breakpoints$ABX_class == "Fluoroquinolones"] <- 
+  "(Fluoro-)quinolones"
+
+breakpoints <- breakpoints %>% 
+  mutate(ABX_subclass = case_when(
+    drug_group == 'Penicillins' ~ 'Penicillins', 
+    drug_group == 'Cephalosporins' ~ 'Cephalosporins', 
+    drug_group == 'Carbapenems' ~ 'Carbapenems', 
+    drug_group == 'Monobactams' ~ 'Monobactams', 
+    is.na(drug_group) ~ 'Miscellaneous agents',
+    TRUE ~ ABX_class))
+
+
+# ##############################################################################
+# combine with our MICs
+
+breakpoints_main <- breakpoints %>% 
+  filter(Anaerobier != 'PK PD breakpoints') %>% 
+  select(c(ABX_class, sensitive)) %>% 
+  mutate(study = 'clinical breakpoints') %>% 
+  mutate(mean_qualifier = '=') %>% 
+  filter(ABX_class %in% 
+           c("beta-lactams", "(Fluoro-)quinolones", 'Sulfonamide', 
+             'Tetracyclines', 'Aminoglycosides',
+             'Macrolides, lincosamides and streptogramins')) %>% 
+  mutate(shp ='grey')
+
+MICs <- read_xlsx(here('data','MICs.xlsx'), sheet = 3)
+
+ABX <- read_xlsx(here('data','MICs.xlsx'), sheet = 1)
+
+species_annotation <-  read_tsv(here('files','species_annotation.tsv'))
+
+MICs <- full_join(MICs, ABX, by='Drug_Abbreviation') %>% 
+  mutate(mean_MICs = (R1_value + R2_value)/2) %>% 
+  mutate(mean_qualifier = case_when(
+    R1_qualifier == '=' & R2_qualifier ==  '=' ~ "=",
+    R1_qualifier == '>' & R2_qualifier ==  '>' ~ ">",
+    R1_qualifier == '<' & R2_qualifier ==  '<' ~ "<",
+    R1_qualifier == '>' & R2_qualifier ==  '=' ~ "=",
+    R1_qualifier == '=' & R2_qualifier ==  '>' ~ "=",
+    R1_qualifier == '<' & R2_qualifier ==  '=' ~ "=",
+    R1_qualifier == '=' & R2_qualifier ==  '<' ~ "=")) %>% 
+  mutate(shp = case_when(
+    mean_qualifier == '=' ~ 'grey', 
+    mean_qualifier == '>' ~ 'black',
+    mean_qualifier == '<' ~ 'black'))
+
+MICs <- left_join(MICs, species_annotation, by='NT_code')
+
+
+antibiotics_per_class <- ABX %>% 
+  group_by(EUCAST_comparison) %>% 
+  count()
+MICs <- left_join(MICs, antibiotics_per_class, by='EUCAST_comparison')
+
+######################################################################################################################################
+# MICs without expansion for Bacteroides!)
+
+MICs_Screen <- MICs %>% 
+  filter(Screen == TRUE)
+
+MICs_Screen_main <- MICs_Screen %>% 
+  filter(EUCAST_comparison %in% 
+           c("beta-lactams", "(Fluoro-)quinolones", 'Sulfonamide', 
+             'Tetracyclines', 'Aminoglycosides',
+             'Macrolides, lincosamides and streptogramins'))
+
+names(MICs_Screen_main)[names(MICs_Screen_main)=="mean_MICs"] <- "sensitive"
+names(MICs_Screen_main)[names(MICs_Screen_main)=="EUCAST_comparison"] <- 
+  "ABX_class"
+MICs_Screen_main <- MICs_Screen_main %>% 
+  mutate(study = 'MICs')
+
+MICs_short <- MICs_Screen_main %>% 
+  select(c(sensitive, ABX_class, study, mean_qualifier, shp))
+
+# Combine breakpoints and MICs
+breakpoints_MICs <- rbind(MICs_short, breakpoints_main)
+
+# Set levels manually to determine order
+lev <- MICs_short %>% 
+  group_by(ABX_class) %>% 
+  summarise(MICs_median = median(sensitive)) %>% 
+  mutate(rank = dense_rank(MICs_median)) %>% 
+  select(c(ABX_class, rank)) %>% 
+  arrange(desc(rank))
+
+breakpoints_MICs$ABX_class <- factor(breakpoints_MICs$ABX_class, 
+                                     levels=lev$ABX_class)
+
+breakpoints_MICs$study <- as.factor(breakpoints_MICs$study)
+breakpoints_MICs$study <- factor(breakpoints_MICs$study,
+                                 levels(breakpoints_MICs$study)[c(2,1)])
+
+
+pdf(here('figures',"Fig1c.pdf"),width=8.27,height=11.69)
+
+  ggplot(data=breakpoints_MICs, aes(x=ABX_class, y=sensitive, fill=study)) +
+  geom_boxplot(show.legend = FALSE, outlier.shape=NA, lwd=0.75, 
+               aes(color=ABX_class), position=position_dodge(1)) +
+  theme_linedraw(base_size = 12) +
+  scale_y_continuous(trans='log2')+
+  # add labels
+  labs(title = "Main classes - MICs", 
+       y = "MIC/breakpoint in µg/ml", x = NULL) +
+  # change font size
+  theme(title = element_text(face = "bold"), 
+        axis.title = element_text(face = "bold", size = 12)) +
+  # change axis label
+  theme(legend.title = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_colour_manual(values=abx.colors) + 
+  scale_fill_manual(values=alpha(c('white', '#bdbdbd'),0.5)) +
+  coord_fixed(ratio=0.5)
+
+dev.off()
+
+# export source data
+if (dir.exists(here('source_data'))){
+  breakpoints_MICs %>% 
+    transmute(value=sensitive, ABX_class, type=study) %>% 
+    write_tsv(here('source_data', 'Fig1c.tsv'))
+}
+  ggplot(data=breakpoints_MICs, aes(x=ABX_class, y=sensitive, fill=study)) +
+  geom_boxplot(show.legend = FALSE, outlier.shape=NA, lwd=0.75, 
+               aes(color=ABX_class), position=position_dodge(1)) +
+  theme_linedraw(base_size = 12) +
+  scale_y_continuous(trans='log2')+
+  # add labels
+  labs(title = "Main classes - MICs", 
+       y = "MIC/breakpoint in µg/ml", x = NULL) +
+  # change font size
+  theme(title = element_text(face = "bold"), 
+        axis.title = element_text(face = "bold", size = 12)) +
+  # change axis label
+  theme(legend.title = element_blank(), 
+        panel.grid.major = element_blank(),
+        panel.grid.minor = element_blank(), 
+        axis.text.x = element_text(angle = 45, hjust = 1)) +
+  scale_colour_manual(values=abx.colors) + 
+  scale_fill_manual(values=alpha(c('white', '#bdbdbd'),0.5)) +
+  coord_fixed(ratio=0.5)
+```
+
+# Heatmaps screen MIC
+
+```{r}
+# ##############################################################################
+#
+## Screen Heatmap for the supplement
+#
+# ##############################################################################
+
+# packages
+library("here")
+library("tidyverse")
+library("readxl")
+library("ape")
+library("ComplexHeatmap")
+library("circlize")
+library("ggthemes")
+
+
+# ##############################################################################
+# data
+
+# abx info
+abx.info <- read_csv(here('files', 'ABX_annotation.csv')) 
+
+# genome info
+genome.info <- read_tsv(here('files','species_annotation.tsv'))
+
+# screen data
+screen.data <- read_tsv(here('data', 'combined_pv.tsv')) %>% 
+  filter(prestwick_ID %in% abx.info$prestwick_ID) %>% 
+  select(NT_code, prestwick_ID, hit) %>% 
+  mutate(hit=as.numeric(hit)) %>% 
+  spread(key=prestwick_ID, value=hit) %>% 
+  as.data.frame()
+rownames(screen.data) <- screen.data$NT_code
+screen.data$NT_code <- NULL
+
+# read in tree
+tree <- read.tree(here('files', 'phylogenetic_tree.tre'))
+
+# colors
+abx.colors.df <- read_delim(here('files','ABX_color_code.csv'), delim=';')
+abx.colors <- abx.colors.df$Color
+names(abx.colors) <- abx.colors.df$ABX_class
+
+# ##############################################################################
+# hetamap for all classes
+
+# order by hits per class
+abx.class.sorted <- abx.info %>% 
+  mutate(no_hits=colSums(screen.data[, prestwick_ID], na.rm = TRUE)) %>% 
+  group_by(EUCAST_Comparison) %>% 
+  summarise(m=median(no_hits)) %>% 
+  arrange(desc(m))
+
+abx.info <- abx.info %>% 
+  mutate(EUCAST_Comparison = 
+           factor(EUCAST_Comparison, 
+                  levels = abx.class.sorted$EUCAST_Comparison)) %>% 
+  arrange(EUCAST_Comparison)
+
+
+abx.info %>% 
+  mutate(no_hits=colSums(screen.data[, prestwick_ID], na.rm = TRUE)) %>% 
+  ggplot(aes(x=EUCAST_Comparison, y=no_hits, fill=EUCAST_Comparison)) + 
+    geom_boxplot(outlier.shape = NA) +
+    geom_jitter(width = 0.1) +
+    scale_fill_manual(values=abx.colors, guide='none') + 
+    coord_flip() + 
+    xlab('') + 
+    ylab('Number of hits') + 
+    theme_few() + 
+    theme(panel.grid.major.x = element_line(colour='lightgrey'))
+```
+
+## Effects of 144 antibiotics on 40 human gut commensals.
+```{r, fig.width=12, fig.height=24}
+library(stringr)
+df.plot <- t(screen.data[,abx.info$prestwick_ID])
+rownames(df.plot) <- abx.info$chemical_name[match(rownames(df.plot), 
+                                                  abx.info$prestwick_ID)]
+
+# annotations
+df.row <- data.frame(Group=abx.info$EUCAST_Comparison)
+side.annot <- rowAnnotation(df=df.row, col=list(Group=abx.colors),
+                            show_legend=FALSE)
+
+# order by phylogeny
+species.clustering <- as.hclust(chronos(tree))
+df.plot <- df.plot[,species.clustering$labels]
+colnames(df.plot) <- genome.info$Species_short[match(colnames(df.plot), 
+                                                     genome.info$NT_code)]
+
+h <- Heatmap(df.plot,
+             cluster_columns = species.clustering,
+             clustering_method_rows = 'ward.D2',
+             clustering_distance_rows = 'binary',
+             col=c('grey90','grey10'), na_col='white',
+             split=abx.info$EUCAST_Comparison,
+             heatmap_legend_param = list(title='Abx Sensitivity', 
+                                         color_bar='discrete', 
+                                         labels=c('resistant', 'sensitive'), 
+                                         at=c(0,1)),
+             show_row_dend = FALSE,
+             row_dend_side = "left",
+             row_dend_width = unit(1, "cm"),
+             row_names_gp = gpar(fontsize = 8),
+             row_names_max_width = unit(0.5, "cm"),
+             row_title_rot = 0,
+             row_title_side = "left")
+             # row_names_gp = gpar(fontsize = 8),
+             # row_title_rot = 90)
+
+side.annot + h
+###################################################################################
+```
+Save the plot to pdf.
+
+```{r}
+pdf(here('figures','EDFig1.pdf'), 
+    width = 8.27, height = 11.7, useDingbats = FALSE)
+side.annot + h
+dev.off()
+```
+## MICs for 20 species/27 strains on 35 antimicrobials.
+
+```{r, fig.width=12, fig.height=16}
+# source data
+if (dir.exists(here('source_data'))){
+  df.plot %>% 
+    as_tibble(rownames = 'Drug') %>% 
+    pivot_longer(-Drug, names_to = 'strain', values_to = 'screen.hit') %>% 
+    left_join(abx.info %>% transmute(Drug=chemical_name, EUCAST_Comparison)) %>% 
+    write_tsv(here('source_data', 'EDFig1.tsv'))
+}
+# ##############################################################################
+# same heatmap for MIC
+# Revisions
+# show all strains in the heatmap
+# strains
+sp.hm <- c("NT5001", "NT5002", "NT5003", "NT5004", "NT5009", "NT5011",
+           "NT5019", "NT5025", "NT5026", "NT5032", "NT5033", "NT5050",
+           "NT5054", "NT5078", "NT5083", "NT5065", "NT5057", "NT5049", 
+           "NT5051", "NT5052", "NT5053", "NT5055", "NT5056", "NT5058", 
+           "NT5059", "NT5066", "NT5064")
+
+# get MIC info
+mic.info <- read_excel(here('data','MICs.xlsx'), sheet = 1)
+
+# get MIC data
+mic.data <- read_excel(here('data','MICs.xlsx'), sheet = 3) %>% 
+  mutate(MIC=exp(rowMeans(as.matrix((select(., R1_value, R2_value) %>% 
+                                       mutate_all(log)))))) %>% 
+  select(Drug_Abbreviation, NT_code, MIC) %>%
+  mutate(MIC=log2(MIC)) %>% 
+  spread(key=Drug_Abbreviation, value=MIC) %>% 
+  as.data.frame()
+rownames(mic.data) <- mic.data$NT_code
+mic.data$NT_code <- NULL
+
+# normalize MIC data
+mic.info <- mic.info %>% 
+  separate(Range, sep='\\s*- ', into = c('low', 'high'), 
+           remove=FALSE, convert=TRUE) %>% 
+  mutate(log.low=log2(low)) %>% 
+  mutate(log.high=log2(high))
+
+# re-order by EUCast Class
+mic.info <- mic.info %>% 
+  mutate(EUCAST_comparison = 
+           factor(EUCAST_comparison, 
+                  levels = abx.class.sorted$EUCAST_Comparison)) %>% 
+  arrange(EUCAST_comparison)
+
+df.plot <- mic.data
+for (d in colnames(df.plot)){
+  low <- mic.info %>% filter(Drug_Abbreviation==d) %>% pull(log.low)
+  high <- mic.info %>% filter(Drug_Abbreviation==d) %>% pull(log.high)
+  df.plot[,d] <- (df.plot[,d] - low)/(high-low)
+}
+# df.plot.mic <- df.plot[rowSums(is.na(df.plot)) == 0,]
+df.plot.mic <- 1 - df.plot
+colnames(df.plot.mic) <- mic.info$Drug_Name[match(colnames(df.plot.mic), 
+                                                  mic.info$Drug_Abbreviation)]
+
+# take strains
+df.plot.mic <- df.plot.mic[sp.hm,]
+
+# re-order by phylogeny
+tree_2 <- read.tree(here('files','iq_tree.nw'))
+tree_2 <- keep.tip(tree_2, rownames(df.plot.mic))
+species.clustering.2 <- as.hclust(chronos(tree_2))
+df.plot.mic <- t(df.plot.mic[species.clustering.2$labels,])
+colnames(df.plot.mic) <- genome.info$Species_short[
+  match(colnames(df.plot.mic), genome.info$NT_code)]
+
+# re-order by EUCAST class
+df.plot.mic <- df.plot.mic[mic.info$Drug_Name,]
+
+# prepare heatmap
+df.row <- data.frame(Group=mic.info$EUCAST_comparison)
+side.annot <- rowAnnotation(df=df.row, col=list(Group=abx.colors),
+                            show_legend=FALSE)
+
+# prepare matrix for cell annotation
+small_mat <- 2**mic.data
+rownames(small_mat) <- genome.info$Species_short[match(rownames(small_mat), 
+                                                       genome.info$NT_code)]
+colnames(small_mat) <- mic.info$Drug_Name[match(colnames(small_mat),
+                                                mic.info$Drug_Abbreviation)]
+small_mat <- t(small_mat[colnames(df.plot.mic), rownames(df.plot.mic)])
+
+
+# remove negative values
+df.plot.mic[df.plot.mic < 0] <- 0
+
+
+# plot heatmap
+h.1 <- Heatmap(df.plot.mic,
+               cluster_columns = species.clustering.2,
+               cluster_rows = FALSE,
+               col=c('grey90','grey10'), na_col='white',
+               split=mic.info$EUCAST_comparison,
+               show_row_dend = FALSE,
+               row_names_side = 'right',
+               row_names_gp = gpar(fontsize = 8),
+               name = 'MIC',
+               cell_fun = function(j, i, x, y, width, height, fill) {
+                 temp <- small_mat[i, j]
+                 if (is.na(temp)) {
+                   string <- ''
+                  } else if (temp > 20){
+                   string <- sprintf('%.0f', temp)
+                  } else if (temp > 2){
+                    string <- sprintf("%.1f", temp)
+                  } else {
+                    string <- sprintf("%.2f", temp)
+                  }
+                 grid.text(string, 
+                           x, y, gp = gpar(fontsize = 6, col='white'))
+                 })
+
+# save heatmap
+side.annot + h.1
+```
+Save the figure to pdf. 
+```{r}
+pdf(here('figures','EDFig2.pdf'), 
+    width = 8.27, height = 11.7, useDingbats = FALSE)
+side.annot + h.1
+dev.off()
+```
+```{r}
+# export source data
+if (dir.exists(here('source_data'))){
+df.plot.mic %>% 
+  as_tibble(rownames = 'Drug') %>% 
+  pivot_longer(-Drug, names_to = 'strain', values_to = 'relative.MIC') %>% 
+  left_join(mic.info %>% transmute(Drug=Drug_Name, EUCAST_comparison)) %>% 
+  left_join(genome.info %>% transmute(strain=Species_short, NT_code)) %>% 
+  full_join(
+    mic.data %>% as_tibble(rownames = 'NT_code') %>% 
+      pivot_longer(-NT_code, names_to='Drug_abbreviation', 
+                   values_to = 'real.MIC') %>% 
+      left_join(mic.info %>% transmute(Drug_abbreviation=Drug_Abbreviation, 
+                                       Drug=Drug_Name)) %>% 
+      select(real.MIC, Drug, NT_code)) %>% 
+  transmute(Drug, strain, relative.MIC, real.MIC, Group=EUCAST_comparison) %>% 
+  write_tsv(here('source_data', 'EDFig2.tsv'))
+}
+
+```
+
+
