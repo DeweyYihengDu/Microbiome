@@ -10,13 +10,6 @@ In order to reproduce the results presented in the paper, you can use the provid
 
 After installing all required packages, you can automatically download the data by executing the `setup.R` script in the `utils` folder.
 
-# Tidy.py
-
-+ It is used to choose the sample sequence form a list and diveided the sequences into different .txt. 
-+ Use the tool.bat to change the name form `.txt` to `.fasta`.
-
-
-
 
 
 ## Contact
