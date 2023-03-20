@@ -1,6 +1,6 @@
 import os
-new_dir = "C:\\Users\\DuYih\\Desktop\\metadata"
-os.chdir(new_dir)
+new_dir = "C:\\Users\\DuYih\\Desktop\\alpha\\metadata"
+os.chdir(new_dir) 
 # 定义列表名称
 sample_names = [
     "CK0001", "CK0002", "CK0003", "CK0601", "CK0602", "CK0603", "CK1201", "CK1202", "CK1203",
@@ -14,7 +14,7 @@ sample_names = [
 ]
 
 # 读取DNA文本文件
-with open("C:\\Users\\DuYih\\Desktop\\metadata\\meta.txt", "r") as f:
+with open("C:\\Users\\DuYih\\Desktop\\alpha\\metadata\\meta.fasta", "r") as f:
     lines = f.readlines()
 # 创建文件夹
 if not os.path.exists("output"):
@@ -24,25 +24,17 @@ if not os.path.exists("output"):
 for i in range(len(lines)):
     if lines[i].startswith(">"):
         name = lines[i].strip()[1:].split("_")[0]
-        
-        # if any(sample_name in name for sample_name in sample_names):
-        #     seq = ""
-        #     j = i + 1
-        #     while j < len(lines) and not lines[j].startswith(">"):
-        #         seq += lines[j].strip()
-        #         j += 1
-        #     file_name = os.path.join("output", name + ".txt")
-        #     with open(file_name, "a") as f:
-        #         f.write(seq + "\n")
-        # name = lines[i].strip()[1:]
+        # print (lines[i].startswith(">"))
         if name in sample_names:
             seq = ""
             j = i + 1
             while j < len(lines) and not lines[j].startswith(">"):
                 seq += lines[j].strip()
                 j += 1
+
                 # print(seq)
-            file_name = os.path.join("output", name + ".txt")
+            file_name = os.path.join("output", name + ".fasta")
             
             with open(file_name, "a") as f:
-                f.write(name + "\n" + seq + "\n")
+                
+                f.write(">" + name + "_" + str(j)+ "\n" + seq + "\n")
